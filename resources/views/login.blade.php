@@ -9,7 +9,7 @@
         <div class="linha"></div>
     <div class="caixal">
         <form class="formlogin">
-            <img class="logologin"src="imagens/Group47.svg">
+            <img class="logologin"src="img/logo.svg">
         <div class="botoes">
             <div class="">
                 <button class="btngoogle">ENTRAR COM GOOGLE</button>
