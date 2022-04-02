@@ -99,7 +99,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 42px;
 line-height: 63px;
-justify-self:;
+
 text-align: center;
 
 color: #FFFFFF;
@@ -128,5 +128,8 @@ align-self:flex-start;
 .botoes{
     display:flex;
     flex-direction: column;
-    position: relative;
+    height: 220px;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
