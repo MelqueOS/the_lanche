@@ -8,7 +8,7 @@
     a{
         text-decoration: none;
     }
-    .cor{
+    .caixalogin{
         display: flex;
     flex-direction: row;
     height: 100vh;
@@ -103,16 +103,18 @@ line-height: 63px;
 text-align: center;
 
 color: #FFFFFF;
+
 }
+
 .textocadastro a{
     color:white;
 }
 .formlogin{
 
-    height: 100%;
+    height: 96%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 .linha{

@@ -5,7 +5,7 @@
 @section('login')
 
     
-    <div class="cor">
+    <div class="caixalogin">
         <div class="linha"></div>
     <div class="caixal">
         <form class="formlogin">
