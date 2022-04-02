@@ -8,8 +8,9 @@
     <div class="caixalogin">
         <div class="linha"></div>
     <div class="caixal">
+    <img class="logologin"src="img/logo.svg">
         <form class="formlogin">
-            <img class="logologin"src="img/logo.svg">
+            
         <div class="botoes">
             <div class="">
                 <button class="btngoogle">ENTRAR COM GOOGLE</button>
@@ -22,7 +23,7 @@
             </div>
         </div>
         <div class="textocadastro">
-            <a href="#">CADASTRO</a>
+            <a href="#">Cadastrar</a>
         </div>
     </div>
 </form>
