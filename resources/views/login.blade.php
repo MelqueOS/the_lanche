@@ -20,8 +20,6 @@
         </div>
     </div>
 </form>
-    <div class="caixaq">
 
-    </div>
 </div>
 @endsection
