@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('reservas', function (Blueprint $table) {
+        Schema::create('reserva', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->String('hora_reserva');
+            $table->foreignId("mesa_id");
+            $table->foreign("mesa_id")->references("id")->on("mesa");
+
         });
     }
 

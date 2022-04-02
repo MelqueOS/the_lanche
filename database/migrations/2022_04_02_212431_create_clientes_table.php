@@ -13,9 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('cliente', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->String('nome');
+            $table->String('email');
+            $table->String('senha');
+            $table->Date('data_nascimento');
+            $table->String('telefone');
+            $table->String('whatsapp');
+            $table->foreignId("user_tag_id");
+            $table->foreign("user_tag_id")->references("id")->on("user_tag");
         });
     }
 

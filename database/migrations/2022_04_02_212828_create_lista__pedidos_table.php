@@ -13,9 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lista__pedidos', function (Blueprint $table) {
-            $table->id();
+        Schema::create('lista_pedido', function (Blueprint $table) {
             $table->timestamps();
+            $table->bigInteger('quantidade'); 
+            $table->Double('val_total_prod',8, 2);// valor unitario x quantidade
+            $table->foreignId("pedido_controle_id");
+            $table->foreign("pedido_controle_id")->references("id")->on("pedido_controle");
+            $table->foreignId("produto_combo_id");
+            $table->foreign("produto_combo_id")->references("id")->on("produto_combo");
         });
     }
 

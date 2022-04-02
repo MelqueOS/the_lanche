@@ -13,9 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('localizacaos', function (Blueprint $table) {
+        Schema::create('localizacao', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->String('tipo_logradouro');
+            $table->String('logradouro');
+            $table->String('bairro');
+            $table->String('numero');
+            $table->String('complemento');
+            $table->String('referencia');
+            $table->foreignId("user_tag_id");
+            $table->foreign("user_tag_id")->references("id")->on("user_tag");
         });
     }
 
