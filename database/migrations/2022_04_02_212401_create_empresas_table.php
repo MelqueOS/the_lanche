@@ -13,9 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('empresa', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->String('cnpj');
+            $table->String('email');
+            $table->String('telefone');
+            $table->String('razao_social');
+            
+            $table->foreignId("user_tag_id");
+            $table->foreign("user_tag_id")->references("id")->on("user_tag");
         });
     }
 

@@ -13,9 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('mesas', function (Blueprint $table) {
+        Schema::create('mesa', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->String('qr_code');
+            $table->String('numero_lugares');
+            $table->String('local');
+            
+            $table->foreignId("empresa_id");
+            $table->foreign("empresa_id")->references("id")->on("empresa");
         });
     }
 
