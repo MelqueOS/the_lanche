@@ -119,6 +119,10 @@ input:focus{
     color: #333333;
 }
 
+.nv-cadastro{
+    text-align: center;
+}
+
 .inpt{
     background: #FFFFFF;
 border: 0.5px solid #9A9A9A;
