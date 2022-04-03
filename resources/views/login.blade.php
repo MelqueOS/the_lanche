@@ -13,7 +13,7 @@
             
         <div class="botoes">
             <div class="">
-                <button class="btngoogle">ENTRAR COM GOOGLE</button>
+             <button class="btngoogle">ENTRAR COM  <img id="google" src="img/googles.svg">OOGLE</i></button>
             </div>
             <div class="">
                 <button class="btnemail">ENTRAR COM EMAIL</button>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="textocadastro">
-            <a href="#">Cadastrar</a>
+            <a href="#">Fazer cadastro</a>
         </div>
     </div>
 </form>

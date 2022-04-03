@@ -4,7 +4,41 @@
         padding: 0px;
  
     }
+#google{
 
+        color: rgb(30, 245, 2);
+        /*text-shadow: 1px 1px 1px #ccc;*/
+        font-size: 20px;
+        width: 17.5px;
+        height: 19px;
+        margin-bottom: 2.5px;
+    }
+    .textopergunta{
+   
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 42px;
+line-height: 63px;
+
+
+color: #C4C4C4;
+    }
+    .cadastrobotoes{
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+    align-content: center;
+    align-items: center;
+    }
+    .cadastroinputs{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    align-content: center;
+    align-items: center;
+    }
     a{
         text-decoration: none;
     }
