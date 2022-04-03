@@ -1,140 +1,99 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+}
 
-    *{
-        margin: 0px;
-        padding: 0px;
- 
-    }
+i{
+    font-size: 26px;
+}
 
-    a{
-        text-decoration: none;
-    }
-    .caixalogin{
-        display: flex;
+.container {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+    height: 500px;
+    width: 800px;
+    display: flex;
     flex-direction: row;
-    height: 100vh;
-        width: 100vw;
-    margin: 0px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    }
-    .caixal{
-    
-    background-color:#EB5600;
-    width:50%;
-    height:100%;
+}
+
+.botao{
+    text-decoration: unset;
+    font-size: 16px;
+    color: #333333;
+    background-color: transparent;
+    border: 0;
+    font-weight: bold;
+}
+
+.bi-qr-code-scan{
+    font-size: 40px;
+}
+
+.box-scan{
+    height: 100%;
+    width: 300px;
+    background-color: #e9ecefad;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-}
-.caixaq{
-    width:50%;
-    height:100%;
-}
-.logologin{
-    margin: 0px;
-    margin-top:10%;
-    margin-bottom: 10%;
-}
-.btngoogle{
-    background-color:white;
-    border-radius:15px;
-    width: 364.75px;
-height: 50px;
-
-border:white;
-filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
-
-font-family: 'Poppins', sans-serif; 
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-
-
-text-align: center;
-
-color: #6D6D6D;
-
-
-}
-.btnemail{
-    background-color:white;
-    border-radius:15px;
-
-    border: #9B998F;
-    width: 364.75px;
-height: 50px;
-background-color: #9B998F;
-
-filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
-
-
-font-family: 'Poppins', sans-serif; 
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-
-
-text-align: center;
-
-color: #FFFFFF;
-
-}
-.textoentrar{
-
-font-family: 'Poppins';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #EBEBEB;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
-.textocadastro{
-    font-family: 'Poppins', sans-serif; 
-font-style: normal;
-font-weight: 400;
-font-size: 42px;
-line-height: 63px;
-
-text-align: center;
-
-color: #FFFFFF;
-
-}
-
-.textocadastro a{
-    color:white;
-}
-.formlogin{
-
-    height: 96%;
+.scan{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
 }
-.linha{
-    width: 13.71px;
-height: 100%;
-margin: 0px;
-padding: 0px;
-background: #EB5600;
-border: 50px solid #EB5600;
 
-align-self:flex-start;
-}
-.botoes{
-    display:flex;
+.box-formulario{
+    height: 100%;
+    width: 500px;
+    background-color: #EB5600;
+    color: white;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
-    height: 220px;
-    justify-content: space-evenly;
-    align-items: center;
-    
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
 
+.text-login{
+    font-size: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+input{
+    height: 35px;
+    width:100%;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+
+input:focus{
+    outline: 0;
+    border: 1px solid #ced4da;
+}
+
+.passwd{
+    margin-top: 20px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-confirm{
+    height: 35px;
+    width: 75%;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: #FAFF0C;
+    color: #EB5600;
+    font-weight: 600;
 }
