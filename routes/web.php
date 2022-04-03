@@ -19,8 +19,8 @@ Route::resources([
 
 ]);
 Route::get('/', function () {
-    return view('login');
+    return view('telascadastro.login');
 });
 Route::get('/2', function () {
-    return view('cadastro.cadastro');
+    return view('telascadastro.cadastro');
 });
