@@ -2,7 +2,7 @@
 @section("titulo", "Login")
 
 
-@section('login')
+@section('conteudo')
 <div class="box-scan">
     <div class="scan">
         <button class='botao'>
