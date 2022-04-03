@@ -20,12 +20,12 @@
 
         <div class="login">
             <label for="">Usuario</label>
-            <input type="email" name="" id="">
+            <input type="email" name="" id="" required>
         </div>
 
         <div class="passwd">
             <label for="">Senha</label>
-            <input type="password" name="" id="">
+            <input type="password" name="" id="" required>
         </div>
 
         <div class="btn">

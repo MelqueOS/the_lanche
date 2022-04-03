@@ -47,6 +47,10 @@ i{
     display: flex;
 }
 
+.botao:hover{
+    color: black;
+}
+
 .box-formulario{
     height: 100%;
     width: 500px;
@@ -74,8 +78,8 @@ input{
 }
 
 input:focus{
-    outline: 0;
-    border: 1px solid #ced4da;
+    outline: #333333;
+    border: 1px solid ;
 }
 
 .passwd{
@@ -93,7 +97,12 @@ input:focus{
     width: 75%;
     border: 1px solid;
     border-radius: 4px;
-    background-color: #FAFF0C;
+    background-color: #333333;
     color: #EB5600;
     font-weight: 600;
+}
+
+.btn-confirm:hover{
+    background-color: #EB5600;
+    color: #333333;
 }
