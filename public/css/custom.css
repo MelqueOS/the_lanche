@@ -5,6 +5,15 @@
     font-style: normal;
 }
 
+a{
+    text-decoration: unset;
+
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 i{
     font-size: 26px;
 }

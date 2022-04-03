@@ -18,12 +18,10 @@
             <p>Login</p>
         </div>
 
-
         <div class="btn">
             <button class='btn-confirm'>Entrar com <i class="bi bi-google" style='font-size: 20px'></i>oogle
             </button>
         </div>
-
 
         <div class="login">
             <label for="">Usuario</label>
@@ -37,6 +35,10 @@
 
         <div class="btn">
             <button class='btn-confirm'>Entrar</button>
+        </div>
+
+        <div class="nv-cadastro">
+            Novo aqui? <a href="/2">Crie uma conta</a>
         </div>
     </form>
 </div>
