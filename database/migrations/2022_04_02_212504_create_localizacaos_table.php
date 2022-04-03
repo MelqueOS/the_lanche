@@ -23,7 +23,7 @@ return new class extends Migration
             $table->String('complemento');
             $table->String('referencia');
             $table->foreignId("user_tag_id");
-            $table->foreign("user_tag_id")->references("id")->on("user_tag");
+            $table->foreign("user_tag_id")->references("id")->on("users");
         });
     }
 
