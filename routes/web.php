@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('telacadastro.login');
 });
 Route::get('/2', function () {
-    return view('cadastro.cadastro');
+    return view('telascadastro.cadastro');
 });
