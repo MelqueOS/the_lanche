@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId("pedido_controle_id");
+            $table->foreign("pedido_controle_id")->references("id")->on("pedido_controle");
+            $table->text('conteudo');
         });
     }
 

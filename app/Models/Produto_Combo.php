@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Produto_Combo extends Model
 {
     use HasFactory;
+    protected $table = "produto_combo";
 }

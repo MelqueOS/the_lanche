@@ -13,9 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('produto__combos', function (Blueprint $table) {
+        Schema::create('produto_combo', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->String("nome_descritivo");
+            $table->String("tipo");//Bebida, lanche, combo
+            $table->Double("valor", 8, 2);//Preço
+            $table->String("descricao");
+            $table->String("url_img");//Imagem representativa do produto
+            $table->foreignId("empresa_id");
+            $table->foreign("empresa_id")->references("id")->on("empresa");
         });
     }
 

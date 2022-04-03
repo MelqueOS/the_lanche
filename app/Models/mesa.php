@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class mesa extends Model
 {
     use HasFactory;
+    protected $table = "mesa";
 }
