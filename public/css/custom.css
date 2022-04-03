@@ -5,6 +5,15 @@
     font-style: normal;
 }
 
+a{
+    text-decoration: unset;
+
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 i{
     font-size: 26px;
 }
@@ -105,4 +114,9 @@ input:focus{
 .btn-confirm:hover{
     background-color: #EB5600;
     color: #333333;
+}
+
+.nv-cadastro{
+    margin-top: 10px;
+    text-align: center;
 }
