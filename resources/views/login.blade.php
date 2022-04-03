@@ -18,6 +18,13 @@
             <p>Login</p>
         </div>
 
+
+        <div class="btn">
+            <button class='btn-confirm'>Entrar com <i class="bi bi-google" style='font-size: 20px'></i>oogle
+            </button>
+        </div>
+
+
         <div class="login">
             <label for="">Usuario</label>
             <input type="email" name="" id="" required>
@@ -29,7 +36,8 @@
         </div>
 
         <div class="btn">
-            <button class='btn-confirm'>Entrar</button></div>
+            <button class='btn-confirm'>Entrar</button>
+        </div>
     </form>
 </div>
 @endsection
