@@ -4,19 +4,21 @@
 
 <div class="cadastrobotoes">
             <div>
-                <p class="textopergunta">Identifique-se </p>
+                <p class="textopergunta" align="center">Identifique-se </p>
             </div>
             <div class="cadastroinputs">
-            <div class="">
-                <button class="btngoogle">ENTRAR COM  <img id="google" src="img/google.svg">OOGLE</i></button>
-            </div>
-            <div class="">
-                <button class="btnemail">ENTRAR COM EMAIL</button>
-            </div>
-            
-            <div class="textoentrar">
-                <a >ENTRAR COMO CONVIDADO</a>
-            </div>
+                <div class="">
+                    <input class="inpt" type="text">
+                </div>
+                <div class="">
+                    <input class="inpt" type="text">
+                </div>
+                <div class="">
+                    <input class="inpt" type="text">
+                </div>
+                <div class="btn">
+                    <button class='btn btn-primary'>Entrar<i class="bi bi-arrow-right"></i></button>
+                </div>
             </div>
         </div>
 
