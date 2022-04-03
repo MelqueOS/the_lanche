@@ -8,8 +8,6 @@
         <button class='botao'>
             <i class="bi bi-qr-code-scan"></i><br> LER QRCODE
         </button>
-
-<<<<<<< HEAD
     </div>
 </div>
 
