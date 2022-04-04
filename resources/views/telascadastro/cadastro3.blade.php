@@ -7,6 +7,7 @@
                 <p class="textopergunta" align="center">Identifique-se </p>
             </div>
             <div class="cadastroinputs">
+            <div class="">
                 <div class="">
                     <input class="inpt" placeholder="telefone"type="text"required>
                 </div>
@@ -16,7 +17,9 @@
                 <div class="">
                     <input class="inpt"  placeholder="whatsapp"type="text"required>
                 </div>
-            <div class="cadastroinputs">
+
+            </div>
+            <div class="">
                 <div class="">
                     <input class="inpt" placeholder="telefone"type="text"required>
                 </div>
