@@ -24,15 +24,7 @@ Route::get('/', function () {
 Route::get('/2', function () {
     return view('telascadastro.cadastro');
 });
-<<<<<<< HEAD
 
 Route::get('/contato', function(){
     return view('telascadastro.contato');
-=======
-Route::get('/3', function () {
-    return view('telascadastro.cadastro2');
-});
-Route::get('/4', function () {
-    return view('telascadastro.cadastro3');
->>>>>>> 69c64f6ee1a1fe2cb17914255035c43261f395ff
 });

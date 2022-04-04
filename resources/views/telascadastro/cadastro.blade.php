@@ -1,7 +1,7 @@
 @extends("templates.template")
 @section("titulo", "Cadastro")
 @section('conteudo')
-
+<form action="/cliente" method="post">
 <div class="cadastrobotoes" id="frame1">
             <div>
                 <p class="textopergunta" align="center">Identifique-se!</p>
@@ -77,9 +77,9 @@
                     <input class="inpt"  name="pontoderef"placeholder="Ponto de referência"type="text"required>
                 </div>
                 <div class="btn l">
-                <button class='btn btn-primary t pr-5' id="btn3">Finalizar<i class="bi bi-clipboard2-check"></i></button>
+                <button type="submit"class='btn btn-primary t pr-5' id="btn3">Finalizar<i class="bi bi-clipboard2-check"></i></button>
                 </div>
             </div>
         </div>
-
+</form>
 @endsection
