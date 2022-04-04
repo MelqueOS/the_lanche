@@ -1,37 +1,42 @@
-*{
+* {
     margin: 0px;
-    padding: 0px;    
+    padding: 0px;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
 }
 
-a{
+a {
     text-decoration: unset;
 
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
 }
 
-i{
+i {
     font-size: 26px;
 }
 
 .container {
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    margin: auto;
-    height: 500px;
-    width: 800px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 500px;
+    width: 800px;
+    background-color: #EB5600;
+    color: white;
+    border-radius: 8px;
 }
 
-.botao{
+.botao {
     text-decoration: unset;
     font-size: 16px;
     color: #333333;
@@ -40,29 +45,31 @@ i{
     font-weight: bold;
 }
 
-.bi-qr-code-scan{
+.bi-qr-code-scan {
     font-size: 40px;
 }
 
-.box-scan{
+.box-scan {
     height: 100%;
     width: 300px;
-    background-color: #e9ecefad;
+    background-color: #f8f9fa;
     display: flex;
     justify-content: center;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top: 2px solid #EB5600;
+    border-bottom: 2px solid #EB5600;
 }
 
-.scan{
+.scan {
     display: flex;
 }
 
-.botao:hover{
+.botao:hover {
     color: black;
 }
 
-.box-formulario{
+.box-formulario {
     height: 100%;
     width: 500px;
     background-color: #EB5600;
@@ -75,36 +82,36 @@ i{
     border-bottom-right-radius: 10px;
 }
 
-.text-login{
+.text-login {
     font-size: 25px;
     text-align: center;
     font-weight: 600;
 }
 
-input{
+input {
     height: 35px;
-    width:100%;
+    width: 100%;
     border: 1px solid #ced4da;
     border-radius: 6px;
 }
 
-input:focus{
+input:focus {
     outline: #333333;
-    border: 1px solid ;
+    border: 1px solid;
 }
 
-.passwd{
+.passwd {
     margin-top: 20px;
 }
 
-.btn{
+.btn {
     display: flex;
     justify-content: center;
     margin-top: 20px;
     align-items: center;
 }
 
-.btn-confirm{
+.btn-confirm {
     height: 35px;
     width: 75%;
     border: 1px solid;
@@ -114,32 +121,39 @@ input:focus{
     font-weight: 600;
 }
 
-.btn-confirm:hover{
+.btn-confirm:hover {
     background-color: #EB5600;
     color: #333333;
 }
 
-.inpt{
-    background: #FFFFFF;
-border: 0.5px solid #9A9A9A;
-box-sizing: border-box;
-box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
-border-radius: 30px;
-text-align: center;
+.nv-cadastro {
+    text-align: center;
 }
-.cadastrobotoes{
+
+.inpt {
+    background: #FFFFFF;
+    border: 0.5px solid #9A9A9A;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.cadastrobotoes {
     display: flex;
     height: 100%;
     flex-direction: column;
     justify-content: center;
 }
-.cadastroinputs{
+
+.cadastroinputs {
     display: flex;
     height: 50%;
     flex-direction: column;
     justify-content: space-around;
 
 }
-.t{
+
+.t {
     margin-top: 0px;
 }

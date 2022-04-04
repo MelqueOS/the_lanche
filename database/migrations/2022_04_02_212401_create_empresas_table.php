@@ -17,12 +17,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->String('cnpj');
-            $table->String('email');
             $table->String('telefone');
             $table->String('razao_social');
             
             $table->foreignId("user_tag_id");
-            $table->foreign("user_tag_id")->references("id")->on("user_tag");
+            $table->foreign("user_tag_id")->references("id")->on("users");
         });
     }
 

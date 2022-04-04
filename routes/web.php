@@ -12,7 +12,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resources([
+    "cliente" => ClienteController::Class,
+    "empresa" =>ClienteController::Class,
+    "" => EmpresaController::Class
 
+]);
 Route::get('/', function () {
     return view('telascadastro.login');
 });
