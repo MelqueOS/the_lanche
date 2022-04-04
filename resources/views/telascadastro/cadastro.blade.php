@@ -1,7 +1,8 @@
 @extends("templates.template")
 @section("titulo", $titulo)
 @section('conteudo')
-<form action="/cliente" method="post">
+<form action="/cliente" method="POST">
+    @csrf
 <div class="cadastrobotoes" id="frame1">
             <div>
                 <p class="textopergunta" align="center">Identifique-se!</p>

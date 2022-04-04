@@ -13,8 +13,15 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        $titulo = "Cadastro de clientes";
+        return view(
+            "telascadastro.cadastro",
+            [
+                "titulo" => $titulo
+            ]
+        );
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +41,8 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $titulo = "Cadastro de clientes";
+        return redirect("/cliente");
     }
 
     /**

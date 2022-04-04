@@ -16,10 +16,10 @@ use App\Http\Controllers\ProdutoController;
 |
 */
 Route::resources([
-    "cliente" => ClienteController::Class,
-    "empresa" =>EmpresaController::Class,
-    "pedido" => PedidoController::Class,
-    "produto" => ProdutoController::Class
+    "cliente" => ClienteController::class,
+    "empresa" =>EmpresaController::class,
+    "pedido" => PedidoController::class,
+    "produto" => ProdutoController::class
 
 ]);
 Route::get('/', function () {
