@@ -1,5 +1,5 @@
 @extends("templates.template")
-@section("titulo", "Cadastro")
+@section("titulo", $titulo)
 @section('conteudo')
 
 <div class="cadastrobotoes">
