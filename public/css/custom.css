@@ -72,7 +72,6 @@ i {
 .box-formulario {
     height: 100%;
     width: 500px;
-    background-color: #EB5600;
     color: white;
     padding: 10%;
     display: flex;
@@ -100,7 +99,7 @@ input:focus {
     border: 1px solid;
 }
 
-.passwd {
+.label-input-form {
     margin-top: 20px;
 }
 
@@ -111,7 +110,7 @@ input:focus {
     align-items: center;
 }
 
-.btn-confirm {
+.btn-form {
     height: 35px;
     width: 75%;
     border: 1px solid;
@@ -121,7 +120,7 @@ input:focus {
     font-weight: 600;
 }
 
-.btn-confirm:hover {
+.btn-form:hover {
     background-color: #EB5600;
     color: #333333;
 }
