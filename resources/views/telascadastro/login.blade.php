@@ -19,22 +19,22 @@
         </div>
 
         <div class="btn">
-            <button class='btn-confirm'>Entrar com <i class="bi bi-google" style='font-size: 20px'></i>oogle
+            <button class='btn-form'>Entrar com <i class="bi bi-google" style='font-size: 20px'></i>oogle
             </button>
         </div>
 
-        <div class="login">
+        <div class="label-input-form login">
             <label for="">Usuario</label>
             <input type="email" name="" id="" required>
         </div>
 
-        <div class="passwd">
+        <div class="label-input-form passwd">
             <label for="">Senha</label>
             <input type="password" name="" id="" required>
         </div>
 
         <div class="btn">
-            <button class='btn-confirm'>Entrar</button>
+            <button class='btn-form'>Entrar</button>
         </div>
 
         <div class="nv-cadastro">

@@ -24,3 +24,7 @@ Route::get('/', function () {
 Route::get('/2', function () {
     return view('telascadastro.cadastro');
 });
+
+Route::get('/contato', function(){
+    return view('telascadastro.contato');
+});
