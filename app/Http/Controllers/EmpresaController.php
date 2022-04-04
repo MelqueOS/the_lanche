@@ -13,7 +13,13 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        //
+        $titulo = "Cadastro de Empresas";
+        return view(
+            "telascadastro.cadastro",
+            [
+                "titulo" => $titulo
+            ]
+        );
     }
 
     /**
@@ -34,7 +40,18 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->get('id')!=""){
+			$entidade = Empresa::Find($request->get('id'));
+			$status = "atualizado";
+		}else{
+			$entidade = new Empresa;
+			$status = "salvo";
+		}
+		$entidade->atributoN = $request->get("coluna_p_atributoN");
+		$entidade->save();
+		//Atualiza o Status
+		$request>session()->flash("status", $status);
+		return redirect("/pagina_retorno");
     }
 
     /**

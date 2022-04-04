@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\ProdutoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resources([
     "cliente" => ClienteController::Class,
-    "empresa" =>ClienteController::Class,
-    "" => EmpresaController::Class
+    "empresa" =>EmpresaController::Class,
+    "pedido" => PedidoController::Class,
+    "produto" => ProdutoController::Class
 
 ]);
 Route::get('/', function () {

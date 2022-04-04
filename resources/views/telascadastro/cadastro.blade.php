@@ -1,5 +1,5 @@
 @extends("templates.template")
-@section("titulo", "Cadastro")
+@section("titulo", $titulo)
 @section('conteudo')
 <form action="/cliente" method="post">
 <div class="cadastrobotoes" id="frame1">
