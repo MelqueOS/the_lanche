@@ -14,12 +14,12 @@
 <div class="box-formulario">
     <form action="">
         <!-- TEXT -->
-        <div class='text-login'>
-            <p>Login</p>
+        <div class='title-form'>
+            <p>ENTRAR</p>
         </div>
 
         <div class="btn">
-            <button class='btn-form'>Entrar com <i class="bi bi-google" style='font-size: 20px'></i>oogle
+            <button class='btn-primary'>Entrar com <i class="bi bi-google" style='font-size: 20px'></i>oogle
             </button>
         </div>
 
@@ -34,7 +34,7 @@
         </div>
 
         <div class="btn">
-            <button class='btn-form'>Entrar</button>
+            <button class='btn-primary'>Entrar</button>
         </div>
 
         <div class="nv-cadastro">
