@@ -15,6 +15,7 @@
    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
    <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
    <link rel="stylesheet" href="{{asset('css/custom.css')}}" />
+   <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
    
    <!-- GOOGLE FONTS -->
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
@@ -28,7 +29,10 @@
 </body>
 
 </html>
-<script>
+
+
+
+<!-- <script>
 
 var btn1=document.getElementById("btn1");
 var btn2=document.getElementById("btn2");
@@ -44,4 +48,4 @@ btn2.onclick=function(){
 }
 
 
-</script>
+</script> -->
