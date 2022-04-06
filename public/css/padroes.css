@@ -1,0 +1,89 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap'); */
+
+@font-face {
+    font-family: 'Poppins', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+    font-weight: 500;
+}
+
+a {
+    color: #0a58ca;
+    text-decoration: unset;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+i {
+    font-size: 16px;
+}
+
+i::before {
+    align-self: flex-end;
+}
+
+input {
+    height: 35px;
+    width: 100%;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    color: #1c1e21;
+    background-color: #fff;
+    padding-left: 11px;
+}
+
+input:focus {
+    outline: #333333;
+    border: 1px solid;
+}
+
+input::placeholder{
+    
+    color: #333333;
+}
+
+/* titulo dos conteudos dos formularios.
+OBS: Não é da aba */
+.title-form {
+    color: #f8f9fa;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center;
+    padding: 0;   
+}
+
+
+.btn-primary {
+    height: 40px;
+    width: 75%;
+    border: 1px solid;
+    border-radius: 4px;
+    background-color: #333333;
+    color: #EB5600;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.btn-primary:hover {
+    background-color: #EB5600;
+    color: #333333;
+    border: 1px solid #333333;
+}
+
+.btn-primary:focus{
+    background-color: #333333;
+    color: #EB5600;
+}
+
+.label-input-form {
+    margin-top: 10px;
+}
