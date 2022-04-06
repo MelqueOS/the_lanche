@@ -1,8 +1,8 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
+    /* font-family: 'Poppins', sans-serif;
+    font-style: normal; */
 }
 
 a {
@@ -81,27 +81,7 @@ i {
     border-bottom-right-radius: 10px;
 }
 
-.text-login {
-    font-size: 25px;
-    text-align: center;
-    font-weight: 600;
-}
 
-input {
-    height: 35px;
-    width: 100%;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
-}
-
-input:focus {
-    outline: #333333;
-    border: 1px solid;
-}
-
-.label-input-form {
-    margin-top: 20px;
-}
 
 .btn {
     display: flex;
@@ -110,33 +90,11 @@ input:focus {
     align-items: center;
 }
 
-.btn-form {
-    height: 35px;
-    width: 75%;
-    border: 1px solid;
-    border-radius: 4px;
-    background-color: #333333;
-    color: #EB5600;
-    font-weight: 600;
-}
-
-.btn-form:hover {
-    background-color: #EB5600;
-    color: #333333;
-}
 
 .nv-cadastro {
     text-align: center;
 }
 
-.inpt {
-    background: #FFFFFF;
-    border: 0.5px solid #9A9A9A;
-    box-sizing: border-box;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    text-align: center;
-}
 
 .cadastrobotoes {
     display: flex;
@@ -145,36 +103,43 @@ input:focus {
     justify-content: center;
 }
 
-.cadastroinputs {
+.cadastro-inputs {
     display: flex;
-    height: 50%;
     flex-direction: column;
     justify-content: space-around;
-    
-
 }
-.cadastroinputs2{
+
+.cadastro-inputs:not(:first-child){
+    margin-top: 10px;
+}
+
+
+.cadastroinputs2 {
     display: flex;
     height: 50%;
     width: 100%;
     flex-direction: row;
 }
+
 .t {
     margin-top: 0px;
 }
-.l{
+
+.l {
     width: 100%;
 }
-.l #btn3{
+
+.l #btn3 {
     width: 400%;
 }
-.inptselect{    
+
+.inptselect {
     background: #FFFFFF;
     border: 0.5px solid #9A9A9A;
     box-sizing: border-box;
     box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-    width:100%;
-   padding: 3.5px;
+    width: 100%;
+    padding: 3.5px;
     text-align: center;
 }
