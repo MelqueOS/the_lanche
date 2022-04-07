@@ -5,7 +5,7 @@
 <div class="box-formulario">
     <form action="">
         <!-- TEXT -->
-        <div class='text-login'>
+        <div class="title-form">
             <p>Como podemos te contatar?</p>
         </div>
 
@@ -25,8 +25,7 @@
         </div>
 
         <div class="btn">
-            <button class='btn-form'>Avançar
-            </button>
+            <button class='btn btn-primary t' id="btn1">Avançar<i class="bi bi-arrow-right col-1"></i></button>
         </div>
     </form>
 </div>

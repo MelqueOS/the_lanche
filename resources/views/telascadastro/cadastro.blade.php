@@ -8,7 +8,7 @@
             <p>cadastre-se</p>
         </div>
         <div class="cadastro-inputs">
-            <div class="row col-12">
+            <div class="row col-13">
                 <div class="name col-5">
                     <input name="nome" type="text" placeholder='Nome' required>
                 </div>
@@ -18,21 +18,21 @@
                 </div>
             </div>
 
-            <div class="">
+            <div class="mt-1">
                 <input name="email" type="email" placeholder='Email' required>
             </div>
 
-            <div class="">
+            <div class="mt-1">
                 <input name="senha" type="password" placeholder='Senha' required>
             </div>
             
-            <div>
+            <div class="mt-1">
                 <input type="password" name='conf-senha' placeholder='Confirme a Senha' required>
             </div>
         </div>
 
         <div class="btn">
-            <button class='btn btn-primary t' id="btn1">Avançar</button>
+            <button class='btn btn-primary t' id="btn1">Avançar<i class="bi bi-arrow-right col-1"></i></button>
         </div>
 
 
