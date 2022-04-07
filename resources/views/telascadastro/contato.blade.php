@@ -25,7 +25,7 @@
         </div>
 
         <div class="btn">
-            <button class='btn btn-primary t' id="btn1">Avançar<i class="bi bi-arrow-right col-1"></i></button>
+            <button class='btn btn-primary m-0' id="btn1">Avançar<i class="bi bi-arrow-right col-1"></i></button>
         </div>
     </form>
 </div>
