@@ -32,7 +32,6 @@ i {
     height: 500px;
     width: 800px;
     background-color: #EB5600;
-    color: white;
     border-radius: 8px;
 }
 
@@ -73,7 +72,7 @@ i {
     height: 100%;
     width: 500px;
     color: white;
-    padding: 10%;
+    padding: 0% 5%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -93,6 +92,41 @@ i {
 
 .nv-cadastro {
     text-align: center;
+    margin-top: 10px;
+}
+
+.cadastro-inputs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.lg{
+    display: flex;
+    align-items: center;
+    width: 200px;
+    justify-content: center;
+}
+
+.fm{
+    display: flex;
+    align-items: center;
 }
 
 
@@ -101,16 +135,6 @@ i {
     height: 100%;
     flex-direction: column;
     justify-content: center;
-}
-
-.cadastro-inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.cadastro-inputs:not(:first-child){
-    margin-top: 10px;
 }
 
 
