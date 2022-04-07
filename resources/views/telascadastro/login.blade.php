@@ -23,14 +23,15 @@
             </button>
         </div>
 
-        <div class="label-input-form login">
-            <label for="">Usuario</label>
-            <input type="email" name="" id="" required>
-        </div>
-
-        <div class="label-input-form passwd">
-            <label for="">Senha</label>
-            <input type="password" name="" id="" required>
+        <div class='inputs'>
+            <div class="label-input-form login">
+                <label for="">Usuario</label>
+                <input type="email" name="" id="" required>
+            </div>
+            <div class="label-input-form passwd">
+                <label for="">Senha</label>
+                <input type="password" name="" id="" required>
+            </div>
         </div>
 
         <div class="btn">
