@@ -29,3 +29,10 @@ Route::get('/', function () {
 Route::get('/1', function () {
     return view('cliente.cadastro_edit');
 });
+Route::get('/2', function () {
+    return view('templates.template');
+});
+
+Route::get('/cadastro', function () {
+    return view('cliente.cadastro');
+});
