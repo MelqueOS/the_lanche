@@ -30,7 +30,3 @@ Route::get('/', function () {
 Route::get('/cadastro', function () {
     return view('cliente.cadastro');
 });
-
-Route::get('/contato', function(){
-    return view('cliente.contato');
-});
