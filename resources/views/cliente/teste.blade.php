@@ -1,33 +1,61 @@
-<!DOCTYPE html>
-
-<head>
-   <meta charset="UTF-8">
+<HTML>
+    <HEAD>
+    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> @yield("titulo")</title>
+   
 
    <!-- CSS -->
-   <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
-   <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
-   <link rel="stylesheet" href="{{asset('css/custom.css')}}" />
-   <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
+
+   <link rel="stylesheet" href="{{asset('css/teste.css')}}">
    
    <!-- GOOGLE FONTS -->
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
+    </HEAD>
+    <BODY>
+        <!-- multistep form -->
+<form id="msform">
+  <!-- progressbar -->
+  <ul id="progressbar">
+    <li class="active">Account Setup</li>
+    <li>Social Profiles</li>
+    <li>Personal Details</li>
+  </ul>
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Create your account</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
+    <input type="text" name="email" placeholder="Email" />
+    <input type="password" name="pass" placeholder="Password" />
+    <input type="password" name="cpass" placeholder="Confirm Password" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Social Profiles</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+    <input type="text" name="twitter" placeholder="Twitter" />
+    <input type="text" name="facebook" placeholder="Facebook" />
+    <input type="text" name="gplus" placeholder="Google Plus" />
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  <fieldset>
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">We will never sell it</h3>
+    <input type="text" name="fname" placeholder="First Name" />
+    <input type="text" name="lname" placeholder="Last Name" />
+    <input type="text" name="phone" placeholder="Phone" />
+    <textarea name="address" placeholder="Address"></textarea>
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+  </fieldset>
+</form>
 
-</head>
-
-<body>
-    
-    <div class="container">
-        @yield("conteudo")
-    </div>
-    
-
+    </BODY>
     <script>
-
+    
 //jQuery time
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
@@ -111,26 +139,4 @@ $(".submit").click(function(){
 })
 
 </script>
-
-</body>
-
-</html>
-
-
-<!-- <script>
-
-var btn1=document.getElementById("btn1");
-var btn2=document.getElementById("btn2");
-var btn3=document.getElementById("btn3");
-
-btn1.onclick=function(){
-    document.getElementById("frame1").style.display = "none";
-    document.getElementById("frame2").style.display = "flex";
-}
-btn2.onclick=function(){
-    document.getElementById("frame2").style.display = "none";
-    document.getElementById("frame3").style.display = "flex";
-}
-
-
-</script> -->
+</HTML>

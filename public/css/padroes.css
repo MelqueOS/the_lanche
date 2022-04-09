@@ -10,7 +10,7 @@ body {
     height: 100vh;
 }
 
-form {
+.aform {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -99,4 +99,6 @@ OBS: Não é da aba */
 .label-input-form {
     width: 80%;
     margin-top: 10px;
+    text-transform: capitalize;
+    color:white;
 }
