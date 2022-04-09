@@ -26,6 +26,9 @@ Route::resources([
 Route::get('/', function () {
     return view('cliente.login');
 });
+Route::get('/1', function () {
+    return view('cliente.cadastro_edit');
+});
 
 Route::get('/cadastro', function () {
     return view('cliente.cadastro');
