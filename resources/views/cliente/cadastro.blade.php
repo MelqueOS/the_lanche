@@ -16,7 +16,8 @@
                 <input type="date"name="datanascimento"placeholder="datanascimento">
                 <input type="text"name="whatsapp"placeholder="whatsapp">
                 
-                <select name="tipologadouro" class="inptselect" required <option value="1" selected="selected">Avenida</option>
+                <select name="tipologadouro" class="inptselect" required> 
+                    <option value="1" selected="selected">Avenida</option>
                                         <option value="2">Rua</option>
                                         <option value="3">Fazenda</option>
                                         <option value="4">Rodovia</option>
