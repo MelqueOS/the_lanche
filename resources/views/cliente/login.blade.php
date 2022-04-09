@@ -14,7 +14,9 @@
 <div class="box-formulario">
     <form action="">
         <!-- TEXT -->
+
         <div class='title-form'>
+        <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
             <p>ENTRAR</p>
         </div>
 
