@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('cliente', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->String('nome');
             $table->Date('data_nascimento');
             $table->String('telefone');
             $table->String('whatsapp');

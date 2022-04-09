@@ -8,6 +8,7 @@
     </div>
     <div class="fm">
         <form action="/cliente" method="POST">
+                @csrf
                 <input type="text"name="nome"placeholder="nome">
                 <input type="email"name="email"placeholder="email">
                 <input type="password"name="senha"placeholder="senha">
