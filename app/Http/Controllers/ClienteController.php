@@ -15,7 +15,7 @@ class ClienteController extends Controller
     {
         $titulo = "Cadastro de clientes";
         return view(
-            "telascadastro.cadastro",
+            "telascadastro.caastro",
             [
                 "titulo" => $titulo
             ]
