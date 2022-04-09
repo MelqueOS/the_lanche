@@ -102,7 +102,7 @@ i {
     justify-content: space-evenly;
 }
 
-.inputs{
+.inputs {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -111,20 +111,20 @@ i {
     align-items: center;
 }
 
-.cont{
+.cont {
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
-.lg{
+.lg {
     display: flex;
     align-items: center;
     width: 200px;
     justify-content: center;
 }
 
-.fm{
+.fm {
     display: flex;
     align-items: center;
 }
@@ -167,26 +167,39 @@ i {
     padding: 3.5px;
     text-align: center;
 }
+
 main {
-  height: 100%;
-  display: flex;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-  padding-top: 50px;
+    height: 100%;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    padding-top: 50px;
 
 }
+
 section {
-  min-width: 100%;
-  height: 100%;
-  background-color: #EB5600;
-  transition: all 1s;
+    min-width: 100%;
+    height: 100%;
+    background-color: #EB5600;
+    transition: all 1s;
 }
+
 section:nth-child(2) {
+<<<<<<< HEAD
  
   background-color: lightsalmon;
+=======
+    background-color: lightsalmon;
+>>>>>>> f546b082bc0198eb93b2226399f6704c792c69d1
 }
+
 section:nth-child(3) {
+<<<<<<< HEAD
   background-color: lightblue;
 }
 
+=======
+    background-color: lightblue;
+}
+>>>>>>> f546b082bc0198eb93b2226399f6704c792c69d1

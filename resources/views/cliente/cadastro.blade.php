@@ -8,11 +8,7 @@
 
     <div class="fm">
         <form action="/cliente" method="POST">
-            @csrf
-
-
-
-            
+            @csrf            
             <div class="" id="frame1">
                 <div class="title-form">
                     <p>cadastre-se</p>
@@ -22,7 +18,7 @@
                         <div class="name col-5">
                             <input name="nome" type="text" placeholder='Nome' required>
                         </div>
-                        <div class="sob-name col-7">
+                        <div class="sob-name col-6">
                             <input name="nome" type="text" placeholder='Sobrenome' required>
                         </div>
                     </div>

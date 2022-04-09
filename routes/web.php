@@ -23,18 +23,18 @@ Route::resources([
 
 ]);
 Route::get('/', function () {
-    return view('telascadastro.login');
+    return view('cliente.login');
 });
 Route::get('/2', function () {
-    return view('telascadastro.cadastro');
+    return view('cliente.cadastro');
 });
 Route::get('/3', function () {
-    return view('telascadastro.cadastro2');
+    return view('cliente.cadastro-cliente');
 });
 Route::get('/4', function () {
     return view('telascadastro.cadastro3');
 });
 
 Route::get('/contato', function(){
-    return view('telascadastro.contato');
+    return view('cliente.contato');
 });
