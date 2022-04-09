@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cliente;
+use App\Models\User;
+use App\Models\Localizacao;
 class ClienteController extends Controller
 {
     /**
@@ -46,23 +48,32 @@ class ClienteController extends Controller
 			$entidade = Cliente::Find($request->get('id'));
 			$status = "atualizado";
 		}else{
+            $user = new User;
 			$entidade = new Cliente;
+            $endereco = new Localizacao;
 			$status = "salvo";
 		}
-		$entidade->nome = $request->get("nome");
-		$entidade->email = $request->get("email");
-		$entidade->senha = $request->get("senha");
-		$entidade->telefone = $request->get("telefone");
-		$entidade->datanascimento = $request->get("datanascimento");
+        $user->name = $request->get("nome");
+        $user->email = $request->get("email");
+        $user->password = $request->get("senha");
+        $user->save();
+        $tag_user = $user->id;
+        $entidade->user_tag_id = $tag_user;
+        $entidade->telefone = $request->get("telefone");
+		$entidade->data_nascimento = $request->get("datanascimento");
 		$entidade->whatsapp = $request->get("whatsapp");
-		$entidade->tipologadouro = $request->get("tipologadouro");
-		$entidade->logradouro = $request->get("logradouro");
-		$entidade->bairro = $request->get("bairro");
-		$entidade->numero = $request->get("numero");
-		$entidade->referencia = $request->get("referencia");
-		$entidade->complemento = $request->get("complemento");
-		$entidade->save();
-		//Atualiza o Status
+
+        $endereco->tipo_logradouro = $request->get("tipologadouro");
+		$endereco->logradouro = $request->get("logradouro");
+		$endereco->bairro = $request->get("bairro");
+		$endereco->numero = $request->get("numero");
+		$endereco->referencia = $request->get("referencia");
+		$endereco->complemento = $request->get("complemento");
+        $endereco->user_tag_id = $tag_user;
+        $endereco->save();
+        
+        $entidade->save();
+        //Atualiza o Status
 		$request>session()->flash("status", $status);
         return redirect("/cliente");
     }
