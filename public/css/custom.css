@@ -183,8 +183,10 @@ section {
   transition: all 1s;
 }
 section:nth-child(2) {
+ 
   background-color: lightsalmon;
 }
 section:nth-child(3) {
   background-color: lightblue;
 }
+

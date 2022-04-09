@@ -45,8 +45,9 @@
                     <p class="textopergunta">Dados complementares!</p>
                 </div>
                 <div class="cadastroinputs">
-                    <div class="">
-                        <input ame="telefone" type="text" required>
+                <div class="">
+                            
+                        <input name="telefone" type="text" required>
                     </div>
                     <div class="">
                         <input name="datanascimento" nascimento" type="date" required>
