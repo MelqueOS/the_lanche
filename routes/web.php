@@ -25,9 +25,6 @@ Route::resources([
 Route::get('/', function () {
     return view('cliente.login');
 });
-Route::get('/2', function () {
-    return view('cliente.cadastro');
-});
 Route::get('/3', function () {
     return view('cliente.cadastro-cliente');
 });
