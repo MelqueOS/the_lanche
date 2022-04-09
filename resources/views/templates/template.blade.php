@@ -115,22 +115,3 @@ $(".submit").click(function(){
 </body>
 
 </html>
-
-
-<!-- <script>
-
-var btn1=document.getElementById("btn1");
-var btn2=document.getElementById("btn2");
-var btn3=document.getElementById("btn3");
-
-btn1.onclick=function(){
-    document.getElementById("frame1").style.display = "none";
-    document.getElementById("frame2").style.display = "flex";
-}
-btn2.onclick=function(){
-    document.getElementById("frame2").style.display = "none";
-    document.getElementById("frame3").style.display = "flex";
-}
-
-
-</script> -->
