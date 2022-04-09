@@ -22,11 +22,13 @@ Route::resources([
     "produto" => ProdutoController::class
 
 ]);
+
 Route::get('/', function () {
     return view('cliente.login');
 });
-Route::get('/3', function () {
-    return view('cliente.cadastro-cliente');
+
+Route::get('/cadastro', function () {
+    return view('cliente.cadastro');
 });
 
 Route::get('/contato', function(){
