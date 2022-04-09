@@ -28,9 +28,6 @@ Route::get('/', function () {
 Route::get('/3', function () {
     return view('cliente.cadastro-cliente');
 });
-Route::get('/4', function () {
-    return view('telascadastro.cadastro3');
-});
 
 Route::get('/contato', function(){
     return view('cliente.contato');

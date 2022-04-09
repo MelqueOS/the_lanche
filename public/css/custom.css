@@ -186,20 +186,11 @@ section {
 }
 
 section:nth-child(2) {
-<<<<<<< HEAD
  
   background-color: lightsalmon;
-=======
-    background-color: lightsalmon;
->>>>>>> f546b082bc0198eb93b2226399f6704c792c69d1
 }
 
 section:nth-child(3) {
-<<<<<<< HEAD
   background-color: lightblue;
 }
 
-=======
-    background-color: lightblue;
-}
->>>>>>> f546b082bc0198eb93b2226399f6704c792c69d1
