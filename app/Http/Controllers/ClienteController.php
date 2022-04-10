@@ -107,9 +107,45 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $confirmed = False)
     {
-        //
+        $titulo = "Sessao do cliente";
+        $user = User::Find($id);
+        if(!empty($user->id)){
+            $cliente = Cliente::Find($id);
+            $endereco = Localizacao::Find($id);
+            $acess_level = "";
+            if($user->acess == "cliente"){
+                $acess_level = "cliente";
+            }
+            $tip_logradouro = array(
+                '1' => 'Avenida',
+                '2' => 'Rua',
+                '3' => 'Fazenda',
+                '4' => 'Rodovia',
+                '5' => 'Condominio'
+            );
+            $data = new \DateTime($cliente->data_nascimento );
+            $difere = $data->diff( new \DateTime( date('Y-m-d') ) );
+            $idade = $difere->format( '%Y anos' );
+            //dd($confirmed);
+            //dd($idade);
+            return view(
+                "cliente.cliente",
+                [
+                    "user" => $user,
+                    "cliente" => $cliente,
+                    "endereco" => $endereco,
+                    "titulo" => $titulo,
+                    "acess" => $acess_level,
+                    "tipo" => $tip_logradouro,
+                    "idade" => $idade,
+                    "confirmed" => $confirmed
+                ]
+            );
+        }else{
+            return Redirect("/cliente");
+        }
     }
 
     /**
@@ -165,8 +201,26 @@ class ClienteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        //
+        if($request->get("confirmed") == "Cancelar"){
+            $confirmed = False;
+        }elseif($request->get("confirmed") == True){
+
+       
+            $endereco = Localizacao::Find($id);
+            $endereco->delete();
+            
+            $cliente = Cliente::Find($id);
+            $cliente->delete();
+            
+            $user = User::Find($id);
+            $user->delete();
+            $status = "excluido";
+            return Redirect("/cliente");
+        }else{
+            $confirmed = True;
+        }
+        return $this->show($id, $confirmed);
     }
 }

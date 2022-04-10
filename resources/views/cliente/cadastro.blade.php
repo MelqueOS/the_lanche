@@ -45,7 +45,7 @@
                         <input type="hidden" name = "id" value = "{{$user->id}}">
                         <button type="submit">Enviar</button>
             </form>
-            <a href = "/cliente/{{2}}/edit">Teste Edição (remover o botão depois)</a>
+            <a href = "/cliente/8"> Teste visualizacao de perfil (remover o botão)</a>
         </div>
         </div>
     </body>
