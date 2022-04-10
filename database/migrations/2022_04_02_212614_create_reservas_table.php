@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('reserva', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->String('hora_reserva');
+            $table->String('hora_reserva')->nullable();
             $table->foreignId("mesa_id");
             $table->foreign("mesa_id")->references("id")->on("mesa");
 

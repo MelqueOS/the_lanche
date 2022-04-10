@@ -9,4 +9,5 @@ class Localizacao extends Model
 {
     use HasFactory;
     protected $table = "localizacao";
+    protected $primaryKey = 'user_tag_id';
 }

@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cliente', function (Blueprint $table) {
-            $table->id();
             $table->timestamps();
             $table->Date('data_nascimento');
             $table->String('telefone');
-            $table->String('whatsapp');
-            $table->foreignId("user_tag_id");
+            $table->String('whatsapp')->nullable();
+            $table->foreignId("user_tag_id")->id();
             $table->foreign("user_tag_id")->references("id")->on("users");
         });
     }

@@ -9,4 +9,5 @@ class Cliente extends Model
 {
     use HasFactory;
     protected $table = "cliente";
+    protected $primaryKey = 'user_tag_id';
 }

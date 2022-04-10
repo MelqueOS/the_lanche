@@ -22,7 +22,7 @@ return new class extends Migration
             $table->Double('troco', 8, 2); //somente dinheiro
             $table->String('bandeira'); // Bandeira do cartão, caso dinheiro atribui o valor N_APLICA
             $table->foreignId("cliente_id");
-            $table->foreign("cliente_id")->references("id")->on("cliente");
+            $table->foreign("cliente_id")->references("user_tag_id")->on("cliente");
         });
     }
 

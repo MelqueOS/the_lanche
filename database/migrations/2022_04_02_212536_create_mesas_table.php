@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->String('qr_code');
             $table->String('numero_lugares');
-            $table->String('local');
+            $table->String('local')->nullable();
             
             $table->foreignId("empresa_id");
             $table->foreign("empresa_id")->references("id")->on("empresa");

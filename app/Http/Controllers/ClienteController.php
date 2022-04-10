@@ -6,8 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\User;
 use App\Models\Localizacao;
+use Illuminate\Support\Facades\DB;
+
 class ClienteController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -15,10 +18,27 @@ class ClienteController extends Controller
      */
     public function index()
     {
+        $tip_logradouro = array(
+            '1' => 'Avenida',
+            '2' => 'Rua',
+            '3' => 'Fazenda',
+            '4' => 'Rodovia',
+            '5' => 'Condominio'
+         );
         $titulo = "Cadastro de clientes";
+        $cliente = new Cliente();
+        $user = new User();
+        $locais = Localizacao::All();
+        $endereco = new Localizacao();
+        //dd($tip_logradouro);
         return view(
-            "telascadastro.cadastro",
+            "cliente.cadastro",
             [
+                "parametro_select" => $tip_logradouro,
+                "user" => $user,
+                "cliente" => $cliente,
+                "locais" => $locais,
+                "endereco" => $endereco,
                 "titulo" => $titulo
             ]
         );
@@ -45,8 +65,10 @@ class ClienteController extends Controller
     {
         $titulo = "Cadastro de clientes";
         if ($request->get('id')!=""){
-			$entidade = Cliente::Find($request->get('id'));
-			$status = "atualizado";
+            $user = User::Find($request->get('id'));
+            $entidade =  Cliente::Find($request->get('id'));
+            $endereco =  Localizacao::Find($request->get('id'));
+            $status = "atualizado";			
 		}else{
             $user = new User;
 			$entidade = new Cliente;
@@ -56,6 +78,7 @@ class ClienteController extends Controller
         $user->name = $request->get("nome");
         $user->email = $request->get("email");
         $user->password = $request->get("senha");
+        $user->acess = "cliente";
         $user->save();
         $tag_user = $user->id;
         $entidade->user_tag_id = $tag_user;
@@ -97,7 +120,31 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tip_logradouro = array(
+            '1' => 'Avenida',
+            '2' => 'Rua',
+            '3' => 'Fazenda',
+            '4' => 'Rodovia',
+            '5' => 'Condominio'
+         );
+        $titulo = "Editar dados de perfil";
+        $user = User::Find($id);
+        $cliente =Cliente::Find($user->id);
+        $locais = DB::table("localizacao as loc")->join("users AS u", "loc.user_tag_id","=","u.id")->select("tipo_logradouro")->get();
+        $endereco =Localizacao::Find($user->id);
+        //dd($tip_logradouro);
+        //dd($locais);
+        return view(
+            "cliente.cadastro",
+            [
+                "parametro_select" => $tip_logradouro,
+                "user" => $user,
+                "cliente" => $cliente,
+                "locais" => $locais,
+                "endereco" => $endereco,
+                "titulo" => $titulo
+            ]
+        );
     }
 
     /**

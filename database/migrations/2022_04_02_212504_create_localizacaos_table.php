@@ -14,15 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('localizacao', function (Blueprint $table) {
-            $table->id();
             $table->timestamps();
             $table->String('tipo_logradouro');
             $table->String('logradouro');
             $table->String('bairro');
             $table->String('numero');
-            $table->String('complemento');
-            $table->String('referencia');
-            $table->foreignId("user_tag_id");
+            $table->String('complemento')->nullable();
+            $table->String('referencia')->nullable();
+            $table->foreignId("user_tag_id")->id();
             $table->foreign("user_tag_id")->references("id")->on("users");
         });
     }
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('localizacaos');
+        Schema::dropIfExists('localizacao');
     }
 };
