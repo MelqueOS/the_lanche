@@ -17,7 +17,7 @@
     <div class="container">
         <div class="box-scan">
             <div class="scan">
-                <button class='botao'>
+                <button class='botao shadow-none'>
                     <i class="bi bi-qr-code-scan"></i><br> LER QRCODE
                 </button>
             </div>
@@ -32,28 +32,29 @@
                     <p>ENTRAR</p>
                 </div>
 
-                <div class="btn">
-                    <button style='width:65%;' class='btn-primary'>Entrar com <i class="bi bi-google" style='font-size: 20px;'></i>oogle
+                <div class="form-group d-flex justify-content-center">
+                    <button style='width:65%;' class='btn-primary shadown-none'>Entrar com <i class="bi bi-google" style='font-size: 20px;'></i>oogle
                     </button>
                 </div>
 
-                <div class='inputs'>
-                    <div class="label-input-form login">
-                        <label for="">Usuario</label>
-                        <input type="email" name="" id="" required>
+                <div class='form-group col-10 d-flex flex-column align-items-center w-100'>
+                    <div class='form-group'>
+                        <label class="label-input-form" for="">Usuario</label>
+                        <input class='form-control' type="email" name="" id="" required>
                     </div>
-                    <div class="label-input-form passwd">
-                        <label for="">Senha</label>
-                        <input type="password" name="" id="" required>
+
+                    <div class='form-group'>
+                        <label class="label-input-form col-4" for="">Senha</label>
+                        <input class='form-control' type="password" name="" id="" required>
                     </div>
                 </div>
 
-                <div class="btn">
-                    <button class='btn-primary' style='width:65%;'>Entrar</button>
+                <div class="form-group d-flex justify-content-center">
+                    <button class='btn-primary btn' style='width:65%;'>Entrar</button>
                 </div>
 
                 <div class="nv-cadastro">
-                    Novo aqui? <a href="/1">Crie uma conta</a>
+                    <label>Novo aqui? <a href="/1">Crie uma conta</a></label>
                 </div>
             </form>
         </div>

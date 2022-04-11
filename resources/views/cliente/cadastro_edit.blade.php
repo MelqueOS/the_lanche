@@ -34,18 +34,20 @@
 
             <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
 
+            <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
 
         <fieldset class="">
             <label for="">Telefone</label>
-            <input type="text" name="telefone" required>
+            <input type="text" name="telefone" class='phone' maxlength='15' required>
             <label for="">Data de Nascimento</label>
             <input type="date" name="datanascimento" required min='1910-01-01' max='2012-01-01' />
             <label for="">WhatsApp</label>
-            <input type="text" name="whatsapp" required>
+            <input type="text" name="whatsapp" class='phone' maxlength='15' required>
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
             <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
 
+            <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
 
         <fieldset class="">
@@ -58,7 +60,7 @@
                 <option value="5">Condominio</option>
             </select>
 
-            <label for="">logradouro</label>
+            <label for="">bairro</label>
             <input type="text" name="logradouro" required>
             <label for="">numero</label>
             <input type="number" name="numero" required>
@@ -68,12 +70,18 @@
             <input type="text" name="complemento">
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
             <input type="submit" name="submit" class="submit action-button btn-primary" value="Finalizar" />
+
+            <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
+
         </fieldset>
     </form>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type='text/javascript' src='js/function.js'></script>
+
+    <!-- JQ MASK -->
+    <script src="{{asset('js/jquery.mask.js')}}"></script>
 </body>
 
 </html>
