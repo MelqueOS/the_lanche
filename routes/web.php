@@ -26,16 +26,16 @@ Route::resources([
 Route::get('/', function () {
     return view('cliente.login');
 });
+
 Route::get('/1', function () {
     return view('cliente.cadastro_edit');
 });
+
 Route::get('/2', function () {
-    return view('templates.template');
+    return view('empresa.cadastro');
 });
 
 Route::get('/cadastro', function () {
     return view('cliente.cadastro');
 });
-Route::get('/3', function () {
-    return view('cliente.teste');
-});
+
