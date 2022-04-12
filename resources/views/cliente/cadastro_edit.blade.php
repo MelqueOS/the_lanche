@@ -14,7 +14,9 @@
 </head>
 
 <body>
-    <form action="/cliente" method="POST" id="msform">
+    <div class="resp"></div>
+
+    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='formulario'>
         <ul id="progressbar">
             <li class="active">Cadastro</li>
             <li>Contato</li>
@@ -32,7 +34,7 @@
             <label for="">Confirmar Senha</label>
             <input type="password" name="csenha" required />
 
-            <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
+            <input type="button" name="next1" class="next action-button btn-primary" value="Proximo" />
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
@@ -41,11 +43,11 @@
             <label for="">Telefone</label>
             <input type="text" name="telefone" class='phone' maxlength='15' required>
             <label for="">Data de Nascimento</label>
-            <input type="date" name="datanascimento" required min='1910-01-01' max='2012-01-01' />
+            <input type="date" name="datanascimento" required min='1900-01-01'/>
             <label for="">WhatsApp</label>
             <input type="text" name="whatsapp" class='phone' maxlength='15' required>
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
-            <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
+            <input type="button" name="next2" class="next action-button btn-primary" value="Proximo" />
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
@@ -69,7 +71,7 @@
             <label for="">complemento</label>
             <input type="text" name="complemento">
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
-            <input type="submit" name="submit" class="submit action-button btn-primary" value="Finalizar" />
+            <input type="submit" name="next" class="submit action-button btn-primary" value="Finalizar" />
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
 
@@ -82,6 +84,7 @@
 
     <!-- JQ MASK -->
     <script src="{{asset('js/jquery.mask.js')}}"></script>
+
 </body>
 
 </html>

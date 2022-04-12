@@ -1,13 +1,15 @@
 $(function () {
     var atual_fs, next_fs, prev_fs;
-    $('.next').click(function () {
-        atual_fs = $(this).parent();
-        next_fs = $(this).parent().next();
+    var formulario = $('form[name=formulario]');
+
+    function next(elem) {
+        atual_fs = $(elem).parent();
+        next_fs = $(elem).parent().next();
 
         $('#progressbar li').eq($('fieldset').index(next_fs)).addClass('active');
         atual_fs.hide(800);
         next_fs.show(800);
-    })
+    }
 
     $('.prev').click(function () {
         atual_fs = $(this).parent();
@@ -18,12 +20,42 @@ $(function () {
         prev_fs.show(800);
     })
 
-    $('#formulario input[type=submit]').click(function () {
-        return false;
+    $('input[name=next1]').click(function () {
+        var array = formulario.serializeArray();
+        if (array[0].value == '' || array[1].value == '' || array[2].value == '' || array[3].value == '') {
+            $('.resp').html('<div class="erros"><p>Preencha todos os dados da primeira etapa!</p></div>');
+        } else {
+            $('.resp').html('');
+            next($(this));
+        }
     })
+
+
+    $('input[name=next2]').click(function () {
+        var array = formulario.serializeArray();
+        if (array[4].value == '' || array[5].value == '' || array[6].value == '') {
+            $('.resp').html('<div class="erros"><p>Preencha todos os dados sobre os seus contatos!</p></div>');
+        } else {
+            $('.resp').html('');
+            next($(this));
+        }
+    });
+
+    $('input[type=submit').click(function (evento) {
+        evento.preventDefault();
+        var array = formulario.serializeArray();
+        if (array[8].value == '' || array[9].value == '') {
+            $('.resp').html('<div class="erros"><p>Preencha todos os dados sobre seu endereço</p></div>');
+        } else {
+            $('.resp').html('<div class="ok"><p>Sua requisição foi enviada!</p></div>');
+            next($(this));
+        }
+
+    });
+
 });
 
-$(document).ready(function(){
+$(document).ready(function () {
     $('.cnpj').mask('99.999.999/9999-99');
     $('.phone').mask('(99) 9999-9999');
 })

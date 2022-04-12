@@ -14,10 +14,31 @@ body {
 	background: linear-gradient(to right, #EB5600, #fc9960);
 }
 
+
+.erros, .ok{
+	width: 390px;
+	padding: 5px;
+	background: rgba(239, 10, 10, 0.9);
+	margin: 20px auto 0 auto;
+	border: 1px solid white;
+	border-radius: 4px;
+	color: white;
+	text-align: center;
+}
+
+.ok{
+	background: #27AE60;
+}
+
+.erros p, .ok p{
+	margin-bottom: 0;
+}
+
+
 /*form styles*/
 #msform {
 	width: 400px;
-	margin: 50px auto;
+	margin: 40px auto;
 	text-align: center;
 	position: relative;
 }
