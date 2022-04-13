@@ -17,6 +17,7 @@
     <div class="resp"></div>
 
     <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='formulario'>
+        @csrf
         <ul id="progressbar">
             <li class="active">Cadastro</li>
             <li>Contato</li>

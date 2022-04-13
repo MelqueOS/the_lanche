@@ -38,3 +38,6 @@ Route::get('/2', function () {
 Route::get('/cadastro', function () {
     return view('cliente.cadastro');
 });
+Route::get('/conteudo', function () {
+    return view('conteudo');
+});
