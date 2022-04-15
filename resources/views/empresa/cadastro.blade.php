@@ -23,7 +23,7 @@
 
         <fieldset class="">
 
-            <label for="">Razão Social</label>
+            <label for="">Nome Fantasia</label>
             <input type="text" name="razsocial" required />
             <label for="">CNPJ</label>
             <input type="text" name="cnpj" maxlength='14' class='cnpj' required />
@@ -33,9 +33,7 @@
             <input type="password" name="pass" required />
             <label for="">Confirmar Senha</label>
             <input type="password" name="csenha" required />
-
             <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
-
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
 
