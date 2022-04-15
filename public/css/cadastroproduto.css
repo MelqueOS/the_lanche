@@ -1,0 +1,74 @@
+.t{
+	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+
+}
+.inpt{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	height: 175px;
+}
+.inpt >div{
+flex: 50%;
+
+	
+}
+.item{
+	width: 100%;
+}
+.item input {
+	width: 95%;
+}
+.item select {
+	width: 95%;
+}
+.item textarea {
+	margin-top: 5px;
+	width: 95%;
+	border-radius: 4px;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.max-width {
+
+    max-width: 225px;
+    width: 100%;
+	
+}
+
+#imgPhoto {
+    width: 180px;
+    height: 180px;
+    padding:0px;
+	margin: 0px;
+	margin-left: 10px;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+
+.btncancel{
+	width: 413px;
+height: 50px;
+background: #CCCCCC;
+border-radius: 15px;
+}
+.btnsave{
+	width: 413px;
+height: 50px;
+	background: #1687F0;
+border-radius: 15px;
+}
+.item2{
+	background:red;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}

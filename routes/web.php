@@ -41,3 +41,6 @@ Route::get('/cadastro', function () {
 Route::get('/conteudo', function () {
     return view('conteudo');
 });
+Route::get('/3', function () {
+    return view('cadastroproduto');
+});
