@@ -10,6 +10,7 @@ html {
 }
 
 body {
+    background: linear-gradient(to right, #f8f9fa, #fff);
     height: 100%;
 }
 
@@ -48,8 +49,8 @@ input:not([type=submit], [type=button]) {
 }
 
 input:focus {
-    outline: #333333;
-    border: 1px solid;
+    outline: #EB5600;
+    border: 1px solid #EB5600;
 }
 
 input::placeholder {

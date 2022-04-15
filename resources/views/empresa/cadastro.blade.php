@@ -23,6 +23,8 @@
 
         <fieldset class="">
 
+            <label for="">Razão Social</label>
+            <input type="text" name="razsocial" required />
             <label for="">CNPJ</label>
             <input type="text" name="cnpj" maxlength='14' class='cnpj' required />
             <label for="">Email</label>
