@@ -14,7 +14,10 @@
 </head>
 
 <body>
-    <form action="/cliente" method="POST" id="msform">
+    <div class="resp"></div>
+
+    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='form-cad'>    
+        @csrf
         <ul id="progressbar">
             <li class="active">Cadastro</li>
             <li>Contato</li>
@@ -24,24 +27,26 @@
         <fieldset class="">
 
             <label for="">Nome Fantasia</label>
-            <input type="text" name="razsocial" required />
+            <input class='form-control' type="text" name="razsocial" required />
             <label for="">CNPJ</label>
-            <input type="text" name="cnpj" maxlength='14' class='cnpj' required />
+            <input class='form-control' type="text" name="cnpj" maxlength='14' class='cnpj' required />
             <label for="">Email</label>
-            <input type="email" name="email" required />
+            <input class='form-control' type="email" name="email" required />
             <label for="">Senha</label>
-            <input type="password" name="pass" required />
+            <input class='form-control' type="password" name="pass" required />
             <label for="">Confirmar Senha</label>
-            <input type="password" name="csenha" required />
+            <input class='form-control' type="password" name="csenha" required />
+
             <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
+
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
 
         <fieldset class="">
             <label for="">Telefone</label>
-            <input type="text" name="telefone" class='phone' maxlength='15' required>
+            <input type="text" name="telefone" class='phone form-control' maxlength='15' required>
             <label for="">WhatsApp</label>
-            <input type="text" name="whatsapp" class='phone' maxlength='15' required>
+            <input type="text" name="whatsapp" class='phone form-control' maxlength='15' required>
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
             <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
 
@@ -59,7 +64,7 @@
             </select>
 
             <label for="">bairro</label>
-            <input type="text" name="logradouro" required>
+            <input class='form-control' type="text" name="logradouro" required>
 
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
             <input type="submit" name="submit" class="submit action-button btn-primary" value="Finalizar" />
@@ -72,7 +77,7 @@
 
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type='text/javascript' src="{{asset('js/function.js')}}"></script>
+    <script type='text/javascript' src='js/function.js'></script>
 
     <!-- JQ MASK -->
     <script src="{{asset('js/jquery.mask.js')}}"></script>

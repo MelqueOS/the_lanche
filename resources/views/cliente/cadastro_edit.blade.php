@@ -16,7 +16,7 @@
 <body>
     <div class="resp"></div>
 
-    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='formulario'>
+    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='form-cad'>
         @csrf
         <ul id="progressbar">
             <li class="active">Cadastro</li>
@@ -27,13 +27,13 @@
         <fieldset class="">
 
             <label for="">Nome</label>
-            <input type="text" name="nome" required />
+            <input class='form-control' type="text" name="nome" required />
             <label for="">Email</label>
-            <input type="email" name="email" required />
+            <input class='form-control' type="email" name="email" required />
             <label for="">Senha</label>
-            <input type="password" name="pass" required />
+            <input class='form-control' type="password" name="pass" required />
             <label for="">Confirmar Senha</label>
-            <input type="password" name="csenha" required />
+            <input class='form-control' type="password" name="csenha" required />
 
             <input type="button" name="next1" class="next action-button btn-primary" value="Proximo" />
 
@@ -42,11 +42,11 @@
 
         <fieldset class="">
             <label for="">Telefone</label>
-            <input type="text" name="telefone" class='phone' maxlength='15' required>
+            <input class='form-control' type="text" name="telefone" class='phone' maxlength='15' required>
             <label for="">Data de Nascimento</label>
-            <input type="date" name="datanascimento" required min='1900-01-01'/>
+            <input class='form-control' type="date" name="datanascimento" required min='1900-01-01' />
             <label for="">WhatsApp</label>
-            <input type="text" name="whatsapp" class='phone' maxlength='15' required>
+            <input class='form-control' type="text" name="whatsapp" class='phone' maxlength='15' required>
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
             <input type="button" name="next2" class="next action-button btn-primary" value="Proximo" />
 
@@ -64,11 +64,11 @@
             </select>
 
             <label for="">bairro</label>
-            <input type="text" name="logradouro" required>
+            <input class='form-control' type="text" name="logradouro" required>
             <label for="">numero</label>
-            <input type="number" name="numero" required>
+            <input class='form-control' type="number" name="numero" required>
             <label for="">referencia</label>
-            <input type="text" name="referencia">
+            <input class='form-control' type="text" name="referencia">
             <label for="">complemento</label>
             <input type="text" name="complemento">
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />

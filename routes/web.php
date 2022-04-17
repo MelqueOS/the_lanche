@@ -38,9 +38,15 @@ Route::get('/2', function () {
 Route::get('/cadastro', function () {
     return view('cliente.cadastro');
 });
+
 Route::get('/conteudo', function () {
     return view('conteudo');
 });
+
+Route::get('/4', function () {
+    return view('cliente.exibi-produto');
+});
+
 Route::get('/3', function () {
     return view('cadastroproduto');
 });
