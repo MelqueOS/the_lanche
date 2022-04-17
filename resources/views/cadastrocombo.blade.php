@@ -20,26 +20,20 @@
       @csrf
       <div class="form-group col-6">
         <label for="nome">Nome: </label>
-        <input type="text" name="produto" class="form-control" required />
-      </div>
-      <div class="form-group col-6">
-        <label for="nome">Tipo: </label>
-        <select name="tipo" class="inptselect form-control" required>
-          <option value="1" selected="selected">comida</option>
+        <select name="produto" class="inptselect form-control" required>
+          <option value="1" selected="selected">Cafe com pao</option>
           <option value="2"></option>
 
         </select>
       </div>
-      <div class="form-group col-6">
-        <label for="nome">Quantidade: </label>
-        <input type="text" name="quantidade" class="form-control" required />
-      </div>
+
+
 
       <div class="form-group col-6">
         <label for="nome">Valor: </label>
         <input type="text" name="valor" required class="form-control" />
       </div>
-      <div class="form-group col-6">
+      <div class="form-group row-6">
         <label for="nome">Descriçao: </label>
         <textarea class="form-control"></textarea>
       </div>

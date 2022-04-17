@@ -50,3 +50,6 @@ Route::get('/4', function () {
 Route::get('/3', function () {
     return view('cadastroproduto');
 });
+Route::get('/5', function () {
+    return view('cadastrocombo');
+});
