@@ -21,7 +21,7 @@
       <div class="form-group col-6">
         <label for="nome">Nome: </label>
         <select name="produto" class="inptselect form-control" required>
-          <option value="1" selected="selected">Cafe com pao</option>
+          <option value="1" selected="selected">Produt 01</option>
           <option value="2"></option>
 
         </select>
