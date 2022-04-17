@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
     <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/exibi-produto.css')}}">
 </head>
 
 <body>

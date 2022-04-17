@@ -43,8 +43,8 @@ Route::get('/conteudo', function () {
     return view('conteudo');
 });
 
-Route::get('/main', function () {
-    return view('cliente.main');
+Route::get('/4', function () {
+    return view('cliente.exibi-produto');
 });
 
 Route::get('/3', function () {
