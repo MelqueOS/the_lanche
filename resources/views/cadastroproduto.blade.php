@@ -13,36 +13,45 @@
             </div>
             </div>
             <input type="file" id="flImage" name="arquivos"   accept="image/png, image/jpeg"  multiple />
-            <div class="row"> 
-            <div class="form-group col-6">
-              <input type="text" name="produto" required />
-            </div>
-            <div class="form-group col-6">
-              <select name="tipo" class="inptselect" required>
+            <form action="/3" method="POST" class="row">
+      @csrf
+    <div class="form-group col-6">
+			<label for="nome">Nome: </label>
+      <input type="text" name="produto"class="form-control" required />
+	</div>
+    <div class="form-group col-6">
+        <label for="nome">TIPO: </label>
+        <select name="tipo" class="inptselect form-control" required>
                         <option value="1" selected="selected">comida</option>
                         <option value="2"></option>
                         
               </select>
-            </div>
-            <div class="form-group col-6">
-              <input type="text" name="quantidade" required />
-            </div>
-            <div class="form-group col-6">
-              <input type="text" name="valor" required />
-            </div>
-            <div class="form-group row-6">
-              <textarea ></textarea>
-            </div>
-          </div>
+	</div>
+    <div class="form-group col-6">
+        <label for="nome">Matricula: </label>
+        <input type="text" name="quantidade"class="form-control" required />
+	</div>
 
-      </div>
-      <div>
-      
-        <div class="item2 d-flex flex-nowrap justify-content-center mt-5"> 
-          <button class="btnsave">Salvar</button>
-          <button class="btncancel">Cancelar</button>
-     </div>
-      </div>
+  <div class="form-group col-6">
+        <label for="nome">VAL: </label>
+        <input type="text" name="valor" required class="form-control"/>
+	</div>
+  <div class="form-group col-6">
+        <label for="nome">DES: </label>
+        <textarea class="form-control" ></textarea>
+	</div>
+	<div class="item2">
+    <div>
+	<button type="submit" class="btn btn-primary bottom "><i class="fas fa-save"></i>Salvar</button>
+    </div>
+    <div>
+	<button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
+    </div>
+    
+</div>
+
+</form>
+
     </body>
 </html>
 <script>

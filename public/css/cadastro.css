@@ -239,8 +239,6 @@ height: 50px;
 border-radius: 15px;
 }
 .item2{
-	background:#ffffffff;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	width: 100%;
+	display: flex;
+	align-self: flex-end;
 }

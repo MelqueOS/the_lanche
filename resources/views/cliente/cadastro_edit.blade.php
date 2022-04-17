@@ -72,7 +72,7 @@
             <label for="">complemento</label>
             <input type="text" name="complemento">
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
-            <input type="submit" name="next" class="submit action-button btn-primary" value="Finalizar" />
+            <button type="submit"  class="submit action-button btn-primary" >Finalizar</button>
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
 

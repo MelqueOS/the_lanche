@@ -68,7 +68,5 @@ height: 50px;
 border-radius: 15px;
 }
 .item2{
-	background:red;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+	display: flex;
 }
