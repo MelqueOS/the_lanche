@@ -40,16 +40,16 @@
         <label for="nome">DES: </label>
         <textarea class="form-control" ></textarea>
 	</div>
-	<div class="item2">
-    <div>
-	<button type="submit" class="btn btn-primary bottom "><i class="fas fa-save"></i>Salvar</button>
-    </div>
-    <div>
-	<button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
-    </div>
+
     
 </div>
-
+<div class="item2 ">
+    <div class="col-4">
+	<button type="submit" class="btn btn-primary bottom "><i class="fas fa-save"></i>Salvar</button>
+    </div>
+    <div class="col-4">
+	<button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Cancelar</button>
+    </div>
 </form>
 
     </body>
