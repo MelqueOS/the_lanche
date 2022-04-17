@@ -20,7 +20,7 @@
       <input type="text" name="produto"class="form-control" required />
 	</div>
     <div class="form-group col-6">
-        <label for="nome">TIPO: </label>
+        <label for="nome">Tipo: </label>
         <select name="tipo" class="inptselect form-control" required>
                         <option value="1" selected="selected">comida</option>
                         <option value="2"></option>
@@ -28,16 +28,16 @@
               </select>
 	</div>
     <div class="form-group col-6">
-        <label for="nome">Matricula: </label>
+        <label for="nome">Quantidade: </label>
         <input type="text" name="quantidade"class="form-control" required />
 	</div>
 
   <div class="form-group col-6">
-        <label for="nome">VAL: </label>
+        <label for="nome">Valor: </label>
         <input type="text" name="valor" required class="form-control"/>
 	</div>
   <div class="form-group col-6">
-        <label for="nome">DES: </label>
+        <label for="nome">Descriçao: </label>
         <textarea class="form-control" ></textarea>
 	</div>
 
