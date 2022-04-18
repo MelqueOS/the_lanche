@@ -27,7 +27,7 @@
             <form action="">
                 <!-- TEXT -->
 
-                <div class='title-form'>
+                <div class='title'>
                     <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
                     <p>ENTRAR</p>
                 </div>

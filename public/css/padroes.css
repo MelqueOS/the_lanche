@@ -14,6 +14,7 @@ body {
     height: 100%;
 }
 
+
 .aform {
     display: flex;
     flex-direction: column;
@@ -39,6 +40,22 @@ i::before {
     align-self: flex-end;
 }
 
+h1::selection,
+h2::selection,
+p::selection,
+label::selection {
+    background-color: #ff7525;
+    color: #f7f7f7;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
 .form-control {
     height: 35px;
     width: 100%;
@@ -50,9 +67,9 @@ i::before {
 
 
 .form-control:focus {
-    border-color: #333333;
-    box-shadow: 0 0 0 0.25rem #33333350;
-    outline: #EB5600;
+    border-color: #EB5600;
+    box-shadow: 0 0 0 0.25rem #EB560050;
+    /* outline: #EB5600; */
 }
 
 
@@ -77,13 +94,30 @@ select:focus {
 
 /* titulo dos conteudos dos formularios.
 OBS: Não é da aba */
-.title-form {
+.title {
+    color: #f8f9fa;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sub-title {
+    color: #f8f9fa;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sub-title {
     color: #f8f9fa;
     font-size: 25px;
     font-weight: 600;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
+
 
 .btn {
     display: flex;
