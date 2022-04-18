@@ -42,10 +42,10 @@
   </div>
   <div class="item2 ">
     <div class="col-4">
-      <button type="submit" class="btn btn-primary bottom "><i class="fas fa-save"></i>Salvar</button>
+      <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
     </div>
     <div class="col-4">
-      <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Cancelar</button>
+      <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
     </div>
     </form>
 
