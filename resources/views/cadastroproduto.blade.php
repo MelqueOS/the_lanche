@@ -18,6 +18,7 @@
     <input type="file" id="flImage" name="arquivos" accept="image/png, image/jpeg" multiple />
     <form action="/3" method="POST" class="row">
       @csrf
+      <input type="file" id="flImage" name="arquivos" accept="image/png, image/jpeg" multiple />
       <div class="form-group col-6">
         <label for="nome">Nome: </label>
         <input type="text" name="produto" class="form-control" required />
@@ -39,7 +40,7 @@
         <label for="nome">Valor: </label>
         <input type="text" name="valor" required class="form-control" />
       </div>
-      <div class="form-group col-6">
+      <div class="form-group row">
         <label for="nome">Descriçao: </label>
         <textarea class="form-control"></textarea>
       </div>
