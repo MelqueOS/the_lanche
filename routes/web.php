@@ -50,3 +50,7 @@ Route::get('/3', function () {
 Route::get('/4', function () {
     return view('cliente.cardapio');
 });
+
+Route::get('/5', function () {
+    return view('cadastrocombo');
+});
