@@ -34,7 +34,7 @@
         <div class="conteudo">
 
             <!-- ITEM 1 -->
-            <div class="item">
+            <div class="item" id='item'>
                 <!-- AQUI VAI TER UM FOREACH >> MOSTRA TODOS OS ITENS DO TIPO -->
                 <div class="box-item">
                     <div class='box-img'>
@@ -156,6 +156,9 @@
             <hr>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-1.4.3.min.js"></script>
+    <script type='text/javascript' src='js/function.js'></script>
 </body>
 
 </html>

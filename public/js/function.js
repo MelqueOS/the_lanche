@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
     var atual_fs, next_fs, prev_fs;
     var formulario = $('form[name=formulario]');
 
@@ -11,7 +11,7 @@ $(function() {
         next_fs.show(800);
     }
 
-    $('.prev').click(function() {
+    $('.prev').click(function () {
         atual_fs = $(this).parent();
         prev_fs = $(this).parent().prev();
 
@@ -20,7 +20,8 @@ $(function() {
         prev_fs.show(800);
     })
 
-    $('input[name=next1]').click(function() {
+    // validacao dos campos em branco
+    $('input[name=next1]').click(function () {
         var array = formulario.serializeArray();
         if (array[0].value == '' || array[1].value == '' || array[2].value == '' || array[3].value == '') {
             $('.resp').html('<div class="erros"><p>Preencha todos os dados da primeira etapa!</p></div>');
@@ -31,7 +32,7 @@ $(function() {
     })
 
 
-    $('input[name=next2]').click(function() {
+    $('input[name=next2]').click(function () {
         var array = formulario.serializeArray();
         if (array[4].value == '' || array[5].value == '' || array[6].value == '') {
             $('.resp').html('<div class="erros"><p>Preencha todos os dados sobre os seus contatos!</p></div>');
@@ -41,7 +42,7 @@ $(function() {
         }
     });
 
-    $('input[type=submit').click(function(evento) {
+    $('input[type=submit]').click(function (evento) {
         evento.preventDefault();
         var array = formulario.serializeArray();
         if (array[8].value == '' || array[9].value == '') {
@@ -55,7 +56,23 @@ $(function() {
 
 });
 
-$(document).ready(function() {
+
+// TELA CARDAPIO
+// ALTERAR A COLORAÇÃO DE UM ITEM AO CLICAR/RECLICAAR
+$('.box-item').click(function () {
+    var cor = $(this).css("border-color");
+
+    if (cor == "rgb(204, 208, 213)") {
+        $(this).css({ "border": "2px solid #EB5600", "background-color": "#eb560025" });
+    }
+    else {
+        $(this).css({ "border": "1px solid #ccd0d5", "background-color": "#f7f7f7" });
+    }
+
+});
+
+// MASCARAS PARA AS TELAS DE CADASTRO(EMPRESA E CLIENTE)
+$(document).ready(function () {
     $('.cnpj').mask('99.999.999/9999-99');
     $('.phone').mask('(99) 9999-9999');
 })

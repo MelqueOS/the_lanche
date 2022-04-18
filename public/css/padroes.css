@@ -44,12 +44,6 @@ p::first-letter {
     text-transform: capitalize;
 }
 
-
-*::selection {
-    background-color: #ff7525;
-    color: #f7f7f7;
-}
-
 h1 {
     font-size: 25px;
 }

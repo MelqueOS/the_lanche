@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Cliente</title>
+    <title>Cadastro da Empresa</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
