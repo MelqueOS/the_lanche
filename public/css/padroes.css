@@ -40,10 +40,12 @@ i::before {
     align-self: flex-end;
 }
 
-h1::selection,
-h2::selection,
-p::selection,
-label::selection {
+p::first-letter {
+    text-transform: capitalize;
+}
+
+
+*::selection {
     background-color: #ff7525;
     color: #f7f7f7;
 }
@@ -55,6 +57,8 @@ h1 {
 h2 {
     font-size: 18px;
 }
+
+
 
 .form-control {
     height: 35px;

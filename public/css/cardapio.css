@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+.title {
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+
+.sub-title {
+    color: #333;
+    text-align: left;
+    font-weight: bold;
+}
+
+h2 {
+    text-decoration: underline wavy #EB5600;
+}
+
 .navbar {
     margin: 10px 0;
     justify-content: flex-end;
@@ -14,8 +30,19 @@
     width: 400px;
 }
 
-.itens {
-    margin: 0 50px;
+.tipo {
+    display: flex;
+    flex-direction: column;
+    margin: 0 25px;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: row;
+}
+
+.item{
+    margin-right: 20px;
 }
 
 .box-item {
@@ -45,27 +72,19 @@
     width: 100px;
 }
 
-.title {
-    color: #333;
-    text-align: left;
-    font-weight: bold;
+.sub-box{
+    height: 100%;
 }
 
-.sub-title {
-    color: #333;
-    text-align: left;
-    font-weight: bold;
-}
-
-h2 {
-    text-decoration: underline wavy #EB5600;
-}
-
-
-.sub-box {
+.descricao {
     display: -webkit-box;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.valor{
+    height: 15%;
+    text-transform: uppercase;
 }
