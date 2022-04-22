@@ -16,7 +16,7 @@
 <body>
     <div class="resp"></div>
 
-    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='form-cad'>    
+    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='formulario'>    
         @csrf
         <ul id="progressbar">
             <li class="active">Cadastro</li>
@@ -37,7 +37,7 @@
             <label for="">Confirmar Senha</label>
             <input class='form-control' type="password" name="csenha" required />
 
-            <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
+            <button type="button" name="next1" class="next action-button btn-primary">Proximo</button>
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
@@ -47,8 +47,9 @@
             <input type="text" name="telefone" class='phone form-control' maxlength='15' required>
             <label for="">WhatsApp</label>
             <input type="text" name="whatsapp" class='phone form-control' maxlength='15' required>
-            <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
-            <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
+            <button type="button" name="previous" class="prev action-button btn-second">Anterior</button>
+            <button type="button" name="next2" class="next action-button btn-primary">Proximo</button>
+
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
         </fieldset>
@@ -77,6 +78,8 @@
 
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/function.js'></script>
 
     <!-- JQ MASK -->
