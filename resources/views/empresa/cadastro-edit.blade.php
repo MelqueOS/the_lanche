@@ -29,7 +29,7 @@
             <label for="">Nome Fantasia</label>
             <input class='form-control' type="text" name="razsocial" required />
             <label for="">CNPJ</label>
-            <input class='form-control' type="text" name="cnpj" maxlength='14' class='cnpj' required />
+            <input class='form-control cnpj' type="text" name="cnpj" maxlength='14' required />
             <label for="">Email</label>
             <input class='form-control' type="email" name="email" required />
             <label for="">Senha</label>
@@ -67,7 +67,7 @@
             <label for="">bairro</label>
             <input class='form-control' type="text" name="logradouro" required>
 
-            <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
+            <button type="button" name="previous" class="prev action-button btn-second">Anterior</button>
             <button type="submit" name="submit" class="submit action-button btn-primary"  >Finalizar</button>
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
@@ -76,11 +76,9 @@
     </form>
     </div>
 
-    <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type='text/javascript' src='js/function.js'></script>
+    <script type='text/javascript' src='js/padroes.js'></script>
+    <script type='text/javascript' src='js/cadastro-empresa.js'></script>
 
     <!-- JQ MASK -->
     <script src="{{asset('js/jquery.mask.js')}}"></script>
