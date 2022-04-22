@@ -22,7 +22,7 @@ return new class extends Migration
             $table->String("descricao");
             $table->String("url_img");//Imagem representativa do produto
             $table->foreignId("empresa_id");
-            $table->foreign("empresa_id")->references("id")->on("empresa");
+            $table->foreign("empresa_id")->references("user_tag_id")->on("empresa");
         });
     }
 

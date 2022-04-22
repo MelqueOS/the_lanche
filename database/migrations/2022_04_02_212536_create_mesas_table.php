@@ -21,7 +21,7 @@ return new class extends Migration
             $table->String('local')->nullable();
             
             $table->foreignId("empresa_id");
-            $table->foreign("empresa_id")->references("id")->on("empresa");
+            $table->foreign("empresa_id")->references("user_tag_id")->on("empresa");
         });
     }
 
