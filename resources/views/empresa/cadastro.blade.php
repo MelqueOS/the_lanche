@@ -15,12 +15,7 @@
 
 <body>
     <div class="resp"></div>
-
-<<<<<<< HEAD
-    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='formulario'>    
-=======
-    <form action="/empresa" method="POST" enctype="multipart/form-data" name='form-cad'>    
->>>>>>> f0a401d509e51cc495506848badcb709c5508b04
+       <form action="/empresa" method="POST" enctype="multipart/form-data" name='form-cad'>
         @csrf
 
         <fieldset class="">
@@ -80,12 +75,7 @@
     <a href="/empresa/1"> Teste visualizacao de perfil (remover o botão)</a>
     </div>
 
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type='text/javascript' src='js/function.js'></script>
-
-    <!-- JQ MASK -->
-    <script src="{{asset('js/jquery.mask.js')}}"></script>
+    
 </body>
 
 </html>
