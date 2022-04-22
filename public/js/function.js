@@ -21,9 +21,10 @@ $(function () {
     })
 
     // validacao dos campos em branco
-    $('input[name=next1]').click(function () {
+    
+    $('button[name=next1]').click(function () {
         var array = formulario.serializeArray();
-        if (array[0].value == '' || array[1].value == '' || array[2].value == '' || array[3].value == '') {
+        if (array[0].value == '' || array[1].value == '' || array[2].value == '' || array[3].value == '' || array[4].value == '') {
             $('.resp').html('<div class="erros"><p>Preencha todos os dados da primeira etapa!</p></div>');
         } else {
             $('.resp').html('');
@@ -32,9 +33,9 @@ $(function () {
     })
 
 
-    $('input[name=next2]').click(function () {
+    $('button[name=next2]').click(function () {
         var array = formulario.serializeArray();
-        if (array[4].value == '' || array[5].value == '' || array[6].value == '') {
+        if (array[5].value == '' || array[6].value == '') {
             $('.resp').html('<div class="erros"><p>Preencha todos os dados sobre os seus contatos!</p></div>');
         } else {
             $('.resp').html('');
@@ -42,7 +43,7 @@ $(function () {
         }
     });
 
-    $('input[type=submit]').click(function (evento) {
+    $('button[type=submit]').click(function (evento) {
         evento.preventDefault();
         var array = formulario.serializeArray();
         if (array[8].value == '' || array[9].value == '') {

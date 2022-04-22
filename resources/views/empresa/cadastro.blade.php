@@ -16,7 +16,7 @@
 <body>
     <div class="resp"></div>
 
-    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='form-cad'>    
+    <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='formulario'>    
         @csrf
         <ul id="progressbar">
             <li class="active">Cadastro</li>
@@ -76,7 +76,7 @@
     </div>
 
     <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/function.js'></script>
 
     <!-- JQ MASK -->
