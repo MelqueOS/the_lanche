@@ -67,7 +67,7 @@
             <input class='form-control' type="text" name="logradouro" required>
 
             <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
-            <button type="submit" name="submit" class="submit action-button btn-primary" value="Finalizar" ></button>
+            <button type="submit" name="submit" class="submit action-button btn-primary"  >Finalizar</button>
 
             <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
 
