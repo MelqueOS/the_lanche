@@ -32,7 +32,7 @@ Route::get('/1', function () {
 });
 
 Route::get('/2', function () {
-    return view('empresa.cadastro');
+    return view('empresa.cadastro-edit');
 });
 
 Route::get('/cadastro', function () {

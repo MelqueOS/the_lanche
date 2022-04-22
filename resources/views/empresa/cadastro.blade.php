@@ -16,63 +16,68 @@
 <body>
     <div class="resp"></div>
 
+<<<<<<< HEAD
     <form action="/cliente" method="POST" id="msform" enctype="multipart/form-data" name='formulario'>    
+=======
+    <form action="/empresa" method="POST" enctype="multipart/form-data" name='form-cad'>    
+>>>>>>> f0a401d509e51cc495506848badcb709c5508b04
         @csrf
-        <ul id="progressbar">
-            <li class="active">Cadastro</li>
-            <li>Contato</li>
-            <li>Endereço</li>
-        </ul>
 
         <fieldset class="">
-
             <label for="">Nome Fantasia</label>
-            <input class='form-control' type="text" name="razsocial" required />
+            <input class='form-control' type="text" name="nome" value = "{{$user->name}}" required />
             <label for="">CNPJ</label>
-            <input class='form-control' type="text" name="cnpj" maxlength='14' class='cnpj' required />
+            <input class='form-control' type="text" name="cnpj" maxlength='14' value = "{{$empresa->cnpj}}" class='cnpj' required />
             <label for="">Email</label>
-            <input class='form-control' type="email" name="email" required />
+            <input class='form-control' type="email" name="email" value = "{{$user->email}}" required />
+            <label for="">Razão social</label>
+            <input class='form-control' type="text" name="razsocial" maxlength='14' value = "{{$empresa->razao_social}}" class='cnpj' required />
             <label for="">Senha</label>
-            <input class='form-control' type="password" name="pass" required />
+            <input class='form-control' type="password" name="senha" value = "{{$user->password}}" required />
             <label for="">Confirmar Senha</label>
-            <input class='form-control' type="password" name="csenha" required />
-
-            <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
-
-            <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
+            <input class='form-control' type="password" name="csenha" value = "{{$user->password}}" required />
         </fieldset>
 
         <fieldset class="">
             <label for="">Telefone</label>
-            <input type="text" name="telefone" class='phone form-control' maxlength='15' required>
-            <label for="">WhatsApp</label>
-            <input type="text" name="whatsapp" class='phone form-control' maxlength='15' required>
-            <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
-            <input type="button" name="next" class="next action-button btn-primary" value="Proximo" />
-
-            <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
+            <input type="text" name="telefone" class='phone form-control' maxlength='15'value = "{{$empresa->telefone}}"  required>
         </fieldset>
 
         <fieldset class="">
-            <label for="">Tipo Logradouro</label>
-            <select name="tipologadouro" required>
-                <option value="1" selected>Avenida</option>
-                <option value="2">Rua</option>
-                <option value="3">Fazenda</option>
-                <option value="4">Rodovia</option>
-                <option value="5">Condominio</option>
+            <label for="">Tipo de Logradouro</label>
+            <select name="tipologadouro" class="inptselect" required>
+                    <?php $ok = false; ?>
+                    <option value="" selected="selected">Selecione o tipo de logradouro
+                    <option>
+                        @foreach($parametro_select as $key_selected => $value_selected)
+                        @foreach($locais as $local)
+                        @if($local->tipo_logradouro == $key_selected)
+                    <option value="{{$key_selected}}" selected="selected">{{$value_selected}}</option>
+                    <?php $ok = true; ?>
+                    @break
+                    @endif
+                    @endforeach
+                    <?php if (!$ok) { ?>
+                        <option value="{{$key_selected}}">{{$value_selected}}</option>
+                    <?php }
+                    $ok = false;
+                    ?>
+
+                    @endforeach
             </select>
-
+            <label for="">Logradouro</label>
+            <input class='form-control' type="text" name="logradouro" value = "{{$endereco->logradouro}}"  required>
+            <label for="">Numero</label>
+            <input class='form-control' type="text" name="numero" value = "{{$endereco->numero}}" required>
             <label for="">bairro</label>
-            <input class='form-control' type="text" name="logradouro" required>
-
-            <input type="button" name="previous" class="prev action-button btn-second" value="Anterior" />
+            <input class='form-control' type="text" name="bairro" value = "{{$endereco->bairro}}" required>
             <input type="submit" name="submit" class="submit action-button btn-primary" value="Finalizar" />
-
-            <label class='nv-cadastro'>Já possui uma conta? <a href="/">Entre agora</a></label>
-
         </fieldset>
+        <input type="hidden" name="id" value="{{$user->id}}">
+        <label class='nv-cadastro'>Já possui uma conta? <a href="/login">Entre agora</a></label>
     </form>
+    
+    <a href="/empresa/1"> Teste visualizacao de perfil (remover o botão)</a>
     </div>
 
     <!-- JQUERY -->

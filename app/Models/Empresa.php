@@ -9,4 +9,5 @@ class Empresa extends Model
 {
     use HasFactory;
     protected $table = "empresa";
+    protected $primaryKey = 'user_tag_id';
 }
