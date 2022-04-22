@@ -19,7 +19,7 @@
     <form action="/3" method="POST" class="row">
       @csrf
       <div class="form-group col-6">
-        <label for="nome">Nome: </label>
+        <label for="nome">Nome</label>
         <select name="produto" class="inptselect form-control" required>
           <option value="1" selected="selected">Produt 01</option>
           <option value="2"></option>
@@ -30,11 +30,11 @@
 
 
       <div class="form-group col-6">
-        <label for="nome">Valor: </label>
+        <label for="nome">Valor</label>
         <input type="text" name="valor" required class="form-control" />
       </div>
       <div class="form-group row-6">
-        <label for="nome">Descriçao: </label>
+        <label for="nome">Descriçao</label>
         <textarea class="form-control"></textarea>
       </div>
 
