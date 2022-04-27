@@ -64,6 +64,7 @@ class ClienteController extends Controller
     public function store(Request $request)
     {
         $titulo = "Cadastro de clientes";
+        //dd($request->get('formulario[id]'));
         if ($request->get('id')!=""){
             $user = User::Find($request->get('id'));
             $entidade =  Cliente::Find($request->get('id'));
