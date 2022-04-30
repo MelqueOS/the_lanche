@@ -30,7 +30,7 @@ i {
     margin: auto;
     height: 90%;
     width: 100%;
-    background-color: #EB5600;
+    background-color: var(--corPrim);
     border-radius: 8px;
 }
 
@@ -44,7 +44,7 @@ form {
 .botao {
     text-decoration: unset;
     font-size: 32px;
-    color: #333333;
+    color: var(--bordBlack);
     background-color: transparent;
     border: 0;
     font-weight: bold;
@@ -61,13 +61,13 @@ form {
 .box-scan {
     height: 100%;
     width: 40%;
-    background-color: #f8f9fa;
+    background-color: var(--corTitle);
     display: flex;
     justify-content: center;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    border-top: 2px solid #EB5600;
-    border-bottom: 2px solid #EB5600;
+    border-top: 2px solid var(--corPrim);
+    border-bottom: 2px solid var(--corPrim);
 }
 
 .scan {

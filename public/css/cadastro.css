@@ -4,7 +4,7 @@
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 	box-sizing: border-box;
-    border: none;
+	border: none;
 }
 
 html {
@@ -12,7 +12,8 @@ html {
 }
 
 
-.erros, .ok{
+.erros,
+.ok {
 	width: 390px;
 	padding: 5px;
 	background: rgba(239, 10, 10, 0.9);
@@ -23,11 +24,12 @@ html {
 	text-align: center;
 }
 
-.ok{
-	background: #27AE60;
+.ok {
+	background: var(--corOk);
 }
 
-.erros p, .ok p{
+.erros p,
+.ok p {
 	margin-bottom: 0;
 }
 
@@ -44,7 +46,7 @@ html {
 	background: #EB560005;
 	border: 0 none;
 	border-radius: 3px;
-	box-shadow: 0 0 15px 1px #EB5600;
+	box-shadow: 0 0 15px 1px var(--corPrim);
 	padding: 20px 30px;
 	box-sizing: border-box;
 	width: 80%;
@@ -62,13 +64,13 @@ html {
 /*inputs*/
 #msform textarea {
 	padding: 15px;
-	border: 1px solid #ccc;
+	border: 1px solid var(--corC);
 	border-radius: 3px;
 	margin-bottom: 10px;
 	width: 100%;
 	box-sizing: border-box;
 	font-family: 'Poppins';
-	color: #2C3E50;
+	color: var(--corFs);
 	font-size: 23px;
 }
 
@@ -77,7 +79,7 @@ html {
 .fs-title {
 	font-size: 25px;
 	text-transform: uppercase;
-	color: #2C3E50;
+	color: var(--corFs);
 	margin-bottom: 10px;
 }
 
@@ -98,7 +100,7 @@ html {
 
 #progressbar li {
 	list-style-type: none;
-	color: #333;
+	color: var(--bordBlack);
 	text-transform: uppercase;
 	font-size: 12px;
 	width: 33.33%;
@@ -113,9 +115,9 @@ html {
 	line-height: 20px;
 	display: block;
 	font-size: 10px;
-	color: #333;
+	color: var(--bordBlack);
 	background: white;
-	border: 1px solid #333;
+	border: 1px solid var(--bordBlack);
 	border-radius: 10px;
 	margin: 0 auto 10px auto;
 }
@@ -142,7 +144,7 @@ html {
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,
 #progressbar li.active:after {
-	background: #EB5600;
+	background: var(--corPrim);
 	color: white;
 }
 
@@ -152,7 +154,8 @@ html {
 	text-transform: capitalize;
 	margin-top: 6px;
 }
-.t{
+
+.t {
 	height: 80%;
 
 	display: flex;
@@ -161,26 +164,32 @@ html {
 	align-items: center;
 
 }
-.inpt{
+
+.inpt {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	height: 175px;
 }
-.inpt >div{
-flex: 50%;
 
-	
+.inpt>div {
+	flex: 50%;
+
+
 }
-.item{
+
+.item {
 	width: 100%;
 }
+
 .item input {
 	width: 95%;
 }
+
 .item select {
 	width: 95%;
 }
+
 .item textarea {
 	margin-top: 5px;
 	width: 95%;
@@ -188,43 +197,45 @@ flex: 50%;
 }
 
 input[type='file'] {
-    display: none;
+	display: none;
 }
 
 .max-width {
 
-    max-width: 225px;
-    width: 100%;
-	
+	max-width: 225px;
+	width: 100%;
+
 }
 
 #imgPhoto {
-    width: 180px;
-    height: 180px;
-    padding:0px;
+	width: 180px;
+	height: 180px;
+	padding: 0px;
 	margin: 0px;
 	margin-left: 10px;
-    cursor: pointer;
-    transition: background .3s;
+	cursor: pointer;
+	transition: background .3s;
 }
 
 
-.btncancel{
+.btncancel {
 	width: 413px;
-height: 50px;
-background: #CCCCCC;
-border-radius: 15px;
+	height: 50px;
+	background: var(--corC);
+	border-radius: 15px;
 }
-.btnsave{
+
+.btnsave {
 	width: 413px;
-height: 50px;
-	background: #1687F0;
-border-radius: 15px;
+	height: 50px;
+	background: var(--corBlue);
+	border-radius: 15px;
 }
-.item2{
+
+.item2 {
 	display: flex;
 	height: 20%;
-    justify-content: space-around;
-	background: #EB5600;
+	justify-content: space-around;
+	background: var(--corPrim);
 	align-items: center;
 }

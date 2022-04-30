@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 
+:root{
+    --corLink: #0a58ca;
+    --formBord: #ccd0d5;
+    --formBG: #f7f7f7;
+    --bordBlack: #333333;
+    --corPrim: #EB5600;
+    --corTitle: #f8f9fa;
+    --corOk: #27AE60;
+    --corC: #ccc;
+    --corFs: #2C3E50;
+    --corBlue: #1687F0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,10 +23,9 @@ html {
 }
 
 body {
-    background: linear-gradient(to right, #f8f9fa, #fff);
+    background: linear-gradient(to right, var(--corTitle), white);
     height: 100%;
 }
-
 
 .aform {
     display: flex;
@@ -24,9 +36,8 @@ body {
 
 a {
     text-decoration: underline;
-    color: #0a58ca;
+    color: var(--corLink);
 }
-
 
 a:hover {
     text-decoration: unset;
@@ -61,18 +72,18 @@ label{
 .form-control {
     height: 35px;
     width: 100%;
-    border: 1px solid #ccd0d5;
+    border: 1px solid var(--formBord);
     border-radius: 6px;
     padding-left: 11px;
-    background-color: #f7f7f7;
+    background-color: var(--formBG);
     cursor: auto;
 }
 
 
 .form-control:focus {
-    border-color: #EB5600;
+    border-color: var(--corPrim);
     box-shadow: 0 0 0 0.25rem #EB560050;
-    /* outline: #EB5600; */
+    /* outline: var(--corPrim); */
 }
 
 
@@ -85,20 +96,20 @@ input::placeholder {
 select {
     height: 35px;
     width: 100%;
-    border: 1px solid #ccd0d5;
+    border: 1px solid var(--corBordBlack);
     border-radius: 6px;
     padding-left: 11px;
 }
 
 select:focus {
-    outline: #333333;
+    outline: var(--bordBlack);
     border: 1px solid;
 }
 
 /* titulo dos conteudos dos formularios.
 OBS: Não é da aba */
 .title {
-    color: #f8f9fa;
+    color: var(--corTitle);
     font-size: 25px;
     font-weight: bold;
     text-align: center;
@@ -106,7 +117,7 @@ OBS: Não é da aba */
 }
 
 .sub-title {
-    color: #f8f9fa;
+    color: var(--corTitle);
     font-size: 25px;
     font-weight: bold;
     text-align: center;
@@ -114,7 +125,7 @@ OBS: Não é da aba */
 }
 
 .sub-title {
-    color: #f8f9fa;
+    color: var(--corTitle);
     font-size: 25px;
     font-weight: 600;
     text-align: center;
@@ -137,7 +148,7 @@ OBS: Não é da aba */
     border: 1px solid transparent;
     outline: 0 none;
     border-radius: 4px;
-    background-color: #333333;
+    background-color: var(--bordBlack);
     color: white;
     font-weight: 600;
     line-height: 1.5;
@@ -146,20 +157,20 @@ OBS: Não é da aba */
 }
 
 .btn-primary:active {
-    box-shadow: 0 0 0 0.25rem #ffc107;
+    box-shadow: 0 0 0 0.25rem ;
     border: none;
 }
 
 .btn-primary:hover {
-    background-color: #EB5600;
-    color: #333333;
-    border: 1px solid #333333;
+    background-color: var(--corPrim);
+    color: var(--bordBlack);
+    border: 1px solid var(--bordBlack);
     box-shadow: unset;
 }
 
 .btn-primary:focus {
-    background-color: #333333;
-    color: #EB5600;
+    background-color: var(--bordBlack);
+    color: var(--corPrim);
     box-shadow: unset;
 }
 
@@ -184,15 +195,15 @@ OBS: Não é da aba */
 }
 
 .btn-second:hover {
-    background-color: #EB5600;
-    color: #333;
-    border: 1px solid #333333;
+    background-color: var(--corPrim);
+    color: var(--bordBlack);
+    border: 1px solid var(--bordBlack);
     box-shadow: unset;
 }
 
 .btn-second:focus {
-    background-color: #ccc;
-    color: #EB5600;
+    background-color: var(--corC);
+    color: var(--corPrim);
     box-shadow: unset;
 }
 
