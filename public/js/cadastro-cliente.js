@@ -48,7 +48,7 @@ $(function () {
         if (array[9].value == '' || array[10].value == '') {
             $('.resp').html('<div class="erros"><p>Preencha todos os dados sobre seu endereço</p></div>');
         } else {
-            $('.resp').html('<div class="ok"><p>Sua requisição foi enviada!</p></div>');
+            $('.resp').html('<div class="ok"><p>Aguarde redirecionamento!</p></div>');
             
             next($(this));
         }

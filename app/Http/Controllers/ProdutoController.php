@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Empresa;
+use App\Models\User;
+use App\Models\Produto_Combo;
+use Illuminate\Support\Facades\DB;
 
 class ProdutoController extends Controller
 {
@@ -13,7 +17,38 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+        //$token = $request->get('id');
+        $tip_produtos = array(
+            '1' => 'Prato',
+            '2' => 'Acompanhamento',
+            '3' => 'Lanche',
+            '4' => 'Sobremesa',
+            '5' => 'Bebida',
+            '6' => 'Combo'
+         );
+         $secao = array(
+            1 =>"Cadastro de produto",
+            2 =>"Lista de produtos"    
+         );
+
+        $tokid = 4;
+        $user = User::Find($tokid);
+        $entidade =  Empresa::Find($tokid);
+        $produto = new Produto_Combo();    
+        $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$tokid)->get();
+        $titulo = "Gerenciamento de cardapio";
+        return view(
+            "produtos.painel_gerenciamento",
+            [
+                //"token" => $user->id,
+                "tokid" =>$tokid,
+                "titulo" => $titulo,
+                "secao" => $secao,
+                "parametro_select" => $tip_produtos,
+                "produto" => $produto,
+                "produtos" => $produtos,
+            ]
+        );
     }
 
     /**
@@ -34,7 +69,35 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $titulo = "Cadastro de produtos";
+        $token = $request->get('tokid');
+        if ($request->get('id')!=""){
+            $user = User::Find($token);
+            $entidade =  Empresa::Find($token);
+            $produto = Produto_Combo::Find($request->get('id'));
+            $status = "atualizado";			
+		}else{
+            $user = new User;
+			$entidade = new Empresa;
+            $produto = new Produto_Combo;
+            $status = "salvo";
+		}
+        $produto->nome_descritivo = $request->get("nome_descritivo");
+        $produto->tipo = $request->get("tipo");
+        $produto->valor = $request->get("valor");
+        $produto->descricao = $request->get("descricao");
+        $url_img = $request->file("imagem_produto")->store("public/produto");
+		$url_img = str_replace("public/","storage/",$url_img);
+		//$url_img = "url_img_not_found";
+        $produto->url_img = $url_img;
+        $produto->empresa_id = $token;
+        
+        $produto->save();
+        
+		
+        //Atualiza o Status
+		$request>session()->flash("status", $status);
+		return redirect("/produto");
     }
 
     /**
@@ -54,9 +117,38 @@ class ProdutoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
-        //
+        $tip_produtos = array(
+            '1' => 'Prato',
+            '2' => 'Acompanhamento',
+            '3' => 'Lanche',
+            '4' => 'Sobremesa',
+            '5' => 'Bebida',
+            '6' => 'Combo'
+         );
+         $secao = array(
+            1 =>"Edição de produto",
+            2 =>"Lista de produtos"    
+         );
+
+        $token = $request->get("tokid");
+        $user = User::Find($token);
+        $entidade =  Empresa::Find($token);
+        $produto = Produto_Combo::Find($id);    
+        $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$token)->get();
+        $titulo = "Gerenciamento de cardapio";
+        return view(
+            "produtos.painel_gerenciamento",
+            [
+                "tokid" => $token,
+                "titulo" => $titulo,
+                "secao" => $secao,
+                "parametro_select" => $tip_produtos,
+                "produto" => $produto,
+                "produtos" => $produtos,
+            ]
+        );
     }
 
     /**
@@ -79,6 +171,9 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $produto = Produto_Combo::Find($id);
+        $produto->delete();
+        return Redirect("/produto");
     }
 }

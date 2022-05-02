@@ -44,7 +44,7 @@ Route::get('/conteudo', function () {
 });
 
 Route::get('/3', function () {
-    return view('cadastroproduto');
+    return view('produtos.cadastroproduto');
 });
 
 Route::get('/4', function () {
@@ -52,5 +52,5 @@ Route::get('/4', function () {
 });
 
 Route::get('/5', function () {
-    return view('cadastrocombo');
+    return view('produtos.cadastrocombo');
 });
