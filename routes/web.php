@@ -19,8 +19,7 @@ Route::resources([
     "cliente" => ClienteController::class,
     "empresa" =>EmpresaController::class,
     "pedido" => PedidoController::class,
-    "produto" => ProdutoController::class
-
+    "produto" => ProdutoController::class,
 ]);
 
 Route::get('/', function () {

@@ -47,6 +47,7 @@ class ProdutoController extends Controller
                 "parametro_select" => $tip_produtos,
                 "produto" => $produto,
                 "produtos" => $produtos,
+                "img_lock" => "disable"
             ]
         );
     }
@@ -86,9 +87,17 @@ class ProdutoController extends Controller
         $produto->tipo = $request->get("tipo");
         $produto->valor = $request->get("valor");
         $produto->descricao = $request->get("descricao");
-        $url_img = $request->file("imagem_produto")->store("public/produto");
-		$url_img = str_replace("public/","storage/",$url_img);
-		//$url_img = "url_img_not_found";
+        if(
+            empty(
+                $request->file("imagem_produto")
+            )
+        ){
+            $url_img = $request->get("att_url");  
+        }else{
+            $url_img = $request->file("imagem_produto")->store("public/produto");
+            $url_img = str_replace("public/","storage/",$url_img);
+        }
+        //$url_img = "url_img_not_found";
         $produto->url_img = $url_img;
         $produto->empresa_id = $token;
         
@@ -131,6 +140,7 @@ class ProdutoController extends Controller
             1 =>"Edição de produto",
             2 =>"Lista de produtos"    
          );
+         $img_lock = "enable";
 
         $token = $request->get("tokid");
         $user = User::Find($token);
@@ -147,6 +157,7 @@ class ProdutoController extends Controller
                 "parametro_select" => $tip_produtos,
                 "produto" => $produto,
                 "produtos" => $produtos,
+                "img_lock" => $img_lock
             ]
         );
     }

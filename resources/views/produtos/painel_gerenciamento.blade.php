@@ -20,7 +20,12 @@
         </div>
         <form action="/produto" method="POST" enctype="multipart/form-data" class="row">
             @csrf
-            <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" value = "{{asset($produto->url_img);}}"required/>
+            @if($img_lock == "disable")
+                <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg"required/>
+            @else
+                <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg"/>
+                <input type="hidden" name="att_url" value = "{{$produto->url_img}}"/>
+            @endif
             <div class="form-group col-6">
                 <label for="nome_descritivo">Nome do Produto </label>
                 <input type="text" name="nome_descritivo" class="form-control" value = "{{$produto->nome_descritivo}}" required />
@@ -42,12 +47,12 @@
 
             <div class="form-group row-6">
                 <label for="nome">Descriçao</label>
-                <textarea class="form-control" name = "descricao">{{$produto->descricao}}</textarea>
+                <textarea class="form-control" name = "descricao" required>{{$produto->descricao}}</textarea>
             </div>
 
             <div class="item2 ">
                 <div class="col-4">
-                    <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
+                    <button type="button" class="btn btn-second bottom " onclick= "window.location.href='/produto'"><i class="fas fa-save"></i>Limpar</button>
                 </div>
                 <div class="col-4">
                     <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
