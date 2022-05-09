@@ -1,3 +1,9 @@
+@import url('padroes.css');
+
+body{
+	margin: 10px 50px;
+}
+
 .t {
 	height: 100%;
 
@@ -51,15 +57,19 @@ input[type='file'] {
 }
 
 #imgPhoto {
-	width: 180px;
-	height: 180px;
+	width: 115px;
+	height: 115px;
 	padding: 0px;
 	margin: 0px;
 	margin-left: 10px;
 	cursor: pointer;
 	transition: background .3s;
+
 }
 
+.bi-image-fill{
+	font-size: 115px;
+}
 
 .btncancel {
 	width: 413px;
@@ -77,4 +87,32 @@ input[type='file'] {
 
 .item2 {
 	display: flex;
+    justify-content: space-around;
+}
+
+.cadastro{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+
+.produto{
+	width: 50%;
+}
+
+.combo{
+	width: 50%;
+}
+
+.separator{
+	margin: 0 20px;
+	width: 2px;
+	background-color: var(--bordBlack);
+	border: 2px solid var(--bordBlack);
+	border-radius: 6px;
+}
+
+
+.photo{
+	text-align: center;
 }
