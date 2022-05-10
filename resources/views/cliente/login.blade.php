@@ -8,7 +8,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
     <link rel="stylesheet" href="{{asset('css/login.css')}}" />
 </head>
 
@@ -29,33 +28,21 @@
 
                 <div class='title'>
                     <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
-                    <p>ENTRAR</p>
-                </div>
+                    <div class="entrada col-8 d-flex flex-column">
+                        <label class="label-input-form" for="codMesa">número da mesa</label>
+                        <input class='form-control input-center' type="text" name="codMesa" id="codMesa" required>
 
-                <div class="form-group d-flex justify-content-center">
-                    <button style='width:65%;' class='btn-primary shadown-none'>Entrar com <i class="bi bi-google" style='font-size: 20px;'></i>oogle
-                    </button>
-                </div>
+                        <div class='error'>
+                            <label for="" class='hidden'></label>
+                        </div>
 
-                <div class='form-group col-10 d-flex flex-column align-items-center w-100'>
-                    <div class='form-group'>
-                        <label class="label-input-form" for="">Usuario</label>
-                        <input class='form-control' type="email" name="" id="" required>
-                    </div>
-
-                    <div class='form-group'>
-                        <label class="label-input-form col-4" for="">Senha</label>
-                        <input class='form-control' type="password" name="" id="" required>
+                        <div class="invalid-feedback">
+                            Esta mesa não está cadastrada
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group d-flex justify-content-center">
-                    <button class='btn-primary btn' style='width:65%;'>Entrar</button>
-                </div>
 
-                <div class="nv-cadastro">
-                    <label>Novo aqui? <a href="/1">Crie uma conta</a></label>
-                </div>
             </form>
         </div>
     </div>
