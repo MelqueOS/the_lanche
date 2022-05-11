@@ -1,19 +1,8 @@
+@import url('padroes.css');
 * {
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
-}
-
-a {
-    text-decoration: unset;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-i {
-    font-size: 26px;
 }
 
 .container {
@@ -34,11 +23,20 @@ i {
     border-radius: 8px;
 }
 
-form {
+.box-scan {
     height: 100%;
+    width: 40%;
+    background-color: var(--corTitle);
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top: 2px solid var(--corPrim);
+    border-bottom: 2px solid var(--corPrim);
+}
+
+.scan {
+    display: flex;
 }
 
 .botao {
@@ -58,22 +56,6 @@ form {
     font-size: 90px;
 }
 
-.box-scan {
-    height: 100%;
-    width: 40%;
-    background-color: var(--corTitle);
-    display: flex;
-    justify-content: center;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    border-top: 2px solid var(--corPrim);
-    border-bottom: 2px solid var(--corPrim);
-}
-
-.scan {
-    display: flex;
-}
-
 .box-formulario {
     height: 100%;
     width: 59%;
@@ -86,6 +68,34 @@ form {
     border-bottom-right-radius: 10px;
 }
 
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .title {
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+}
+
+label {
+    text-transform: uppercase;
+    cursor: auto;
+}
+
+.input-center {
+    text-align: center;
+}
+
+.invalid-feedback {
+    font-size: 18px;
 }
