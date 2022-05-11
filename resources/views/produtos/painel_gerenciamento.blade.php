@@ -1,4 +1,35 @@
 <html>
+    <head>
+        <title>{{$titulo}}</title>
+        <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
+        <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
+        <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
+        <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
+    </head>
+    <body>
+        <div>
+            <p>{{$secao[1]}}</p>
+        <div class="max-width col">
+            <div class="">
+                @if($produto->url_img != NULL)
+                    <img alt="" id="imgPhoto" src = "{{asset($produto->url_img);}}" class="imgPhoto">
+                @else
+                    <img alt="" id="imgPhoto" src = "{{asset('img/mais.webp')}}" class="imgPhoto">
+                @endif
+            </div>
+        </div>
+        <form action="/produto" method="POST" enctype="multipart/form-data" class="row">
+            @csrf
+            @if($img_lock == "disable")
+                <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg"required/>
+            @else
+                <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg"/>
+                <input type="hidden" name="att_url" value = "{{$produto->url_img}}"/>
+            @endif
+            <div class="form-group col-6">
+                <label for="nome_descritivo">Nome do Produto </label>
+                <input type="text" name="nome_descritivo" class="form-control" value = "{{$produto->nome_descritivo}}" required />
+            </div>
 
 <head>
     <title>{{$titulo}}</title>
@@ -57,17 +88,17 @@
             </div>
             <!--Produto-->
 
-            <div class="separator">
+            <div class="form-group row-6">
+                <label for="nome">Descriçao</label>
+                <textarea class="form-control" name = "descricao" required>{{$produto->descricao}}</textarea>
             </div>
 
-            <div class="combo">
-                <p class='text-center'>{{$secao[1]}}</p>
-                <div class="col photo">
-                    @if($produto->url_img != NULL)
-                    <img alt="" id="imgPhoto" src="{{asset($produto->url_img);}}" class="imgPhoto">
-                    @else
-                    <i id='imgPhoto' class=" imgPhoto bi bi-image-fill"></i>
-                    @endif
+            <div class="item2 ">
+                <div class="col-4">
+                    <button type="button" class="btn btn-second bottom " onclick= "window.location.href='/produto'"><i class="fas fa-save"></i>Limpar</button>
+                </div>
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
                 </div>
                 <form action="/produto" method="POST" enctype="multipart/form-data" class="col">
                     @csrf

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Nome da empresa aqui -->
-    <title>Cardapio da Empresa X</title>
+    <title>Cardapio</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
@@ -25,138 +25,61 @@
     </div>
 
     <!-- AQUI VAI TER UM FOREACH >> AQUI VAI SER O TIPO(COMBO, COMIDA, BEBIDA, ETC)-->
+    <form method ="POST" action="/pedido">
+    @csrf
+    @foreach($tipo as $t_key=> $t_value)
     <div class="tipo">
         <!-- descricao do tipo -->
         <div class='title'>
-            <h1>Combos</h1>
+            <h1>{{$t_value}}</h1>
         </div>
-
+        @foreach($produtos as $produto_linha)
+        @if($t_key == $produto_linha->tipo)
         <div class="conteudo">
-
+            
             <!-- ITEM 1 -->
+
             <div class="item" id='item'>
                 <!-- AQUI VAI TER UM FOREACH >> MOSTRA TODOS OS ITENS DO TIPO -->
                 <div class="box-item">
+                <input type="checkbox" name="item_pedido[]" value="{{$produto_linha->id}}"> 
                     <div class='box-img'>
                         <!-- MOSTRA A FOTO DO ITEM -->
-                        <img src="{{asset('img/logo.svg')}}" alt="">
+                        <img src="{{asset($produto_linha->url_img)}}" alt="">
                     </div>
 
                     <div class="sub-box">
                         <div class="sub-title">
                             <!-- nome_descritivo -->
-                            <h2>Prato do Mar</h2>
+                            <h2>{{$produto_linha->nome_descritivo}}</h2>
                         </div>
                         <div class='descricao'>
                             <!-- descricao -->
-                            <p>Prato "viagem ao fundo do mar" poderia ser descrita como "polvo cozido, lula Prato "viagem ao fundo do mar" poderia em ser descrita como "polvo cozido, lula em anéis e camarões refogados servidos com anéis e camarões refogados servidos com caldo de peixe especial do chefe".</p>
+                            <p>{{$produto_linha->descricao}}.</p>
                         </div>
 
                         <hr>
 
                         <div class='valor'>
                             <!-- valor do item -->
-                            <p><strong>Valor: </strong>R$25,00</p>
+                            <p><strong>Valor: </strong>R${{$produto_linha->valor}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- ITEM 2 -->
-            <div class="item">
-                <!-- AQUI VAI TER UM FOREACH >> MOSTRA TODOS OS ITENS DO TIPO -->
-                <div class="box-item">
-                    <div class='box-img'>
-                        <!-- MOSTRA A FOTO DO ITEM -->
-                        <img src="{{asset('img/logo.svg')}}" alt="">
-                    </div>
-
-                    <div class="sub-box">
-                        <div class="sub-title">
-                            <!-- nome_descritivo -->
-                            <h2>Prato do Mar</h2>
-                        </div>
-                        <div class='descricao'>
-                            <!-- descricao -->
-                            <p>Prato "viagem ao fundo do mar" poderia ser descrita como "polvo cozido, lula Prato "viagem ao fundo do mar" poderia em ser descrita como "polvo cozido, lula em anéis e camarões refogados servidos com anéis e camarões refogados servidos com caldo de peixe especial do chefe".</p>
-                        </div>
-
-                        <hr>
-
-                        <div class='valor'>
-                            <!-- valor do item -->
-                            <p><strong>Valor: </strong>R$25,00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ITEM 3 -->
-            <div class="item">
-                <!-- AQUI VAI TER UM FOREACH >> MOSTRA TODOS OS ITENS DO TIPO -->
-                <div class="box-item">
-                    <div class='box-img'>
-                        <!-- MOSTRA A FOTO DO ITEM -->
-                        <img src="{{asset('img/logo.svg')}}" alt="">
-                    </div>
-
-                    <div class="sub-box">
-                        <div class="sub-title">
-                            <!-- nome_descritivo -->
-                            <h2>Prato do Mar</h2>
-                        </div>
-                        <div class='descricao'>
-                            <!-- descricao -->
-                            <p>Prato "viagem ao fundo do mar" poderia ser descrita como "polvo cozido, lula Prato "viagem ao fundo do mar" poderia em ser descrita como "polvo cozido, lula em anéis e camarões refogados servidos com anéis e camarões refogados servidos com caldo de peixe especial do chefe".</p>
-                        </div>
-
-                        <hr>
-
-                        <div class='valor'>
-                            <!-- valor do item -->
-                            <p><strong>Valor: </strong>R$25,00</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endif
+            @endforeach  
         </div>
     </div>
-
     <hr>
-
-    <!-- DESCONSIDERAR! DAQUI PARA BAIXO É SOMENTE PARA EXEMPLIFICAR MESMO -->
-    <div class="tipo">
-        <div class="item">
-            <!-- descricao do tipo -->
-            <div class='title'>
-                <h1>Pastel</h1>
-            </div>
-            <!-- AQUI VAI TER UM FOREACH >> MOSTRA TODOS OS ITENS DO TIPO -->
-            <div class="box-item">
-                <div class='box-img'>
-                    <!-- MOSTRA A FOTO DO ITEM -->
-                    <img src="{{asset('img/logo.svg')}}" alt="">
-                </div>
-                <div class="sub-box">
-                    <div class="sub-title">
-                        <!-- nome_descritivo -->
-                        <h2>Pastel de Queijo</h2>
-                    </div>
-                    <div class='descricao'>
-                        <!-- descricao -->
-                        <p>alimento composto por uma massa à base de farinha a que se dá a forma de um envelope, se recheia e depois se frita por imersão em óleo fervente.</p>
-                    </div>
-                    <hr>
-                    <div class='valor'>
-                        <!-- valor do item -->
-                        <p><strong>Valor: </strong>R$25,00</p>
-                    </div>
-                </div>
-            </div>
-            <hr>
-        </div>
+    @endforeach
+    <div class="fab"  ontouchstart="">
+        <input type = "submit" value="Pedir"/>
     </div>
-
+    <input type = "hidden" name = "revise" value = "false">
+    <input type = "hidden" name = "usr_token"value = "{{$usr_token}}">
+    <input type = "hidden" name = "tokid"value = "{{$tokid}}">
+    </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>
 </body>
