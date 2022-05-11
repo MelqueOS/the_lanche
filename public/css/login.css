@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+p {
+    text-transform: lowercase;
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -92,10 +96,21 @@ label {
     cursor: auto;
 }
 
+.entrada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .input-center {
     text-align: center;
 }
 
 .invalid-feedback {
     font-size: 18px;
+    color: var(--bordBlack);
+}
+
+.invalid {
+    border-color: var(--bordBlack);
 }

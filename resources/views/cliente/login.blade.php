@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
     <link rel="stylesheet" href="{{asset('css/login.css')}}" />
+
+    <link rel='stylesheet' href="{{asset('css/padroes.css')}}"/>
+
 </head>
 
 <body>
@@ -23,29 +26,26 @@
         </div>
 
         <div class="box-formulario">
-            <form action="">
-                <!-- TEXT -->
-
+            <form action="" class='needs-validation' novalidate>
                 <div class='title'>
                     <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
                     <div class="entrada col-8 d-flex flex-column">
                         <label class="label-input-form" for="codMesa">número da mesa</label>
-                        <input class='form-control input-center' type="text" name="codMesa" id="codMesa" required>
+                        <input class='form-control input-center' maxlength='3' type="text" name="codMesa" id="codMesa" required>
 
-                        <div class='error'>
-                            <label for="" class='hidden'></label>
-                        </div>
+                        <button type='submit' class='col-4 btn btn-primary '>Confirmar</button>
 
                         <div class="invalid-feedback">
-                            Esta mesa não está cadastrada
+                            <!-- fazer um if para garantir que a mesa exista no bd -->
+                            <p>Digite o numero da mesa</p>
                         </div>
+
                     </div>
                 </div>
-
-
             </form>
         </div>
     </div>
+    <script type='text/javascript' src='js/login-cliente.js'></script>
 </body>
 
 </html>
