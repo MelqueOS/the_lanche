@@ -1,12 +1,22 @@
 @import url('padroes.css');
+
 * {
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
 }
 
-p {
-    text-transform: lowercase;
+input {
+    text-align: center;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+label:hover {
+    text-decoration: underline;
 }
 
 .container {
@@ -44,12 +54,12 @@ p {
 }
 
 .botao {
-    text-decoration: unset;
-    font-size: 32px;
-    color: var(--bordBlack);
-    background-color: transparent;
     border: 0;
+    background-color: transparent;
+    color: var(--bordBlack);
+    font-size: 25px;
     font-weight: bold;
+    text-decoration: unset;
 }
 
 .botao:hover {
@@ -79,38 +89,35 @@ form {
     justify-content: center;
 }
 
-.title {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 img {
-    width: 150px;
-    height: 150px;
-}
-
-label {
-    text-transform: uppercase;
-    cursor: auto;
-}
-
-.entrada {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.input-center {
-    text-align: center;
+    width: 100px;
+    height: 100px;
 }
 
 .invalid-feedback {
     font-size: 18px;
     color: var(--bordBlack);
+    text-decoration: underline wavy var(--formBG);
 }
 
 .invalid {
     border-color: var(--bordBlack);
+}
+
+.needs-validation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    color: var(--bordBlack);
+    width: 100%;
+}
+
+.line{
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: underline wavy var(--bordBlack);
 }

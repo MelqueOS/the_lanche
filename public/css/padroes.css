@@ -117,9 +117,8 @@ OBS: Não é da aba */
 
 .title {
     color: var(--corTitle);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    text-align: center;
     text-transform: uppercase;
 }
 

@@ -8,9 +8,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
+    <link rel='stylesheet' href="{{asset('css/padroes.css')}}" />
     <link rel="stylesheet" href="{{asset('css/login.css')}}" />
 
-    <link rel='stylesheet' href="{{asset('css/padroes.css')}}"/>
 
 </head>
 
@@ -26,21 +26,37 @@
         </div>
 
         <div class="box-formulario">
-            <form action="" class='needs-validation' novalidate>
-                <div class='title'>
+            <form action="/" class='needs-validation' novalidate>
+                <div class='logo'>
                     <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
-                    <div class="entrada col-8 d-flex flex-column">
-                        <label class="label-input-form" for="codMesa">número da mesa</label>
-                        <input class='form-control input-center' maxlength='3' type="text" name="codMesa" id="codMesa" required>
+                </div>
 
-                        <button type='submit' class='col-4 btn btn-primary '>Confirmar</button>
+                <div class="login col-9">
+                    <label for="email">Email</label>
+                    <input type="email" name='email' class="email form-control" required>
+                </div>
 
-                        <div class="invalid-feedback">
-                            <!-- fazer um if para garantir que a mesa exista no bd -->
-                            <p>Digite o numero da mesa</p>
-                        </div>
+                <div class="passwd col-9">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="senha" class='form-control' required>
+                </div>
 
-                    </div>
+                <div class="line">
+                    <p class=''>OU</p>
+                </div>
+
+                <div class="login-mesa col-9">
+                    <label for="mesa">Mesa</label>
+                    <input type="text" class='form-control' required>
+                </div>
+
+
+                <div class="invalid-feedback">
+                    Faça o login ou Digite a mesa
+                </div>
+
+                <div>
+                    <button type='submit' class='btn btn-primary'>Confirmar</button>
                 </div>
             </form>
         </div>
