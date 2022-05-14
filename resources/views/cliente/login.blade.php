@@ -63,7 +63,7 @@
                 </div>
 
                 <div>
-                    <button type='submit' class='btn btn-primary'>Confirmar</button>
+                    <button type='submit' class='btn btn-primary'>Entrar</button>
                 </div>
             </form>
         </div>
