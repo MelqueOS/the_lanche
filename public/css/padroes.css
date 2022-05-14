@@ -3,7 +3,6 @@
     src: url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
 }
 
-
 :root {
     --corLink: #0a58ca;
     --formBord: #ccd0d5;
@@ -71,31 +70,33 @@ label {
     cursor: auto;
 }
 
+.was-validated .form-control:valid {
+    border-color: var(--bordBlack);
+    background-image: none;
+}
 
+.was-validated .form-control:invalid {
+    border-color: var(--bordBlack);
+}
 
 .form-control {
     height: 35px;
-    width: 100%;
-    border: 1px solid var(--formBord);
+    border: 1px solid transparent;
     border-radius: 6px;
     padding-left: 11px;
     background-color: var(--formBG);
     cursor: auto;
 }
 
-
 .form-control:focus {
-    border-color: var(--corPrim);
-    box-shadow: 0 0 0 0.25rem #EB560050;
+    border-color: var(--bordBlack);
+    box-shadow: none;
     /* outline: var(--corPrim); */
 }
 
-
 input::placeholder {
-
     color: #6c757d;
 }
-
 
 select {
     height: 35px;
@@ -110,13 +111,14 @@ select:focus {
     border: 1px solid;
 }
 
+
 /* titulo dos conteudos dos formularios.
 OBS: Não é da aba */
+
 .title {
     color: var(--corTitle);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    text-align: center;
     text-transform: uppercase;
 }
 
@@ -136,7 +138,6 @@ OBS: Não é da aba */
     text-transform: capitalize;
 }
 
-
 .btn {
     display: flex;
     justify-content: center;
@@ -145,10 +146,9 @@ OBS: Não é da aba */
     padding: 0;
 }
 
-
 .btn-primary {
     height: 40px;
-    width: 100%;
+    /* width: 100%; */
     border: 1px solid transparent;
     outline: 0 none;
     border-radius: 4px;
@@ -177,7 +177,6 @@ OBS: Não é da aba */
     color: var(--corPrim);
     box-shadow: unset;
 }
-
 
 .btn-second {
     height: 40px;
@@ -209,19 +208,4 @@ OBS: Não é da aba */
     background-color: var(--corC);
     color: var(--corPrim);
     box-shadow: unset;
-}
-
-.label-input-form {
-    width: 80%;
-    margin-top: 10px;
-    text-transform: capitalize;
-    color: white;
-    cursor: auto;
-}
-
-
-.nv-cadastro {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 20px;
 }

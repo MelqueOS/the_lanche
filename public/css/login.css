@@ -1,19 +1,22 @@
+@import url('padroes.css');
+
 * {
     margin: 0px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
 }
 
-a {
-    text-decoration: unset;
+input {
+    text-align: center;
 }
 
-a:hover {
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+label:hover {
     text-decoration: underline;
-}
-
-i {
-    font-size: 26px;
 }
 
 .container {
@@ -34,30 +37,6 @@ i {
     border-radius: 8px;
 }
 
-form {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.botao {
-    text-decoration: unset;
-    font-size: 32px;
-    color: var(--bordBlack);
-    background-color: transparent;
-    border: 0;
-    font-weight: bold;
-}
-
-.botao:hover {
-    color: black;
-}
-
-.bi-qr-code-scan {
-    font-size: 90px;
-}
-
 .box-scan {
     height: 100%;
     width: 40%;
@@ -74,6 +53,23 @@ form {
     display: flex;
 }
 
+.botao {
+    border: 0;
+    background-color: transparent;
+    color: var(--bordBlack);
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: unset;
+}
+
+.botao:hover {
+    color: black;
+}
+
+.bi-qr-code-scan {
+    font-size: 90px;
+}
+
 .box-formulario {
     height: 100%;
     width: 59%;
@@ -86,6 +82,42 @@ form {
     border-bottom-right-radius: 10px;
 }
 
-.title {
-    margin-top: 10px;
+form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.invalid-feedback {
+    font-size: 18px;
+    color: var(--bordBlack);
+    text-decoration: underline wavy var(--formBG);
+}
+
+.invalid {
+    border-color: var(--bordBlack);
+}
+
+.needs-validation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    color: var(--bordBlack);
+    width: 100%;
+}
+
+.line{
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: underline wavy var(--bordBlack);
 }
