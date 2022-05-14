@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <head>
@@ -21,6 +22,7 @@
          @else
          nau
          @endif
+
     <div class="container">
         <div class="box-scan">
             <div class="scan">
@@ -31,11 +33,8 @@
         </div>
 
         <div class="box-formulario">
-            <form  action="/login" method="post">
-                @csrf
-                <!-- TEXT -->
-
-                <div class='title'>
+            <form action="/" class='needs-validation' novalidate>
+                <div class='logo'>
                     <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
                 </div>
 
