@@ -15,7 +15,12 @@
 </head>
 
 <body>
-
+@if (Auth::user())
+        
+         alou
+         @else
+         nau
+         @endif
     <div class="container">
         <div class="box-scan">
             <div class="scan">
@@ -26,8 +31,11 @@
         </div>
 
         <div class="box-formulario">
-            <form action="/" class='needs-validation' novalidate>
-                <div class='logo'>
+            <form  action="/login" method="post">
+                @csrf
+                <!-- TEXT -->
+
+                <div class='title'>
                     <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
                 </div>
 

@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
     </head>
     <body>
+        <div class="d-flex">
         <div>
             <p>{{$secao[1]}}</p>
         <div class="max-width col">
@@ -100,17 +101,29 @@
                 <div class="col-4">
                     <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
                 </div>
-                <form action="/produto" method="POST" enctype="multipart/form-data" class="col">
-                    @csrf
-                    <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" value="{{asset($produto->url_img);}}" required />
-                    <div class="form-group col-12">
-                        <label for="nome_descritivo">Nome do Produto </label>
-                        <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
-                    </div>
-                    <div class="tpo-valor col-12 row d-flex">
-                        <div class="form-group col-7">
-                            <label for="tipo">Tipo de produto</label>
-                            <select name="tipo" class="inptselect form-control" required>
+            </div>
+            <input type = "hidden" name = "id" value = "{{$produto->id}}">
+            <input type = "hidden" name = "tokid" value = "{{$tokid}}">
+        </form>
+        </div>
+        <div class="p-5 w-50 bg-dark">Alou</div>
+        </div>
+        <div>
+ 
+            <p>{{$secao[2]}}, cadastrado um total de {{count($produtos)}} produtos</p>
+            @if(count($produtos) > 0)
+            <table>
+                <th>Produto</th>
+                <th>Açoes</th>  
+                @foreach($produtos as $linha) 
+                <tr>
+                    <td>
+                        <ul>
+                            <li>
+                                {{$linha->nome_descritivo}} custando R${{$linha->valor}}. 
+                            </li>
+                            <li>
+                                Cadastrado como um(a)  
                                 @foreach($parametro_select as $key_selected => $value_selected)
                                 <option value="{{$key_selected}}">{{$value_selected}}</option>
                                 @endforeach
