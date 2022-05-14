@@ -44,28 +44,6 @@
                     <input type="email" name='email' class="email form-control" required>
                 </div>
 
-<<<<<<< HEAD
-                <div class='form-group col-10 d-flex flex-column align-items-center w-100'>
-                    <form action="/login" method="post">
-                    @csrf
-                    <div class='form-group'>
-                        <label class="label-input-form" for="">Usuario</label>
-                        <input class='form-control' type="email" name="email" id="" required>
-                    </div>
-
-                    <div class='form-group'>
-                        <label class="label-input-form col-4" for="">Senha</label>
-                        <input class='form-control' type="password" name="password" id="" required>
-                    </div>
-                </div>
-
-                <div class="form-group d-flex justify-content-center">
-                    <button type="submit"class='btn-primary btn' style='width:65%;'>Entrar</button>
-                </div>
-            </form>
-                <div class="nv-cadastro">
-                    <label>Novo aqui? <a href="/cliente">Crie uma conta</a></label>
-=======
                 <div class="passwd col-9">
                     <label for="senha">Senha</label>
                     <input type="password" name="senha" class='form-control' required>
@@ -87,7 +65,6 @@
 
                 <div>
                     <button type='submit' class='btn btn-primary'>Confirmar</button>
->>>>>>> ec705ea1a74dd4e66484dbd04c477a187a7aa50c
                 </div>
             </form>
         </div>

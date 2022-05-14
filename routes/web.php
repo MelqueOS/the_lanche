@@ -21,11 +21,7 @@ Route::resources([
     "empresa" =>EmpresaController::class,
     "pedido" => PedidoController::class,
     "produto" => ProdutoController::class,
-<<<<<<< HEAD
-    "login" => AuthController::class
-
-=======
->>>>>>> ec705ea1a74dd4e66484dbd04c477a187a7aa50c
+    "login" => AuthController::class,
 ]);
 
 Route::get('/', function () {
