@@ -5,6 +5,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,8 @@ Route::resources([
     "cliente" => ClienteController::class,
     "empresa" =>EmpresaController::class,
     "pedido" => PedidoController::class,
-    "produto" => ProdutoController::class
+    "produto" => ProdutoController::class,
+    "login" => AuthController::class
 
 ]);
 

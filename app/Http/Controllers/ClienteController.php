@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Localizacao;
 use Illuminate\Support\Facades\DB;
 
+
 class ClienteController extends Controller
 {
 
@@ -99,7 +100,7 @@ class ClienteController extends Controller
         $entidade->save();
         //Atualiza o Status
 		$request>session()->flash("status", $status);
-        return redirect("/cliente");
+        return redirect("/");
     }
 
     /**
@@ -110,6 +111,7 @@ class ClienteController extends Controller
      */
     public function show($id, $confirmed = False)
     {
+        
         $titulo = "Sessao do cliente";
         $user = User::Find($id);
         if(!empty($user->id)){
@@ -148,7 +150,7 @@ class ClienteController extends Controller
             return Redirect("/cliente");
         }
     }
-
+   
     /**
      * Show the form for editing the specified resource.
      *

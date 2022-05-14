@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
     </head>
     <body>
+        <div class="d-flex">
         <div>
             <p>{{$secao[1]}}</p>
         <div class="max-width col">
@@ -57,7 +58,10 @@
             <input type = "hidden" name = "tokid" value = "{{$tokid}}">
         </form>
         </div>
+        <div class="p-5 w-50 bg-dark">Alou</div>
+        </div>
         <div>
+ 
             <p>{{$secao[2]}}, cadastrado um total de {{count($produtos)}} produtos</p>
             @if(count($produtos) > 0)
             <table>

@@ -13,7 +13,12 @@
 </head>
 
 <body>
-
+@if (Auth::user())
+        
+         alou
+         @else
+         nau
+         @endif
     <div class="container">
         <div class="box-scan">
             <div class="scan">
@@ -24,7 +29,8 @@
         </div>
 
         <div class="box-formulario">
-            <form action="">
+            <form  action="/login" method="post">
+                @csrf
                 <!-- TEXT -->
 
                 <div class='title'>
@@ -38,23 +44,25 @@
                 </div>
 
                 <div class='form-group col-10 d-flex flex-column align-items-center w-100'>
+                    <form action="/login" method="post">
+                    @csrf
                     <div class='form-group'>
                         <label class="label-input-form" for="">Usuario</label>
-                        <input class='form-control' type="email" name="" id="" required>
+                        <input class='form-control' type="email" name="email" id="" required>
                     </div>
 
                     <div class='form-group'>
                         <label class="label-input-form col-4" for="">Senha</label>
-                        <input class='form-control' type="password" name="" id="" required>
+                        <input class='form-control' type="password" name="password" id="" required>
                     </div>
                 </div>
 
                 <div class="form-group d-flex justify-content-center">
-                    <button class='btn-primary btn' style='width:65%;'>Entrar</button>
+                    <button type="submit"class='btn-primary btn' style='width:65%;'>Entrar</button>
                 </div>
-
+            </form>
                 <div class="nv-cadastro">
-                    <label>Novo aqui? <a href="/1">Crie uma conta</a></label>
+                    <label>Novo aqui? <a href="/cliente">Crie uma conta</a></label>
                 </div>
             </form>
         </div>

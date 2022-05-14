@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Nome da empresa aqui -->
     <title>Cardapio da Empresa X</title>
-
+    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
+  <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
+  <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
+  <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
@@ -156,7 +159,13 @@
             <hr>
         </div>
     </div>
-
+    <div class="item2 ">
+    <div class="col-4">
+      <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
+    </div>
+    <div class="col-4">
+      <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>
 </body>
