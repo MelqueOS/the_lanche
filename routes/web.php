@@ -55,3 +55,7 @@ Route::get('/4', function () {
 Route::get('/5', function () {
     return view('produtos.cadastrocombo');
 });
+
+Route::get('/7', function(){
+    return view('empresa.empresa_edit');
+});

@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/cardapio.css')}}">
 </head>
 
-<body>
+<body class="h-75">
     <!-- NAVBAR -->
     <div class="navbar navbar-expand-lg col-12">
         <div class="cont-form ">
@@ -72,16 +72,10 @@
     </div>
     <hr>
     @endforeach
-    <div class="fab"  ontouchstart="">
-        <input type = "submit" value="Pedir"/>
+    <div class="fab "  ontouchstart="">
+        <input type ="submit"class="btn btn-success p-2" value="Pedir"/>
     </div>
-    <div class="item2 ">
-    <div class="col-4">
-      <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
-    </div>
-    <div class="col-4">
-      <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>
 </body>

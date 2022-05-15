@@ -31,7 +31,7 @@ class EmpresaController extends Controller
         $user = new User();
         
         return view(
-            "empresa.cadastro",
+            "empresa.empresa_edit",
             [
                 "titulo" => $titulo,
                 "parametro_select" => $tip_logradouro,
