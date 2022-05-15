@@ -84,13 +84,14 @@ label {
     border: 1px solid transparent;
     border-radius: 6px;
     padding-left: 11px;
+    border:1px solid var(--bordBlack);
     background-color: var(--formBG);
     cursor: auto;
 }
 
 .form-control:focus {
     border-color: var(--bordBlack);
-    box-shadow: none;
+    box-shadow: 0 0 0 0.20rem #33333375;
     /* outline: var(--corPrim); */
 }
 
@@ -148,7 +149,7 @@ OBS: Não é da aba */
 
 .btn-primary {
     height: 40px;
-    /* width: 100%; */
+    width: 100%;
     border: 1px solid transparent;
     outline: 0 none;
     border-radius: 4px;
