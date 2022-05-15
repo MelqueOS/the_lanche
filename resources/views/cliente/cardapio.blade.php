@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Nome da empresa aqui -->
     <title>Cardapio da Empresa X</title>
-    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
-  <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
-  <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
-  <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
