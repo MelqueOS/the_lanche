@@ -81,7 +81,6 @@ label {
 
 .form-control {
     height: 35px;
-    border: 1px solid transparent;
     border-radius: 6px;
     padding-left: 11px;
     border:1px solid var(--bordBlack);
@@ -92,7 +91,13 @@ label {
 .form-control:focus {
     border-color: var(--bordBlack);
     box-shadow: 0 0 0 0.20rem #33333375;
-    /* outline: var(--corPrim); */
+}
+
+.input-group-text{
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    border:1px solid var(--bordBlack);
 }
 
 input::placeholder {

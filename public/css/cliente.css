@@ -1,0 +1,46 @@
+@import url('padroes.css');
+
+li{
+    list-style-type: none;
+    color: var(--corPrim);
+}
+
+.navbar{
+    background-color: var(--corPrim);
+}
+
+.navbar > li{
+    color: var(--formBG);
+}
+
+img{
+    width: 50px;
+    height: 50px;
+}
+
+.bi-person-circle, .nav-link{
+    font-size: 25px;
+    color: white;
+}
+
+h1{
+    font-size: 25px;
+    text-decoration: underline wavy var(--bordBlack);
+    text-transform: uppercase;
+}
+
+.form-control {
+    border-radius: 6px;
+    border:1px solid var(--bordBlack);
+    background-color: var(--formBG);
+    cursor: auto;
+}
+
+.form-control:focus {
+    border-color: var(--bordBlack);
+    box-shadow: none
+}
+
+.cont > *{
+    margin-bottom: 15px;
+}

@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthController;
 */
 Route::resources([
     "cliente" => ClienteController::class,
-    "empresa" =>EmpresaController::class,
+    "empresa" => EmpresaController::class,
     "pedido" => PedidoController::class,
     "produto" => ProdutoController::class,
     "login" => AuthController::class,
@@ -54,8 +54,4 @@ Route::get('/4', function () {
 
 Route::get('/5', function () {
     return view('produtos.cadastrocombo');
-});
-
-Route::get('/6', function(){
-    return view('cliente.cliente_edit');
 });

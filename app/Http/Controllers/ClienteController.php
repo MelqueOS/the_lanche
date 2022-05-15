@@ -33,7 +33,7 @@ class ClienteController extends Controller
         $endereco = new Localizacao();
         //dd($tip_logradouro);
         return view(
-            "cliente.cadastro",
+            "cliente.cliente_edit",
             [
                 "parametro_select" => $tip_logradouro,
                 "user" => $user,
@@ -133,8 +133,9 @@ class ClienteController extends Controller
             $idade = $difere->format( '%Y anos' );
             //dd($confirmed);
             //dd($idade);
+
             return view(
-                "cliente.cliente",
+                "cliente.cliente_edit",
                 [
                     "user" => $user,
                     "cliente" => $cliente,

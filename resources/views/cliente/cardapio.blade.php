@@ -5,16 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Nome da empresa aqui -->
-<<<<<<< HEAD
     <title>Cardapio da Empresa X</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
   <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
   <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
   <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
-=======
-    <title>Cardapio</title>
-
->>>>>>> ec705ea1a74dd4e66484dbd04c477a187a7aa50c
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
