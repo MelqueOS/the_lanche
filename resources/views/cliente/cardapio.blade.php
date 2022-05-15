@@ -5,16 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Nome da empresa aqui -->
-<<<<<<< HEAD
     <title>Cardapio da Empresa X</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
   <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
   <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
   <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
-=======
-    <title>Cardapio</title>
-
->>>>>>> ec705ea1a74dd4e66484dbd04c477a187a7aa50c
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
@@ -22,7 +17,7 @@
     <link rel="stylesheet" href="{{asset('css/cardapio.css')}}">
 </head>
 
-<body>
+<body class="h-75">
     <!-- NAVBAR -->
     <div class="navbar navbar-expand-lg col-12">
         <div class="cont-form ">
@@ -81,16 +76,10 @@
     </div>
     <hr>
     @endforeach
-    <div class="fab"  ontouchstart="">
-        <input type = "submit" value="Pedir"/>
+    <div class="fab "  ontouchstart="">
+        <input type ="submit"class="btn btn-success p-2" value="Pedir"/>
     </div>
-    <div class="item2 ">
-    <div class="col-4">
-      <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
-    </div>
-    <div class="col-4">
-      <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
-    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>
 </body>

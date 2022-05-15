@@ -59,3 +59,6 @@ Route::get('/5', function () {
 Route::get('/6', function(){
     return view('cliente.cliente_edit');
 });
+Route::get('/7', function(){
+    return view('empresa.empresa_edit');
+});
