@@ -72,10 +72,11 @@
     </div>
     <hr>
     @endforeach
+    <input type="hidden" name = "revise" value = "false">
     <div class="fab "  ontouchstart="">
         <input type ="submit"class="btn btn-success p-2" value="Pedir"/>
     </div>
-
+    </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>
 </body>

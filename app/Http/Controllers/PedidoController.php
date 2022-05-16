@@ -73,7 +73,7 @@ class PedidoController extends Controller
         }else{
             //dd($request->get("item_pedido"));
             $n_itens = count($request->get("item_pedido"));
-            dd($n_itens);
+            //dd($n_itens);
         }
     }
 

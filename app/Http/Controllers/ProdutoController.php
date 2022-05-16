@@ -31,7 +31,7 @@ class ProdutoController extends Controller
             2 =>"Lista de produtos"    
          );
 
-        $tokid = 1;
+        $tokid = 4;
         $user = User::Find($tokid);
         $entidade =  Empresa::Find($tokid);
         $produto = new Produto_Combo();    
