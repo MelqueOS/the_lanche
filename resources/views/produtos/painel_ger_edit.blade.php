@@ -6,20 +6,17 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
     <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
     <link rel="stylesheet" href="{{asset('css/painel_gerenciamento.css')}}" />
-    
 </head>
-<div class="conteiner-sm">
-    <div class="d-flex">
-        <div class="panel">
-            <p class="lead">{{$secao[1]}}</p>
+<div class="conteiner-fluid">
+    <div class="d-flex flex-column">
+        <div class="painel d-flex flex-column align-items-center">
+            <h1>{{$secao[1]}}</h1>
             <div class="max-width col">
-                <div class="card">
-                    @if($produto->url_img != NULL)
-                    <img alt="" id="imgPhoto" src="{{asset($produto->url_img);}}" class="imgPhoto">
-                    @else
-                    <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
-                    @endif
-                </div>
+                @if($produto->url_img != NULL)
+                <img alt="" id="imgPhoto" src="{{asset($produto->url_img);}}" class="imgPhoto">
+                @else
+                <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
+                @endif
             </div>
         </div>
         <div class="content">
@@ -54,7 +51,7 @@
                             <label for="descricao">Descriçao</label>
                             <textarea class="form-control" rows="10" name="descricao">{{$produto->descricao}}</textarea>
                         </div>
-                        <div class="item2">
+                        <div class="item2 row">
                             <div class="col-4">
                                 <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
                             </div>
@@ -69,16 +66,77 @@
             </div>
         </div>
     </div>
-    <div class="">
-        <!--listagem-->
+    <hr>
+    <div class="produtos-genericos  ">
         <div class="content">
+            <!--contagem-->
             <div class="count">
-                <p>{{$secao[2]}}, cadastrado um total de {{count($produtos)}} produtos</p>
+                <h2>{{$secao[2]}}</h2>
+                <p class='lead'>total de produtos cadastrados: {{count($produtos)}}</p>
             </div>
+
+            <!-- listagem -->
             <div class="listagem">
                 @if(count($produtos) > 0)
-                <table>
-                    <th>Produto</th>
+                @foreach($produtos as $linha)
+                <div class="conteudo">
+                    <div class='produto d-flex flex-row'>
+                        <div class="img">
+                            <img src="{{asset($linha->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
+                        </div>
+
+                        <div class="informacoes d-flex flex-column">
+                            <div class="nome">{{$linha->nome_descritivo}}</div>
+                            <div class="tipo_valor d-flex flex-row">
+                                <p>
+                                    @foreach($parametro_select as $key_selected => $value_selected)
+                                    @if($linha->tipo == $key_selected)
+                                    {{$value_selected}}
+                                    ~
+                                    @endif
+                                    @endforeach
+                                </p>
+                                <p>R${{$linha->valor}}</p>
+                            </div>
+                            <div class="desc">
+                                {{$linha->descricao}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class='acoes'>
+                        <div class="editar">
+                            <form method="GET" action="/produto/{{$linha->id}}/edit">
+                                @csrf
+                                <input type="hidden" name="tokid" value="{{$tokid}}" />
+                                <button type="submit" id="editarBotao" class="btn btn-second">
+                                    Alterar
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="apagar">
+                            <form method="POST" action="/produto/{{$linha->id}}">
+                                @csrf
+                                <input type="hidden" name="_method" value="DELETE" />
+                                <button type="submit" id="excluirBotao" class="btn btn-primary">Excluir</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                @endif
+            </div>
+        </div>
+    </div>
+    </body>
+
+</html>
+
+<!-- <table>
+                    <th>Produto(s)</th>
                     <th>Açoes</th>
                     <th>Ilustração</th>
                     @foreach($produtos as $linha)
@@ -128,14 +186,7 @@
                         </td>
                     </tr>
                     @endforeach
-                </table>
-                @endif
-            </div>
-        </div>
-    </div>
-    </body>
-
-</html>
+                </table> -->
 
 <script>
     'use strict'

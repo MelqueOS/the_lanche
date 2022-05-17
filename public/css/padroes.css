@@ -147,9 +147,9 @@ OBS: Não é da aba */
 .btn {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     align-items: center;
     padding: 0;
+    font-size: 1rem
 }
 
 .btn-primary {
@@ -163,7 +163,6 @@ OBS: Não é da aba */
     font-weight: 600;
     line-height: 1.5;
     text-transform: uppercase;
-    margin-top: 10px;
 }
 
 .btn-primary:active {
@@ -194,7 +193,6 @@ OBS: Não é da aba */
     color: white;
     font-weight: 600;
     line-height: 1.5;
-    margin-top: 10px;
     text-transform: uppercase;
 }
 

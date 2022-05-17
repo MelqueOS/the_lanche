@@ -1,0 +1,71 @@
+@import url('padroes.css');
+
+.imgPhoto{
+    height: 75px;
+    width: 75px;
+    border-radius: 6px;
+}
+.img{
+    border-radius: 6px;
+    left: 0px;
+    max-width: 40%;
+    margin: 5px;
+}
+
+
+.item2{
+    justify-content: space-around;
+}
+
+hr{
+    /* margin: 50px 0px; */
+    color: var(--corPrim);
+    height: 2px;
+    width: 90%;
+}
+
+h1{
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+h2{
+    font-weight: bold;
+    text-decoration: underline wavy var(--corPrim);
+    text-transform: capitalize;
+}
+
+.conteiner-fluid{
+    margin: 0px 50px;
+}
+
+.listagem{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+.conteudo{
+    min-width: 250px;
+    width: 31%;
+
+    min-height: 100px;
+    max-height: 300px;
+
+    border: 1px solid var(--corPrim);
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.acoes{
+    display: flex;
+    justify-content: space-around;
+    
+    width: 100%;
+    height: 50px;
+}
