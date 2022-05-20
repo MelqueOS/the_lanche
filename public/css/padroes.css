@@ -149,21 +149,11 @@ OBS: Não é da aba */
     justify-content: center;
     align-items: center;
     padding: 0;
-    font-size: 1rem
+    font-size: .9rem;
+    padding: 0px 5px;
 }
 
-.btn-primary {
-    height: 40px;
-    width: 100%;
-    border: 1px solid transparent;
-    outline: 0 none;
-    border-radius: 4px;
-    background-color: var(--bordBlack);
-    color: white;
-    font-weight: 600;
-    line-height: 1.5;
-    text-transform: uppercase;
-}
+
 
 .btn-primary:active {
     box-shadow: 0 0 0 0.25rem;
@@ -172,7 +162,6 @@ OBS: Não é da aba */
 
 .btn-primary:hover {
     background-color: var(--corPrim);
-    color: var(--bordBlack);
     border: 1px solid var(--bordBlack);
     box-shadow: unset;
 }
@@ -183,28 +172,34 @@ OBS: Não é da aba */
     box-shadow: unset;
 }
 
-.btn-second {
+.btn-primary {
     height: 40px;
     width: 100%;
-    border: 1px solid transparent;
+    border: 1px solid var(--bordBlack);
     outline: 0 none;
     border-radius: 4px;
-    background-color: gray;
+    background-color: var(--bordBlack);
     color: white;
     font-weight: 600;
     line-height: 1.5;
     text-transform: uppercase;
 }
 
-.btn-second:active {
-    box-shadow: 0 0 0 0.25rem #ffc107;
-    border: none;
+.btn-second {
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--bordBlack);
+    outline: 0 none;
+    border-radius: 4px;
+    background-color: white;
+    color: var(--bordBlack);
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
 .btn-second:hover {
     background-color: var(--corPrim);
-    color: var(--bordBlack);
-    border: 1px solid var(--bordBlack);
     box-shadow: unset;
 }
 

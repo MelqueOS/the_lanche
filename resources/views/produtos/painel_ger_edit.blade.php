@@ -9,60 +9,58 @@
 </head>
 <div class="conteiner-fluid">
     <div class="d-flex flex-column">
-        <div class="painel d-flex flex-column align-items-center">
+        <header class="painel d-flex flex-column align-items-center">
             <h1>{{$secao[1]}}</h1>
-            <div class="max-width col">
+            <figure class="max-width col">
                 @if($produto->url_img != NULL)
-                <img alt="" id="imgPhoto" src="{{asset($produto->url_img);}}" class="imgPhoto">
+                <img alt="" id="imgHead" src="{{asset($produto->url_img);}}" class="imgHead">
                 @else
-                <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
+                <i class="bi bi-image imgHead"></i>
                 @endif
-            </div>
-        </div>
+            </figure>
+        </header>
         <div class="content">
-            <div class="cadastro">
-                <div class='produto'>
-                    <form action="/produto" method="POST" enctype="multipart/form-data" class="row">
-                        @csrf
+            <div class='cadastro'>
+                <form action="/produto" method="POST" enctype="multipart/form-data" class="row formulario">
+                    @csrf
 
-                        @if($img_lock == "disable")
-                        <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
-                        @else
-                        <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
-                        <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
-                        @endif
-                        <div class="form-group col-5">
-                            <label for="nome_descritivo">Nome do Produto </label>
-                            <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
+                    @if($img_lock == "disable")
+                    <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
+                    @else
+                    <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
+                    <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
+                    @endif
+                    <div class="form-group col-5">
+                        <label for="nome_descritivo">Nome do Produto </label>
+                        <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
+                    </div>
+                    <div class="form-group col-5">
+                        <label for="tipo">Tipo de produto</label>
+                        <select name="tipo" class="form-control" class="inptselect form-control" required>
+                            @foreach($parametro_select as $key_selected => $value_selected)
+                            <option value="{{$key_selected}}">{{$value_selected}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group col-2">
+                        <label for="valor">Preço</label>
+                        <input type="number" name="valor" class="form-control" step="0.01" min=="0.01" value="{{$produto->valor}}" required />
+                    </div>
+                    <div class="form-group col-12 descricao">
+                        <label for="descricao">Descriçao</label>
+                        <textarea class="form-control" rows="10" name="descricao">{{$produto->descricao}}</textarea>
+                    </div>
+                    <div class="button-form row">
+                        <div class="col-2">
+                            <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
                         </div>
-                        <div class="form-group col-5">
-                            <label for="tipo">Tipo de produto</label>
-                            <select name="tipo" class="form-control" class="inptselect form-control" required>
-                                @foreach($parametro_select as $key_selected => $value_selected)
-                                <option value="{{$key_selected}}">{{$value_selected}}</option>
-                                @endforeach
-                            </select>
+                        <div class="col-2">
+                            <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
                         </div>
-                        <div class="form-group col-2">
-                            <label for="valor">Preço</label>
-                            <input type="number" name="valor" class="form-control" step="0.01" min=="0.01" value="{{$produto->valor}}" required />
-                        </div>
-                        <div class="form-group col-12">
-                            <label for="descricao">Descriçao</label>
-                            <textarea class="form-control" rows="10" name="descricao">{{$produto->descricao}}</textarea>
-                        </div>
-                        <div class="item2 row">
-                            <div class="col-4">
-                                <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
-                            </div>
-                            <div class="col-4">
-                                <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
-                            </div>
-                        </div>
-                        <input type="hidden" name="id" value="{{$produto->id}}">
-                        <input type="hidden" name="tokid" value="{{$tokid}}">
-                    </form>
-                </div>
+                    </div>
+                    <input type="hidden" name="id" value="{{$produto->id}}">
+                    <input type="hidden" name="tokid" value="{{$tokid}}">
+                </form>
             </div>
         </div>
     </div>
@@ -104,7 +102,7 @@
                         </div>
                     </div>
 
-                    <hr>
+                    <hr class='sep'>
 
                     <div class='acoes'>
                         <div class="editar">

@@ -1,27 +1,45 @@
 @import url('padroes.css');
 
+.imgHead{
+    border-radius: 6px;
+    font-size: 60px;
+    height: 100px;
+    width: 125px;
+}
+
 .imgPhoto{
+    border-radius: 6px;
+    font-size: 60px;
     height: 75px;
     width: 75px;
-    border-radius: 6px;
 }
+
 .img{
+    display: flex;
     border-radius: 6px;
-    left: 0px;
     max-width: 40%;
     margin: 5px;
 }
 
+.formulario > *{
+    margin-bottom: 20px;
+}
 
-.item2{
-    justify-content: space-around;
+
+.button-form{
+    justify-content: space-evenly;
+    margin: 10px 0px 30px 0px;
 }
 
 hr{
-    /* margin: 50px 0px; */
     color: var(--corPrim);
+    margin: 30px 0px;
+    text-align: center;
+    width: 100%;
+}
+
+hr:not([size]){
     height: 2px;
-    width: 90%;
 }
 
 h1{
@@ -47,7 +65,7 @@ h2{
 
 .conteudo{
     min-width: 250px;
-    width: 31%;
+    width: 27%;
 
     min-height: 100px;
     max-height: 300px;
@@ -60,6 +78,15 @@ h2{
     align-items: center;
     margin-right: 20px;
     margin-bottom: 20px;
+}
+
+.cadastro{
+    width: 100%;
+    justify-content: space-around;
+}
+
+.sep{
+    width: 90%;
 }
 
 .acoes{
