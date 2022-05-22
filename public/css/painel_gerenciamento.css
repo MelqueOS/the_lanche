@@ -1,73 +1,79 @@
 @import url('padroes.css');
 
-.imgHead{
-    border-radius: 6px;
-    font-size: 60px;
-    height: 100px;
-    width: 125px;
+:root{
+    --sizeImg: 75px;
 }
 
-.imgPhoto{
+
+
+.imgPhoto {
     border-radius: 6px;
     font-size: 60px;
-    height: 75px;
-    width: 75px;
+    height: var(--sizeImg);
+    width: var(--sizeImg);
 }
 
-.img{
+.img {
     display: flex;
     border-radius: 6px;
     max-width: 40%;
     margin: 5px;
 }
 
-.formulario > *{
+.formulario>* {
     margin-bottom: 20px;
 }
 
 
-.button-form{
+.button-form {
     justify-content: space-evenly;
     margin: 10px 0px 30px 0px;
 }
 
-hr{
+hr {
     color: var(--corPrim);
     margin: 30px 0px;
     text-align: center;
     width: 100%;
 }
 
-hr:not([size]){
+hr:not([size]) {
     height: 2px;
 }
 
-h1{
+h1 {
     font-weight: bold;
     text-transform: capitalize;
 }
 
-h2{
+h2 {
     font-weight: bold;
     text-decoration: underline wavy var(--corPrim);
     text-transform: capitalize;
 }
 
-.conteiner-fluid{
+.conteiner-fluid {
     margin: 0px 50px;
 }
 
-.listagem{
+.listagem {
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
+    justify-content: space-evenly
 }
 
-.conteudo{
-    min-width: 250px;
-    width: 27%;
 
-    min-height: 100px;
+.cadastro {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.conteudo {
+    min-width: 250px;
+    width: 35%;
+
+    min-height: 200px;
     max-height: 300px;
 
     border: 1px solid var(--corPrim);
@@ -80,19 +86,56 @@ h2{
     margin-bottom: 20px;
 }
 
-.cadastro{
-    width: 100%;
-    justify-content: space-around;
+.conteudo > *{
+    justify-content: center;
+    align-items: center;
 }
 
-.sep{
+.produto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 140px;
     width: 90%;
 }
 
-.acoes{
+.informacoes{
     display: flex;
-    justify-content: space-around;
-    
+    flex-direction: column;
+    align-items: center;
+    font-size: 15px;
+    margin: 0px 10px;
+    width: calc(100% - var(--sizeImg));
+}
+
+.under{
+    text-decoration: underline;
+}
+
+.nome{
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: underline wavy var(--corPrim);
+}
+
+.tipo_valor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
     height: 50px;
+    
+}
+
+.sep {
+    margin: 10px 0px;
+    height: 2px;
+    width: 90%;
+}
+
+.acoes {
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
 }

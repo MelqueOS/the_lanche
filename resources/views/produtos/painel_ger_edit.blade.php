@@ -12,10 +12,10 @@
         <header class="painel d-flex flex-column align-items-center">
             <h1>{{$secao[1]}}</h1>
             <figure class="max-width col">
-                @if($produto->url_img != NULL)
-                <img alt="" id="imgHead" src="{{asset($produto->url_img);}}" class="imgHead">
+                @if($produto->url_img != null)
+                <img alt="" id="imgHead" src="{{asset($produto->url_img);}}" class="imgPhoto">
                 @else
-                <i class="bi bi-image imgHead"></i>
+                <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
                 @endif
             </figure>
         </header>
@@ -24,12 +24,15 @@
                 <form action="/produto" method="POST" enctype="multipart/form-data" class="row formulario">
                     @csrf
 
-                    @if($img_lock == "disable")
-                    <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
-                    @else
-                    <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
-                    <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
-                    @endif
+                    <div class="file form-group">
+                        <label for="">Imagem Do Produto</label>
+                        @if($img_lock == "disable")
+                        <input type="file" class='form-control col-11' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
+                        @else
+                        <input type="file" class='form-control' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
+                        <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
+                        @endif
+                    </div>
                     <div class="form-group col-5">
                         <label for="nome_descritivo">Nome do Produto </label>
                         <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
@@ -78,26 +81,35 @@
                 @if(count($produtos) > 0)
                 @foreach($produtos as $linha)
                 <div class="conteudo">
-                    <div class='produto d-flex flex-row'>
+                    <div class='produto'>
                         <div class="img">
                             <img src="{{asset($linha->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
                         </div>
 
-                        <div class="informacoes d-flex flex-column">
+                        <div class="informacoes ">
                             <div class="nome">{{$linha->nome_descritivo}}</div>
-                            <div class="tipo_valor d-flex flex-row">
-                                <p>
-                                    @foreach($parametro_select as $key_selected => $value_selected)
-                                    @if($linha->tipo == $key_selected)
-                                    {{$value_selected}}
-                                    ~
-                                    @endif
-                                    @endforeach
-                                </p>
-                                <p>R${{$linha->valor}}</p>
+                            <div class="tipo_valor">
+                                <div class='tipo d-flex flex-column'>
+                                    <label class='under'><strong>Tipo</strong></label>
+                                    <p>
+                                        @foreach($parametro_select as $key_selected => $value_selected)
+                                        @if($linha->tipo == $key_selected)
+                                        {{$value_selected}}
+                                        @endif
+                                        @endforeach
+                                    </p>
+                                </div>
+
+                                <div class='valor d-flex flex-column'>
+                                    <label class='under' for=""><strong>Valor</strong></label>
+                                    <p>R${{$linha->valor}}</p>
+                                </div>
                             </div>
-                            <div class="desc">
-                                {{$linha->descricao}}
+                            <div class="descricao">
+                                <div class="desc d-flex flex-column">
+                                    <label class='under' for=""><strong>Descrição</strong></label>
+                                    {{$linha->descricao}}
+                                </div>
                             </div>
                         </div>
                     </div>
