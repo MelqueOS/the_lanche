@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
     <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
     <link rel="stylesheet" href="{{asset('css/painel_gerenciamento.css')}}" />
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- INPUT MONEY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <div class="conteiner-fluid">
     <div class="d-flex flex-column">
         <header class="painel d-flex flex-column align-items-center">
@@ -17,6 +23,7 @@
                 @else
                 <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
                 @endif
+                <!-- <figcaption>Imagem Do Produto</figcaption> -->
             </figure>
         </header>
         <div class="content">
@@ -47,9 +54,9 @@
                     </div>
                     <div class="form-group col-2">
                         <label for="valor">Preço</label>
-                        <input type="number" name="valor" class="form-control" step="0.01" min=="0.01" value="{{$produto->valor}}" required />
+                        <input type="text" id='valor' name="valor" class="form-control" value="{{$produto->valor}}" maxlength="11" required />
                     </div>
-                    <div class="form-group col-12 descricao">
+                    <div class="form-group col-12 descricao-form">
                         <label for="descricao">Descriçao</label>
                         <textarea class="form-control" rows="10" name="descricao">{{$produto->descricao}}</textarea>
                     </div>
@@ -105,10 +112,10 @@
                                     <p>R${{$linha->valor}}</p>
                                 </div>
                             </div>
-                            <div class="descricao">
+                            <div class="descricao-content">
                                 <div class="desc d-flex flex-column">
-                                    <label class='under' for=""><strong>Descrição</strong></label>
-                                    {{$linha->descricao}}
+                                    <label class='under ' for=""><strong>Descrição</strong></label>
+                                    <p class='descricao'>{{$linha->descricao}}</p>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +206,20 @@
                 </table> -->
 
 <script>
-    'use strict'
+    $(document).ready(function() {
+        $('#valor').maskMoney({
+            prefix: 'R$ ',
+            allowNegative: true,
+            thousands: '.',
+            decimal: ',',
+            affixesStay: false
+        });
 
+
+    });
+
+
+    'use strict'
     let photo = document.getElementById('imgPhoto');
     let file = document.getElementById('flImage');
 
