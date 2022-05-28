@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group col-12 descricao-form">
                         <label for="descricao">Descriçao</label>
-                        <textarea class="form-control" rows="10" name="descricao">{{$produto->descricao}}</textarea>
+                        <textarea class="textarea form-control" rows="2" name="descricao">{{$produto->descricao}}</textarea>
                     </div>
                     <div class="button-form row">
                         <div class="col-2">
@@ -85,66 +85,64 @@
 
             <!-- listagem -->
             <div class="listagem">
-                @if(count($produtos) > 0)
                 @foreach($produtos as $linha)
-                <div class="conteudo">
-                    <div class='produto'>
-                        <div class="img">
-                            <img src="{{asset($linha->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
-                        </div>
-
-                        <div class="informacoes ">
-                            <div class="nome">{{$linha->nome_descritivo}}</div>
-                            <div class="tipo_valor">
-                                <div class='tipo d-flex flex-column'>
-                                    <label class='under'><strong>Tipo</strong></label>
-                                    <p>
-                                        @foreach($parametro_select as $key_selected => $value_selected)
-                                        @if($linha->tipo == $key_selected)
-                                        {{$value_selected}}
-                                        @endif
-                                        @endforeach
-                                    </p>
-                                </div>
-
-                                <div class='valor d-flex flex-column'>
-                                    <label class='under' for=""><strong>Valor</strong></label>
-                                    <p>R${{$linha->valor}}</p>
-                                </div>
-                            </div>
-                            <div class="descricao-content">
-                                <div class="desc d-flex flex-column">
-                                    <label class='under ' for=""><strong>Descrição</strong></label>
-                                    <p class='descricao'>{{$linha->descricao}}</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class='item'>
+                    <div class="tipo d-flex flex-column">
+                        <h1>
+                            @foreach($parametro_select as $key_selected => $value_selected)
+                            @if($linha->tipo == $key_selected)
+                            {{$value_selected}}
+                            @endif
+                            @endforeach
+                        </h1>
                     </div>
+                    <div class="cont">
+                        @foreach($parametro_select as $key_selected => $value_selected)
+                        @if($linha->tipo == $key_selected)
+                        <div class="conteudo">
+                            <div class='produto'>
+                                <div class="img">
+                                    <img src="{{asset($linha->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
+                                </div>
+                                <div class="informacoes ">
+                                    <div class="nome">
+                                        <p>{{$linha->nome_descritivo}}</p>
+                                    </div>
 
-                    <hr class='sep'>
+                                    <div class="desc d-flex flex-column">
+                                        <p class='descricao'>{{$linha->descricao}}</p>
+                                    </div>
 
-                    <div class='acoes'>
-                        <div class="editar">
-                            <form method="GET" action="/produto/{{$linha->id}}/edit">
-                                @csrf
-                                <input type="hidden" name="tokid" value="{{$tokid}}" />
-                                <button type="submit" id="editarBotao" class="btn btn-second">
-                                    Alterar
-                                </button>
-                            </form>
+                                    <div class='valor d-flex flex-column'>
+                                        <p>R${{$linha->valor}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class='sep'>
+                            <div class='acoes'>
+                                <div class="editar">
+                                    <form method="GET" action="/produto/{{$linha->id}}/edit">
+                                        @csrf
+                                        <input type="hidden" name="tokid" value="{{$tokid}}" />
+                                        <button type="submit" id="editarBotao" class="btn btn-second">
+                                            Alterar
+                                        </button>
+                                    </form>
+                                </div>
+                                <div class="apagar">
+                                    <form method="POST" action="/produto/{{$linha->id}}">
+                                        @csrf
+                                        <input type="hidden" name="_method" value="DELETE" />
+                                        <button type="submit" id="excluirBotao" class="btn btn-primary">Excluir</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="apagar">
-                            <form method="POST" action="/produto/{{$linha->id}}">
-                                @csrf
-                                <input type="hidden" name="_method" value="DELETE" />
-                                <button type="submit" id="excluirBotao" class="btn btn-primary">Excluir</button>
-                            </form>
-                        </div>
+                        @endif
+                        @endforeach
                     </div>
                 </div>
                 @endforeach
-                @endif
             </div>
         </div>
     </div>
