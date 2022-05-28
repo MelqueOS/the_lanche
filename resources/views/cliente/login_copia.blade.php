@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <head>
@@ -14,13 +13,6 @@
 </head>
 
 <body>
-@if (Auth::user())
-        
-         alou
-         @else
-         nau
-         @endif
-
     <div class="container">
         <div class="box-scan">
             <div class="scan">
@@ -32,22 +24,8 @@
 
         <div class="box-formulario">
             <form action="/" class='needs-validation' novalidate>
-                <div class='logo'>
-                    <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
-                </div>
-
-                <div class="login col-9">
-                    <label for="email">Email</label>
-                    <input type="email" name='email' class="email form-control" required>
-                </div>
-
-                <div class="passwd col-9">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" class='form-control' required>
-                </div>
-
-                <div class="line">
-                    <p class=''>OU</p>
+                <div class='logo-img'>
+                    <img class='logo' src="{{asset('img/logo.svg')}}" alt="">
                 </div>
 
                 <div class="login-mesa col-9">
@@ -57,10 +35,10 @@
 
 
                 <div class="invalid-feedback">
-                    Faça o login ou Digite a mesa
+                    Digite a mesa
                 </div>
 
-                <div>
+                <div class='botao'>
                     <button type='submit' class='btn btn-primary'>Entrar</button>
                 </div>
             </form>

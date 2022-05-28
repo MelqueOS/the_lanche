@@ -36,10 +36,6 @@ Route::get('/2', function () {
     return view('empresa.cadastro-edit');
 });
 
-Route::get('/cadastro', function () {
-    return view('cliente.cadastro');
-});
-
 Route::get('/conteudo', function () {
     return view('conteudo');
 });
@@ -54,6 +50,10 @@ Route::get('/4', function () {
 
 Route::get('/5', function () {
     return view('produtos.cadastrocombo');
+});
+
+Route::get('/6', function(){
+    return view('cliente.login_copia');
 });
 
 Route::get('/7', function(){
