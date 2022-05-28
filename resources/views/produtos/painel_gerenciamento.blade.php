@@ -158,7 +158,8 @@
                 </form>
             </div>
             <!--Combo-->
-
+            @endforeach
+            @endif
 
         </div> <!-- Cadastro -->
         <div class="listagem">
