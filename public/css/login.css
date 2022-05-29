@@ -60,6 +60,7 @@ label:hover {
     font-size: 25px;
     font-weight: bold;
     text-decoration: unset;
+    width: 25%;
 }
 
 .botao:hover {
@@ -87,12 +88,25 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    row-gap: 25px;
 }
 
 
 img {
     width: 100px;
     height: 100px;
+}
+
+.logo-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(var(--tamImg) + 30px);
+    width: calc(var(--tamImg) + 30px);
+
+    border: 1px dashed #fefefe;
+    border-radius: 50%;
+
 }
 
 .invalid-feedback {

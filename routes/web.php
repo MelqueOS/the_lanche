@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthController;
 */
 Route::resources([
     "cliente" => ClienteController::class,
-    "empresa" =>EmpresaController::class,
+    "empresa" => EmpresaController::class,
     "pedido" => PedidoController::class,
     "produto" => ProdutoController::class,
     "login" => AuthController::class,
@@ -34,10 +34,6 @@ Route::get('/1', function () {
 
 Route::get('/2', function () {
     return view('empresa.cadastro-edit');
-});
-
-Route::get('/cadastro', function () {
-    return view('cliente.cadastro');
 });
 
 Route::get('/conteudo', function () {
@@ -57,8 +53,9 @@ Route::get('/5', function () {
 });
 
 Route::get('/6', function(){
-    return view('cliente.cliente_edit');
+    return view('cliente.login_copia');
 });
+
 Route::get('/7', function(){
     return view('empresa.empresa_edit');
 });

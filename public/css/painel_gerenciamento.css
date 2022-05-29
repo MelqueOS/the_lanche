@@ -1,0 +1,171 @@
+@import url('padroes.css');
+
+:root {
+    --sizeImg: 75px;
+}
+
+
+
+.imgPhoto {
+    border-radius: 6px;
+    font-size: 60px;
+    height: var(--sizeImg);
+    width: var(--sizeImg);
+}
+
+.img {
+    display: flex;
+    border-radius: 6px;
+    max-width: 40%;
+    margin: 5px;
+}
+
+.formulario {
+    row-gap: 20px;
+}
+
+
+.button-form {
+    justify-content: space-evenly;
+    margin: 10px 0px 30px 0px;
+}
+
+hr {
+    color: var(--corPrim);
+    margin: 30px 0px;
+    text-align: center;
+    width: 100%;
+}
+
+hr:not([size]) {
+    height: 2px;
+}
+
+h1 {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-weight: bold;
+    text-decoration: underline wavy var(--corPrim);
+    text-transform: capitalize;
+}
+
+.textarea{
+    height:calc(3em + 1rem + 2px) ;
+}
+
+.conteiner-fluid {
+    margin: 0px 50px;
+}
+
+.listagem {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: left;
+    row-gap: 40px;
+}
+
+.cadastro {
+    width: 100%;
+    justify-content: space-around;
+}
+
+.cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.conteudo {
+    min-width: 250px;
+    width: 350px;
+
+    min-height: 200px;
+    max-height: 300px;
+    height: 200px;
+    background-color: #eb5600ab;
+    border: 1px solid var(--corPrim);
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+}
+
+.conteudo>* {
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo:hover {
+    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
+}
+
+.tipo h1 {
+    text-transform: uppercase;
+}
+
+.produto {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 140px;
+    width: 90%;
+}
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    margin: 0px 10px;
+    width: calc(100% - var(--sizeImg));
+}
+
+.informacoes > * {
+    text-align: center;
+    width: 100%;
+}
+
+.nome {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: underline wavy var(--corPrim);
+}
+
+.sep {
+    margin: 10px 0px;
+    height: 2px;
+    width: 90%;
+}
+
+
+.descricao {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+
+}
+
+.acoes {
+    display: flex;
+    justify-content: space-evenly;
+    height: 60px;
+    width: 100%;
+}
+.item hr{
+    color:white;
+}
+figure{
+    cursor:pointer;
+}

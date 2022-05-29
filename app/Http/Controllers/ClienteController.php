@@ -133,8 +133,9 @@ class ClienteController extends Controller
             $idade = $difere->format( '%Y anos' );
             //dd($confirmed);
             //dd($idade);
+
             return view(
-                "cliente.cliente",
+                "cliente.cadastro",
                 [
                     "user" => $user,
                     "cliente" => $cliente,

@@ -1,161 +1,71 @@
 <html>
-    <head>
-        <title>{{$titulo}}</title>
-        <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
-        <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
-        <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
-        <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
-    </head>
-    <body>
-        <div class="d-flex">
-        <div>
-            <p>{{$secao[1]}}</p>
-        <div class="max-width col">
-            <div class="">
-                @if($produto->url_img != NULL)
-                    <img alt="" id="imgPhoto" src = "{{asset($produto->url_img);}}" class="imgPhoto">
-                @else
-                    <img alt="" id="imgPhoto" src = "{{asset('img/mais.webp')}}" class="imgPhoto">
-                @endif
-            </div>
-        </div>
-        <form action="/produto" method="POST" enctype="multipart/form-data" class="row">
-            @csrf
-            @if($img_lock == "disable")
-                <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg"required/>
-            @else
-                <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg"/>
-                <input type="hidden" name="att_url" value = "{{$produto->url_img}}"/>
-            @endif
-            <div class="form-group col-6">
-                <label for="nome_descritivo">Nome do Produto </label>
-                <input type="text" name="nome_descritivo" class="form-control" value = "{{$produto->nome_descritivo}}" required />
-            </div>
 
 <head>
     <title>{{$titulo}}</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
     <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
-    <link rel="stylesheet" href="{{asset('css/cadastro-produto.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/painel_gerenciamento.css')}}" />
+    
 </head>
-
-<body>
-    <div class="content">
-        <div class="cadastro">
-            <div class='produto'>
-                <p class='text-center'>{{$secao[1]}}</p>
-                <div class="col photo">
+<div class="conteiner-sm">
+    <div class="d-flex">
+        <div class="panel">
+            <p class="lead">{{$secao[1]}}</p>
+            <div class="max-width col">
+                <div class="card">
                     @if($produto->url_img != NULL)
                     <img alt="" id="imgPhoto" src="{{asset($produto->url_img);}}" class="imgPhoto">
                     @else
-                    <i id='imgPhoto' class=" imgPhoto bi bi-image-fill"></i>
+                    <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
                     @endif
                 </div>
-                <form action="/produto" method="POST" enctype="multipart/form-data" class="col">
-                    @csrf
-                    <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" value="{{asset($produto->url_img);}}" required />
-                    <div class="form-group col-12">
-                        <label for="nome_descritivo">Nome do Produto </label>
-                        <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
-                    </div>
-                    <div class="form-group col-12">
-                        <label for="tipo">Tipo de produto</label>
-                        <select name="tipo" class="inptselect form-control" required>
-                            @foreach($parametro_select as $key_selected => $value_selected)
-                            <option value="{{$key_selected}}">{{$value_selected}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group col-7">
-                        <label for="valor">Preço</label>
-                        <input type="number" name="valor" class="form-control" step="0.01" value="{{$produto->valor}}" required />
-                    </div>
-                    <div class="form-group col-12">
-                        <label for="descricao">Descriçao</label>
-                        <textarea rows='5' class="form-control" name="descricao">{{$produto->descricao}}</textarea>
-                    </div>
-                    <div class="item2 ">
-                        <div class="col-4">
-                            <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
-                        </div>
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
-                        </div>
-                    </div>
-                    <input type="hidden" name="id" value="{{$produto->id}}">
-                    <input type="hidden" name="tokid" value="{{$tokid}}">
-                </form>
             </div>
-            <!--Produto-->
-
-            <div class="form-group row-6">
-                <label for="nome">Descriçao</label>
-                <textarea class="form-control" name = "descricao" required>{{$produto->descricao}}</textarea>
-            </div>
-
-            <div class="item2 ">
-                <div class="col-4">
-                    <button type="button" class="btn btn-second bottom " onclick= "window.location.href='/produto'"><i class="fas fa-save"></i>Limpar</button>
-                </div>
-                <div class="col-4">
-                    <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
-                </div>
-            </div>
-            <input type = "hidden" name = "id" value = "{{$produto->id}}">
-            <input type = "hidden" name = "tokid" value = "{{$tokid}}">
-        </form>
         </div>
-        <div class="p-5 w-50 bg-dark">Alou</div>
-        </div>
-        <div>
- 
-            <p>{{$secao[2]}}, cadastrado um total de {{count($produtos)}} produtos</p>
-            @if(count($produtos) > 0)
-            <table>
-                <th>Produto</th>
-                <th>Açoes</th>  
-                @foreach($produtos as $linha) 
-                <tr>
-                    <td>
-                        <ul>
-                            <li>
-                                {{$linha->nome_descritivo}} custando R${{$linha->valor}}. 
-                            </li>
-                            <li>
-                                Cadastrado como um(a)  
+        <div class="content">
+            <div class="cadastro">
+                <div class='produto'>
+                    <form action="/produto" method="POST" enctype="multipart/form-data" class="row">
+                        @csrf
+
+                        @if($img_lock == "disable")
+                        <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
+                        @else
+                        <input type="file" id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
+                        <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
+                        @endif
+                        <div class="form-group col-5">
+                            <label for="nome_descritivo">Nome do Produto </label>
+                            <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
+                        </div>
+                        <div class="form-group col-5">
+                            <label for="tipo">Tipo de produto</label>
+                            <select name="tipo" class="form-control" class="inptselect form-control" required>
                                 @foreach($parametro_select as $key_selected => $value_selected)
                                 <option value="{{$key_selected}}">{{$value_selected}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group col-5">
+                        <div class="form-group col-2">
                             <label for="valor">Preço</label>
-                            <input type="number" name="valor" class="form-control" step="0.01" value="{{$produto->valor}}" required />
+                            <input type="number" name="valor" class="form-control" step="0.01" min=="0.01" value="{{$produto->valor}}" required />
                         </div>
-                    </div>
-
-                    <div class="form-group col-12">
-                    <label for="prod">Produtos</label>
-                            <select name="prod" class="inptselect form-control" required>
-                                <option value="">Trazer os produtos cadastrados</option>
-                            </select>
-                    </div>
-                    <div class="form-group row-6">
-                        <label for="nome">Descriçao</label>
-                        <textarea class="form-control" name="descricao">{{$produto->descricao}}</textarea>
-                    </div>
-                    <div class="item2 ">
-                        <div class="col-4">
-                            <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
+                        <div class="form-group col-12">
+                            <label for="descricao">Descriçao</label>
+                            <textarea class="form-control" rows="10" name="descricao">{{$produto->descricao}}</textarea>
                         </div>
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
+                        <div class="item2">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
+                            </div>
+                            <div class="col-4">
+                                <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
+                            </div>
                         </div>
-                    </div>
-                    <input type="hidden" name="id" value="{{$produto->id}}">
-                    <input type="hidden" name="tokid" value="{{$tokid}}">
-                </form>
+                        <input type="hidden" name="id" value="{{$produto->id}}">
+                        <input type="hidden" name="tokid" value="{{$tokid}}">
+                    </form>
+                </div>
             </div>
             <!--Combo-->
             @endforeach
@@ -164,11 +74,20 @@
         </div> <!-- Cadastro -->
         <div class="listagem">
             <div>
+        </div>
+    </div>
+    <div class="">
+        <!--listagem-->
+        <div class="content">
+            <div class="count">
                 <p>{{$secao[2]}}, cadastrado um total de {{count($produtos)}} produtos</p>
+            </div>
+            <div class="listagem">
                 @if(count($produtos) > 0)
                 <table>
                     <th>Produto</th>
                     <th>Açoes</th>
+                    <th>Ilustração</th>
                     @foreach($produtos as $linha)
                     <tr>
                         <td>
@@ -209,15 +128,19 @@
                                 </li>
                             </ul>
                         </td>
+                        <td>
+                            <div class="max-width col">
+                                <img src="{{asset($linha->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
+                            </div>
+                        </td>
                     </tr>
                     @endforeach
                 </table>
                 @endif
             </div>
-        </div> <!-- Listagem -->
-    </div> <!-- Content -->
-
-</body>
+        </div>
+    </div>
+    </body>
 
 </html>
 

@@ -13,10 +13,12 @@
             </li>
             <li>No sistema desde:{{ \Carbon\Carbon::parse($user->created_at)->format('d/m/Y')}}</li>
             <li>Endereco atual: {{$tipo[$endereco->tipo_logradouro]}} {{$endereco->logradouro}}, n {{$endereco->numero}}, {{$endereco->complemento}}, bairro {{$endereco->bairro}}, localiza-se perto de {{$endereco->referencia}}</li>
+
             <p>Contatos </p>
             <li>Email: {{$user->email}}</li>
             <li>Telefone: {{$cliente->telefone}}</li>
             <li>whatsapp: {{$cliente->whatsapp}}</li>
+
             <p>Registro de atualizações<p>
             <li>Ultima modificação de dados de acesso: {{ \Carbon\Carbon::parse($user->updated_at)->format('d/m/Y')}} as {{ \Carbon\Carbon::parse($user->updated_at)->format('H:m')}}</li>
             <li>Ultima modificação de dados de contato: {{ \Carbon\Carbon::parse($cliente->updated_at)->format('d/m/Y')}}</li>
@@ -41,7 +43,7 @@
                 <input type = "hidden" name = "_method" value = "DELETE"/> 
 	
                 @if($confirmed == true)
-                    <p>Uma solicitação de excluzão da sua conta foi recebida, tem certeza que deseja exclui-la?<p>
+                    <p>Uma solicitação de excluzão da sua conta foi recebida, tem certeza que deseja exclui-la?</p>
     				<input type = "hidden" name = "confirmed" value = "{{True}}"/> 
                     <input type = "submit" id = "excluirBotao" name="confirmed" class="btn btn-danger" value = "Cancelar"/>
                 @else

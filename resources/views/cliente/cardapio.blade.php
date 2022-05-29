@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Nome da empresa aqui -->
     <title>Cardapio da Empresa X</title>
-    <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
-  <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
-  <link rel="stylesheet" href="{{asset('css/padroes.css')}}">
-  <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
@@ -76,10 +72,11 @@
     </div>
     <hr>
     @endforeach
+    <input type="hidden" name = "revise" value = "false">
     <div class="fab "  ontouchstart="">
         <input type ="submit"class="btn btn-success p-2" value="Pedir"/>
     </div>
-
+    </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>
 </body>

@@ -38,9 +38,10 @@ class ProdutoController extends Controller
         $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$tokid)->get();
         $titulo = "Gerenciamento de cardapio";
         return view(
-            "produtos.painel_gerenciamento",
+            "produtos.painel_ger_edit",
             [
                 //"token" => $user->id,
+
                 "tokid" =>$tokid,
                 "titulo" => $titulo,
                 "secao" => $secao,
@@ -149,7 +150,7 @@ class ProdutoController extends Controller
         $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$token)->get();
         $titulo = "Gerenciamento de cardapio";
         return view(
-            "produtos.painel_gerenciamento",
+            "produtos.painel_ger_edit",
             [
                 "tokid" => $token,
                 "titulo" => $titulo,

@@ -14,6 +14,7 @@
     --corC: #ccc;
     --corFs: #2C3E50;
     --corBlue: #1687F0;
+    --tamImg: 100px;
 }
 
 * {
@@ -81,7 +82,6 @@ label {
 
 .form-control {
     height: 35px;
-    border: 1px solid transparent;
     border-radius: 6px;
     padding-left: 11px;
     border:1px solid var(--bordBlack);
@@ -92,7 +92,13 @@ label {
 .form-control:focus {
     border-color: var(--bordBlack);
     box-shadow: 0 0 0 0.20rem #33333375;
-    /* outline: var(--corPrim); */
+}
+
+.input-group-text{
+    height: 35px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    border:1px solid var(--bordBlack);
 }
 
 input::placeholder {
@@ -142,24 +148,13 @@ OBS: Não é da aba */
 .btn {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     align-items: center;
     padding: 0;
+    font-size: .9rem;
+    padding: 0px 5px;
 }
 
-.btn-primary {
-    height: 40px;
-    width: 100%;
-    border: 1px solid transparent;
-    outline: 0 none;
-    border-radius: 4px;
-    background-color: var(--bordBlack);
-    color: white;
-    font-weight: 600;
-    line-height: 1.5;
-    text-transform: uppercase;
-    margin-top: 10px;
-}
+
 
 .btn-primary:active {
     box-shadow: 0 0 0 0.25rem;
@@ -168,7 +163,6 @@ OBS: Não é da aba */
 
 .btn-primary:hover {
     background-color: var(--corPrim);
-    color: var(--bordBlack);
     border: 1px solid var(--bordBlack);
     box-shadow: unset;
 }
@@ -179,29 +173,34 @@ OBS: Não é da aba */
     box-shadow: unset;
 }
 
-.btn-second {
+.btn-primary {
     height: 40px;
     width: 100%;
-    border: 1px solid transparent;
+    border: 1px solid var(--bordBlack);
     outline: 0 none;
     border-radius: 4px;
-    background-color: gray;
+    background-color: var(--bordBlack);
     color: white;
     font-weight: 600;
     line-height: 1.5;
-    margin-top: 10px;
     text-transform: uppercase;
 }
 
-.btn-second:active {
-    box-shadow: 0 0 0 0.25rem #ffc107;
-    border: none;
+.btn-second {
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--bordBlack);
+    outline: 0 none;
+    border-radius: 4px;
+    background-color: white;
+    color: var(--bordBlack);
+    font-weight: 600;
+    line-height: 1.5;
+    text-transform: uppercase;
 }
 
 .btn-second:hover {
     background-color: var(--corPrim);
-    color: var(--bordBlack);
-    border: 1px solid var(--bordBlack);
     box-shadow: unset;
 }
 
