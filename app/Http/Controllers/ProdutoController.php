@@ -25,24 +25,24 @@ class ProdutoController extends Controller
             '4' => 'Sobremesa',
             '5' => 'Bebida',
             '6' => 'Combo'
-         );
-         $secao = array(
-            1 =>"Cadastro de produto",
-            2 =>"Lista de produtos"    
-         );
+        );
+        $secao = array(
+            1 => "Cadastro de produto",
+            2 => "Lista de produtos"
+        );
 
-        $tokid = 1;
+        $tokid = 4;
         $user = User::Find($tokid);
         $entidade =  Empresa::Find($tokid);
-        $produto = new Produto_Combo();    
-        $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$tokid)->get();
+        $produto = new Produto_Combo();
+        $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id", "=", "emp.user_tag_id")->where("emp.user_tag_id", "=", $tokid)->get();
         $titulo = "Gerenciamento de cardapio";
         return view(
             "produtos.painel_ger_edit",
             [
                 //"token" => $user->id,
 
-                "tokid" =>$tokid,
+                "tokid" => $tokid,
                 "titulo" => $titulo,
                 "secao" => $secao,
                 "parametro_select" => $tip_produtos,
@@ -73,41 +73,40 @@ class ProdutoController extends Controller
     {
         $titulo = "Cadastro de produtos";
         $token = $request->get('tokid');
-        if ($request->get('id')!=""){
+        if ($request->get('id') != "") {
             $user = User::Find($token);
             $entidade =  Empresa::Find($token);
             $produto = Produto_Combo::Find($request->get('id'));
-            $status = "atualizado";			
-		}else{
+            $status = "atualizado";
+        } else {
             $user = new User;
-			$entidade = new Empresa;
+            $entidade = new Empresa;
             $produto = new Produto_Combo;
             $status = "salvo";
-		}
+        }
         $produto->nome_descritivo = $request->get("nome_descritivo");
         $produto->tipo = $request->get("tipo");
+
         $produto->valor = $request->get("valor");
         $produto->descricao = $request->get("descricao");
-        if(
-            empty(
-                $request->file("imagem_produto")
-            )
-        ){
-            $url_img = $request->get("att_url");  
-        }else{
+        if (
+            empty($request->file("imagem_produto"))
+        ) {
+            $url_img = $request->get("att_url");
+        } else {
             $url_img = $request->file("imagem_produto")->store("public/produto");
-            $url_img = str_replace("public/","storage/",$url_img);
+            $url_img = str_replace("public/", "storage/", $url_img);
         }
         //$url_img = "url_img_not_found";
         $produto->url_img = $url_img;
         $produto->empresa_id = $token;
-        
+
         $produto->save();
-        
-		
+
+
         //Atualiza o Status
-		$request>session()->flash("status", $status);
-		return redirect("/produto");
+        $request > session()->flash("status", $status);
+        return redirect("/produto");
     }
 
     /**
@@ -136,18 +135,18 @@ class ProdutoController extends Controller
             '4' => 'Sobremesa',
             '5' => 'Bebida',
             '6' => 'Combo'
-         );
-         $secao = array(
-            1 =>"Edição de produto",
-            2 =>"Lista de produtos"    
-         );
-         $img_lock = "enable";
+        );
+        $secao = array(
+            1 => "Edição de produto",
+            2 => "Lista de produtos"
+        );
+        $img_lock = "enable";
 
         $token = $request->get("tokid");
         $user = User::Find($token);
         $entidade =  Empresa::Find($token);
-        $produto = Produto_Combo::Find($id);    
-        $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$token)->get();
+        $produto = Produto_Combo::Find($id);
+        $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id", "=", "emp.user_tag_id")->where("emp.user_tag_id", "=", $token)->get();
         $titulo = "Gerenciamento de cardapio";
         return view(
             "produtos.painel_ger_edit",
@@ -183,7 +182,7 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        
+
         $produto = Produto_Combo::Find($id);
         $produto->delete();
         return Redirect("/produto");

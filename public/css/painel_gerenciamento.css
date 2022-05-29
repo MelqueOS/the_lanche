@@ -4,7 +4,13 @@
     --sizeImg: 75px;
 }
 
+p {
+    margin-bottom: .5rem;
+}
 
+header {
+    row-gap: 20px;
+}
 
 .imgPhoto {
     border-radius: 6px;
@@ -52,8 +58,8 @@ h2 {
     text-transform: capitalize;
 }
 
-.textarea{
-    height:calc(3em + 1rem + 2px) ;
+.textarea {
+    height: calc(3em + 1rem + 2px);
 }
 
 .conteiner-fluid {
@@ -129,7 +135,7 @@ h2 {
     width: calc(100% - var(--sizeImg));
 }
 
-.informacoes > * {
+.informacoes>* {
     text-align: center;
     width: 100%;
 }
@@ -163,9 +169,11 @@ h2 {
     height: 60px;
     width: 100%;
 }
-.item hr{
-    color:white;
+
+.item hr {
+    color: white;
 }
-figure{
-    cursor:pointer;
+
+figure {
+    cursor: pointer;
 }

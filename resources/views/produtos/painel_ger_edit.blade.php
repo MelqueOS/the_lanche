@@ -9,6 +9,9 @@
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
+    <!-- JQUERY MASK -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- INPUT MONEY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
@@ -28,7 +31,7 @@
         </header>
         <div class="content">
             <div class='cadastro'>
-                <form action="/produto" method="POST" enctype="multipart/form-data" class="row formulario">
+                <form action="/produto" method="POST" enctype="multipart/form-data" onsubmit="f" class="row formulario">
                     @csrf
 
                     <div class="file form-group">
@@ -53,8 +56,9 @@
                         </select>
                     </div>
                     <div class="form-group col-2">
-                        <label for="valor">Preço</label>
-                        <input type="text" id='valor' name="valor" class="form-control" value="{{$produto->valor}}" maxlength="11" required />
+                        <label for="valor_mask">Preço</label>
+                        <input type="text" id="valor_mask" name="valor_mask" class="form-control" value="{{ number_format($produto->valor, 2)}}" />
+                        <input id='valor' type='hidden' name="valor" class="form-control" value="{{$produto->valor}}" maxlength="11" required />
                     </div>
                     <div class="form-group col-12 descricao-form">
                         <label for="descricao">Descriçao</label>
@@ -107,19 +111,19 @@
                         </h1>
                     </div>
                     <div class="d-flex flex-row flex-wrap aqui">
-                  
-                    @foreach($produtos as $linha2)
-                    @if($linha->tipo==$linha2->tipo)
-                  
+
+                        @foreach($produtos as $linha2)
+                        @if($linha->tipo==$linha2->tipo)
+
                         <div class="cont me-5 mb-5 shadow">
                             @foreach($parametro_select as $key_selected => $value_selected)
                             @if($linha2->tipo == $key_selected)
                             <div class="conteudo">
                                 <div class='produto '>
                                     <div class="img ">
-                                        
+
                                         @if(asset($linha2->url_img))
-                                        <i class="bi bi-file-image-fill "style="font-size:50px"></i>
+                                        <i class="bi bi-file-image-fill " style="font-size:50px"></i>
 
                                         @else
                                         <img src="{{asset($linha2->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
@@ -135,8 +139,8 @@
                                         </div>
 
                                         <div class='valor d-flex flex-column'>
-                                            <input type="hidden" id="teste"name="valor" value="{{$linha2->valor}}"class=""></input>
-                                            <output name="x" for="teste"></output>
+                                            <p>R${{number_format($linha2->valor, 2, ',', '.')}}</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -163,11 +167,11 @@
                             @endif
                             @endforeach
                         </div>
-                        
-                    @endif
-                    
-                    @endforeach
-                   
+
+                        @endif
+
+                        @endforeach
+
                     </div>
                 </div>
                 @endif
@@ -179,71 +183,17 @@
 
 </html>
 
-<!-- <table>
-                    <th>Produto(s)</th>
-                    <th>Açoes</th>
-                    <th>Ilustração</th>
-                    @foreach($produtos as $linha)
-                    <tr>
-                        <td>
-                            <ul>
-                                <li>
-                                    {{$linha->nome_descritivo}} custando R${{$linha->valor}}.
-                                </li>
-                                <li>
-                                    Cadastrado como um(a)
-                                    @foreach($parametro_select as $key_selected => $value_selected)
-                                    @if($linha->tipo == $key_selected)
-                                    {{$value_selected}}
-                                    @endif
-                                    @endforeach
-                                    .
-                                    {{$linha->descricao}}
-                                </li>
-                                <li>
-                                    Cadastrado em {{ \Carbon\Carbon::parse($produto->created_at)->format('d/m/Y')}} as {{ \Carbon\Carbon::parse($produto->created_at)->format('H:m')}}
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>
-                                    <form method="GET" action="/produto/{{$linha->id}}/edit">
-                                        @csrf
-                                        <input type="hidden" name="tokid" value="{{$tokid}}" />
-                                        <input type="submit" id="editarBotao" class="btn btn-danger" value="Alterar dados" />
-                                    </form>
-                                </li>
-                                <li>
-                                    <form method="POST" action="/produto/{{$linha->id}}">
-                                        @csrf
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                        <input type="submit" id="excluirBotao" class="btn btn-danger" value="Excluir produto" />
-                                    </form>
-                                </li>
-                            </ul>
-                        </td>
-                        <td>
-                            <div class="max-width col">
-                                <img src="{{asset($linha->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
-                            </div>
-                        </td>
-                    </tr>
-                    @endforeach
-                </table> -->
 
 <script>
-    $(document).ready(function() {
-        $('#valor').maskMoney({
-            prefix: 'R$ ',
-            allowNegative: true,
-            thousands: '.',
-            decimal: ',',
-            affixesStay: false
+    document.addEventListener("DOMContentLoaded", function() {
+        $('#valor_mask').mask("#.##0,00", {
+            reverse: true
         });
-
-
     });
+
+    function f() {
+        $('#valor').val($("#valor_mask").cleanVal() / 100);
+    }
 
 
     'use strict'
