@@ -23,19 +23,18 @@
         </div>
 
         <div class="box-formulario">
-            <form action="/6" class='needs-validation' novalidate>
-                <div class='logo-img'>
+            <form action="/" class='needs-validation' novalidate>
+                <figure class='logo-img'>
                     <img class='logo' src="{{asset('img/logo.svg')}}" alt="">
-                </div>
+                </figure>
 
-                <div class="login-mesa col-9">
-                    <label for="mesa">Mesa</label>
-                    <input type="text" class='form-control' required>
+                <div class="login-mesa col-7">
+                    <label for="mesa" class='mesa'>Mesa</label>
+                    <input type="number" id='mesa' @class(['form-control', 'is-invalid'=> ($errors->first('mesa') != '')])required>
                 </div>
-
 
                 <div class="invalid-feedback">
-                    Digite a mesa
+                    {{$errors->first('mesa')}}
                 </div>
 
                 <div class='botao'>
