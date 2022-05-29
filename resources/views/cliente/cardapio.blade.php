@@ -25,57 +25,68 @@
 
     <!-- AQUI VAI TER UM FOREACH >> AQUI VAI SER O TIPO(COMBO, COMIDA, BEBIDA, ETC)-->
     <form method ="POST" action="/pedido">
-    @csrf
-    @foreach($tipo as $t_key=> $t_value)
-    <div class="tipo">
-        <!-- descricao do tipo -->
-        <div class='title'>
-            <h1>{{$t_value}}</h1>
-        </div>
-        @foreach($produtos as $produto_linha)
-        @if($t_key == $produto_linha->tipo)
-        <div class="conteudo">
-            
-            <!-- ITEM 1 -->
+    @if(count($produtos) == 0)
+            <p>Não há nenhum cardapio disponivel<p>
+    @else
+        
+        @csrf
+        @foreach($tipo as $t_key=> $t_value)
+        <div class="tipo">
+            <!-- descricao do tipo -->
+            <div class='title'>
+                <h1>{{$t_value}}</h1>
+            </div>
+            @foreach($produtos as $produto_linha)
+            @if($t_key == $produto_linha->tipo)
+            <div class="conteudo">
+                
+                <!-- ITEM N -->
 
-            <div class="item" id='item'>
-                <!-- AQUI VAI TER UM FOREACH >> MOSTRA TODOS OS ITENS DO TIPO -->
-                <div class="box-item">
-                <input type="checkbox" name="item_pedido[]" value="{{$produto_linha->id}}"> 
-                    <div class='box-img'>
-                        <!-- MOSTRA A FOTO DO ITEM -->
-                        <img src="{{asset($produto_linha->url_img)}}" alt="">
-                    </div>
-
-                    <div class="sub-box">
-                        <div class="sub-title">
-                            <!-- nome_descritivo -->
-                            <h2>{{$produto_linha->nome_descritivo}}</h2>
-                        </div>
-                        <div class='descricao'>
-                            <!-- descricao -->
-                            <p>{{$produto_linha->descricao}}.</p>
+                <div class="item" id='item'>
+                    <div class="box-item">
+                    <input type="checkbox" name="item_pedido[]" value="{{$produto_linha->id}}"> 
+                        <div class='box-img'>
+                            <!-- MOSTRA A FOTO DO ITEM -->
+                            <img src="{{asset($produto_linha->url_img)}}" alt="">
                         </div>
 
-                        <hr>
+                        <div class="sub-box">
+                            <div class="sub-title">
+                                <!-- nome_descritivo -->
+                                <h2>{{$produto_linha->nome_descritivo}}</h2>
+                            </div>
+                            <div class='descricao'>
+                                <!-- descricao -->
+                                <p>{{$produto_linha->descricao}}.</p>
+                            </div>
 
-                        <div class='valor'>
-                            <!-- valor do item -->
-                            <p><strong>Valor: </strong>R${{$produto_linha->valor}}</p>
+                            <hr>
+
+                            <div class='valor'>
+                                <!-- valor do item -->
+                                <p><strong>Valor: </strong>R${{$produto_linha->valor}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                @endif
+                @endforeach  
             </div>
-            @endif
-            @endforeach  
         </div>
-    </div>
-    <hr>
-    @endforeach
+        <hr>
+        @endforeach
+    @endif
     <input type="hidden" name = "revise" value = "false">
+    <input type="hidden" name = "usr_token" value = "{{$usr_token}}">
+    <input type="hidden" name = "tokid" value = "{{$tokid}}">
+    <!--
+        Não aceitando envio de pedidos
+    -->
+    {{-- Botão removido, adicionar funcionalidade de revisão de pedido futuramente
     <div class="fab "  ontouchstart="">
         <input type ="submit"class="btn btn-success p-2" value="Pedir"/>
     </div>
+    --}}
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>

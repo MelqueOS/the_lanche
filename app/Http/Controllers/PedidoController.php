@@ -22,8 +22,8 @@ class PedidoController extends Controller
             '5' => 'Bebida',
             '6' => 'Combo'
          );
-        $usr_token = "3"; 
-        $tokid = 4;//Linha temporaria
+        $usr_token = 2; 
+        $tokid = 1;//Linha temporaria
         $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$tokid)->get();
         return view(
             "cliente.cardapio",

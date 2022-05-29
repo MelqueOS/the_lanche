@@ -17,17 +17,18 @@ use App\Http\Controllers\AuthController;
 |
 */
 Route::resources([
-    "cliente" => ClienteController::class,
+    //"cliente" => ClienteController::class,
     "empresa" => EmpresaController::class,
-    "pedido" => PedidoController::class,
+    //"pedido" => PedidoController::class,
     "produto" => ProdutoController::class,
     "login" => AuthController::class,
+    "/" => PedidoController::class,
 ]);
-
+/*
 Route::get('/', function () {
-    return view('cliente.login');
+    return view('cliente.cardapio');
 });
-
+*/
 Route::get('/1', function () {
     return view('cliente.cadastro_edit');
 });
