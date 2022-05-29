@@ -28,6 +28,7 @@ Route::resources([
 Route::get('/', function () {
     return view('cliente.cardapio');
 });
+
 Route::get('/teste', function () {
     return view('cliente.login_copia');
 });
