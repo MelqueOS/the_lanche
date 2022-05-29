@@ -16,6 +16,7 @@ use App\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::resources([
     //"cliente" => ClienteController::class,
     "empresa" => EmpresaController::class,
@@ -24,21 +25,18 @@ Route::resources([
     "login" => AuthController::class,
     "/" => PedidoController::class,
 ]);
-/*
 Route::get('/', function () {
     return view('cliente.cardapio');
 });
-*/
+Route::get('/teste', function () {
+    return view('cliente.login_copia');
+});
 Route::get('/1', function () {
     return view('cliente.cadastro_edit');
 });
 
 Route::get('/2', function () {
     return view('empresa.cadastro-edit');
-});
-
-Route::get('/cadastro', function () {
-    return view('cliente.cadastro');
 });
 
 Route::get('/conteudo', function () {
@@ -57,6 +55,6 @@ Route::get('/5', function () {
     return view('produtos.cadastrocombo');
 });
 
-Route::get('/7', function(){
+Route::get('/7', function () {
     return view('empresa.empresa_edit');
 });

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <head>
@@ -14,13 +13,6 @@
 </head>
 
 <body>
-@if (Auth::user())
-        
-         alou
-         @else
-         nau
-         @endif
-
     <div class="container">
         <div class="box-scan">
             <div class="scan">
@@ -32,35 +24,20 @@
 
         <div class="box-formulario">
             <form action="/" class='needs-validation' novalidate>
-                <div class='logo'>
-                    <img class='logo ' src="{{asset('img/logo.svg')}}" alt="">
-                </div>
+                <figure class='logo-img'>
+                    <img class='logo' src="{{asset('img/logo.svg')}}" alt="">
+                </figure>
 
-                <div class="login col-9">
-                    <label for="email">Email</label>
-                    <input type="email" name='email' class="email form-control" required>
+                <div class="login-mesa col-7">
+                    <label for="mesa" class='mesa'>Mesa</label>
+                    <input type="number" id='mesa' @class(['form-control', 'is-invalid'=> ($errors->first('mesa') != '')])required>
                 </div>
-
-                <div class="passwd col-9">
-                    <label for="senha">Senha</label>
-                    <input type="password" name="senha" class='form-control' required>
-                </div>
-
-                <div class="line">
-                    <p class=''>OU</p>
-                </div>
-
-                <div class="login-mesa col-9">
-                    <label for="mesa">Mesa</label>
-                    <input type="text" class='form-control' required>
-                </div>
-
 
                 <div class="invalid-feedback">
-                    Faça o login ou Digite a mesa
+                    {{$errors->first('mesa')}}
                 </div>
 
-                <div>
+                <div class='botao'>
                     <button type='submit' class='btn btn-primary'>Entrar</button>
                 </div>
             </form>

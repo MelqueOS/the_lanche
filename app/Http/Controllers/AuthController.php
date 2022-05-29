@@ -14,12 +14,15 @@ class AuthController extends Controller
      */
     public function index(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        // $credentials = $request->only('email', 'password');
  
-        if (Auth::attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('dashboard');
-        }
+        // if (Auth::attempt($credentials)) {
+        //     // Authentication passed...
+        //     return redirect()->intended('dashboard');
+        // }
+            return view('cliente.login_copia');
+
+
     }
 
     /**
@@ -40,6 +43,15 @@ class AuthController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'mesa' => 'required|max:3'
+        ],
+        [
+            'mesa.required' => 'Insira o número da mesa',
+            'mesa.max' => 'Mesa Inválida'
+        ]);
+
         $credentials = $request->only('email', 'password');
  
         if (Auth::attempt($credentials)) {
