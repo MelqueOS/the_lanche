@@ -25,7 +25,7 @@ Route::resources([
     "login" => AuthController::class,
 ]);
 
-Route::get('/', function () {
+Route::get('/teste', function () {
     return view('cliente.login_copia');
 });
 
