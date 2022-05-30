@@ -6,6 +6,8 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdmLogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,13 +24,16 @@ Route::resources([
     "empresa" => EmpresaController::class,
     //"pedido" => PedidoController::class,
     "produto" => ProdutoController::class,
-    "login" => AuthController::class,
+    "log" => AuthController::class,
     "/" => PedidoController::class,
+    "adm"=> AdmLogController::class
 ]);
+Route::get("/sair", [AdmLogController::Class, "sair"]);
 Route::get('/', function () {
     return view('cliente.cardapio');
 });
-
+//Rota de login da empresa
+Route::get("/login", [AdmLogController::Class, "index"])->name('login');
 Route::get('/teste', function () {
     return view('cliente.login_copia');
 });

@@ -7,16 +7,50 @@ use App\Models\Empresa;
 use App\Models\User;
 use App\Models\Localizacao;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class EmpresaController extends Controller
 {
+    public function __construct(){
+        $this->middleware("auth");       
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($confirmed = False)
     {
+        $titulo = "Painel Administrativo da Empresa";
+        
+        $empresa = Empresa::Find(Auth::user()->id);
+        $endereco = Localizacao::Find(Auth::user()->id);
+        $acess_level = "";
+        if(Auth::user()->acess == "empresa"){
+            $acess_level = "empresa";
+        }
+        $tip_logradouro = array(
+            '1' => 'Avenida',
+            '2' => 'Rua',
+            '3' => 'Fazenda',
+            '4' => 'Rodovia',
+            '5' => 'Condominio'
+        );
+        return view(
+            "empresa.empresa",
+            [
+                "user" => Auth::user(),
+                "empresa" => $empresa,
+                "endereco" => $endereco,
+                "titulo" => $titulo,
+                "acess" => $acess_level,
+                "tipo" => $tip_logradouro,
+                "confirmed" => $confirmed
+            ]
+        );
+        /*
+        //Antigo codigo da index
         $tip_logradouro = array(
             '1' => 'Avenida',
             '2' => 'Rua',
@@ -40,7 +74,7 @@ class EmpresaController extends Controller
                 "user"=> $user, 
                 "empresa"=> $empresa
             ]
-        );
+        );*/
     }
 
     /**
@@ -75,7 +109,7 @@ class EmpresaController extends Controller
 		}
         $user->name = $request->get("nome");
         $user->email = $request->get("email");
-        $user->password = $request->get("senha");
+        $user->password = Hash::make($request->get("senha"));
         $user->acess = "empresa";
         $user->save();
         $tag_user = $user->id;
@@ -107,7 +141,7 @@ class EmpresaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id, $confirmed = False)
-    {
+    {        
         $titulo = "Painel Administrativo da Empresa";
         $user = User::Find($id);
         if(!empty($user->id)){

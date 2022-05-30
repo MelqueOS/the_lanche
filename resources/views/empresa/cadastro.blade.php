@@ -28,9 +28,9 @@
             <label for="">Razão social</label>
             <input class='form-control' type="text" name="razsocial" maxlength='14' value = "{{$empresa->razao_social}}" class='cnpj' required />
             <label for="">Senha</label>
-            <input class='form-control' type="password" name="senha" value = "{{$user->password}}" required />
+            <input class='form-control' type="password" name="senha" required />
             <label for="">Confirmar Senha</label>
-            <input class='form-control' type="password" name="csenha" value = "{{$user->password}}" required />
+            <input class='form-control' type="password" name="csenha" required />
         </fieldset>
 
         <fieldset class="">
