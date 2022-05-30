@@ -23,20 +23,29 @@
         </div>
 
         <div class="box-formulario">
-            <form action="/" class='needs-validation' novalidate>
+            <form action="/login" class='form-login'method="POST" >
+                @csrf
                 <figure class='logo-img'>
                     <img class='logo' src="{{asset('img/logo.svg')}}" alt="">
                 </figure>
 
                 <div class="login-mesa col-7">
                     <label for="mesa" class='mesa'>Mesa</label>
-                    <input type="number" id='mesa' @class(['form-control', 'is-invalid'=> ($errors->first('mesa') != '')])required>
+                    <input type="number" id='mesa' @class(['form-control', 'is-invalid'=> ($errors->first('mesa') != '')])>
                 </div>
+            
+              
 
-                <div class="invalid-feedback">
-                    {{$errors->first('mesa')}}
-                </div>
+                @if($errors->all())
+   
+   @foreach($errors->all() as $error)
 
+       <div class="alert alert-danger">
+   
+           {{ $error }}
+       </div>
+   @endforeach
+@endif
                 <div class='botao'>
                     <button type='submit' class='btn btn-primary'>Entrar</button>
                 </div>

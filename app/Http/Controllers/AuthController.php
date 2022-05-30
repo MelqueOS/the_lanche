@@ -51,7 +51,7 @@ class AuthController extends Controller
             'mesa.required' => 'Insira o número da mesa',
             'mesa.max' => 'Mesa Inválida'
         ]);
-
+        
         $credentials = $request->only('email', 'password');
  
         if (Auth::attempt($credentials)) {
