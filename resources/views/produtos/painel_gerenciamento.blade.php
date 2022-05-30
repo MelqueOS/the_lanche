@@ -67,10 +67,6 @@
                     </form>
                 </div>
             </div>
-            <!--Combo-->
-            @endforeach
-            @endif
-
         </div> <!-- Cadastro -->
         <div class="listagem">
             <div>

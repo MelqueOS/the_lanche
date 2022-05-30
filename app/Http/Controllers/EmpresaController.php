@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EmpresaController extends Controller
 {
+    //Comentem essa primeira função para criar usuario de empresa
     public function __construct(){
         $this->middleware("auth");       
     }
@@ -22,6 +23,7 @@ class EmpresaController extends Controller
      */
     public function index($confirmed = False)
     {
+        //Comentem apartir daqui
         $titulo = "Painel Administrativo da Empresa";
         
         $empresa = Empresa::Find(Auth::user()->id);
@@ -49,6 +51,7 @@ class EmpresaController extends Controller
                 "confirmed" => $confirmed
             ]
         );
+        //Ate aqui, descomente abaixo
         /*
         //Antigo codigo da index
         $tip_logradouro = array(
@@ -75,6 +78,7 @@ class EmpresaController extends Controller
                 "empresa"=> $empresa
             ]
         );*/
+        //descomente ate aqui
     }
 
     /**
