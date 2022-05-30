@@ -31,7 +31,7 @@
 
                 <div class="login-mesa col-7">
                     <label for="mesa" class='mesa'>Mesa</label>
-                    <input type="number" id='mesa' @class(['form-control', 'is-invalid'=> ($errors->first('mesa') != '')])>
+                    <input type="number" name="mesa" id='mesa' @class(['form-control', 'is-invalid'=> ($errors->first('mesa') != '')])>
                 </div>
             
               

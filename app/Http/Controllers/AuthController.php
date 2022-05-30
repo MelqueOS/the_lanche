@@ -45,13 +45,13 @@ class AuthController extends Controller
     {
 
         $request->validate([
-            'mesa' => 'required|max:3'
+            'mesa' => 'required|max:1'
         ],
         [
             'mesa.required' => 'Insira o número da mesa',
             'mesa.max' => 'Mesa Inválida'
         ]);
-        
+
         $credentials = $request->only('email', 'password');
  
         if (Auth::attempt($credentials)) {
