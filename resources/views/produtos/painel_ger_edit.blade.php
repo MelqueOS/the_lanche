@@ -58,7 +58,7 @@
                     <div class="form-group col-2">
                         <label for="valor_mask">Preço</label>
                         <input type="text" id="valor_mask" name="valor_mask" class="form-control" value="{{ number_format($produto->valor, 2)}}" />
-                        <input id='valor' type='hidden' name="valor" class="form-control" value="{{$produto->valor}}" maxlength="11" required />
+                       
                     </div>
                     <div class="form-group col-12 descricao-form">
                         <label for="descricao">Descriçao</label>
