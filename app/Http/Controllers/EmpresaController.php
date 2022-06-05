@@ -252,4 +252,71 @@ class EmpresaController extends Controller
         }
         return $this->show($id, $confirmed);
     }
+    public function acesso(Request $request)
+    {
+        $tip_logradouro = array(
+            '1' => 'Avenida',
+            '2' => 'Rua',
+            '3' => 'Fazenda',
+            '4' => 'Rodovia',
+            '5' => 'Condominio'
+         );
+        $locais = Localizacao::All();
+        $titulo = "Cadastro de Empresas";
+        $endereco = new Localizacao();
+        $empresa = new Empresa();
+        $user = new User();
+        
+        return view(
+            "empresa.cadastro",
+            [
+                "titulo" => $titulo,
+                "parametro_select" => $tip_logradouro,
+                "locais" => $locais,
+                "endereco" => $endereco,
+                "user"=> $user, 
+                "empresa"=> $empresa
+            ]
+        );
+    }
+    public function cadastro(Request $request)
+    {
+        $titulo = "Cadastro de empresas";
+        if ($request->get('id')!=""){
+            $user = User::Find($request->get('id'));
+            $entidade =  Empresa::Find($request->get('id'));
+            $endereco =  Localizacao::Find($request->get('id'));
+            $status = "atualizado";			
+		}else{
+            $user = new User;
+			$entidade = new Empresa;
+            $endereco = new Localizacao;
+			$status = "salvo";
+		}
+        $user->name = $request->get("nome");
+        $user->email = $request->get("email");
+        $user->password = Hash::make($request->get("senha"));
+        $user->acess = "empresa";
+        $user->save();
+        $tag_user = $user->id;
+        
+		$entidade->cnpj = $request->get("cnpj");
+		$entidade->telefone = $request->get("telefone");
+		$entidade->razao_social = $request->get("razsocial");
+		$entidade->user_tag_id = $tag_user;
+		
+        $endereco->tipo_logradouro = $request->get("tipologadouro");
+		$endereco->logradouro = $request->get("logradouro");
+		$endereco->bairro = $request->get("bairro");
+		$endereco->numero = $request->get("numero");
+		//$endereco->referencia = $request->get("referencia");
+		//$endereco->complemento = $request->get("complemento");
+        $endereco->user_tag_id = $tag_user;
+        $endereco->save();
+        
+        $entidade->save();
+		//Atualiza o Status
+		$request>session()->flash("status", $status);
+		return redirect("/empresa");
+    }
 }

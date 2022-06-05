@@ -21,19 +21,19 @@ use App\Http\Controllers\AdmLogController;
 
 Route::resources([
     //"cliente" => ClienteController::class,
-    "empresa" => EmpresaController::class,
+    //"empresa" => EmpresaController::class,
     //"pedido" => PedidoController::class,
-    "produto" => ProdutoController::class,
+    //"produto" => ProdutoController::class,
     "log" => AuthController::class,
     "/" => PedidoController::class,
     "adm"=> AdmLogController::class
 ]);
-Route::get("/sair", [AdmLogController::Class, "sair"]);
+
 Route::get('/', function () {
     return view('cliente.cardapio');
 });
 //Rota de login da empresa
-Route::get("/login", [AdmLogController::Class, "index"])->name('login');
+Route::get("/login", [AdmLogController::class, "index"])->name('login');
 Route::get('/teste', function () {
     return view('cliente.login_copia');
 });
@@ -64,6 +64,14 @@ Route::get('/5', function () {
 Route::get('/7', function () {
     return view('empresa.empresa_edit');
 });
+Route::get('/', function () {
+    return view('empresa.cadastro');
+});
+Route::get('/empresaacesso',[EmpresaController::class, 'acesso'])->name('acesso');
+Route::post('/empresacadastro',[EmpresaController::class, 'cadastro'])->name('cadastro');
+
+
+
 Route::group([  
     'middleware' => 'auth',  
   ], function () {  
@@ -71,4 +79,6 @@ Route::group([
         "empresa" => EmpresaController::class,
         "produto" => ProdutoController::class,
     ]);
+    Route::get("/sair", [AdmLogController::class, "sair"]);
+
 });
