@@ -15,7 +15,7 @@
 
 <body>
     <div class="resp"></div>
-       <form action="/empresa" method="POST" enctype="multipart/form-data" name='form-cad'>
+       <form action="{{route('cadastro')}}" method="POST" enctype="multipart/form-data" name='form-cad'>
         @csrf
 
         <fieldset class="">

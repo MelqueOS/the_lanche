@@ -129,11 +129,11 @@
                                 <div class='produto '>
                                     <div class="img ">
 
-                                        @if(asset($linha2->url_img))
-                                        <i class="bi bi-file-image-fill " style="font-size:50px"></i>
-
-                                        @else
+                                        @if(!empty($linha2->url_img))
+                                        
                                         <img src="{{asset($linha2->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
+                                        @else
+                                        <i class="bi bi-file-image-fill " style="font-size:50px"></i>
                                         @endif
                                     </div>
                                     <div class="informacoes text-light">
