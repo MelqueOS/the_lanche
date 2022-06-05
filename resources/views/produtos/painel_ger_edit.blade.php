@@ -59,7 +59,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1">R$</span>
                                 </div>
-                                <input type="text" id="valor" maxlength="11" name="valor" class="form-control" value="@if($produto->valor != 0)
+                                <input type="text" id="valor" maxlength="8" name="valor" class="form-control" value="@if($produto->valor != 0)
                                     {{number_format($produto->valor, 2, ',', '.')}}
                                     @endif" />
                             </div>
