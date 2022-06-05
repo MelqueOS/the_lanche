@@ -11,9 +11,6 @@
 
     <!-- JQUERY MASK -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- INPUT MONEY -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js" integrity="sha512-Rdk63VC+1UYzGSgd3u2iadi0joUrcwX0IWp2rTh6KXFoAmgOjRS99Vynz1lJPT8dLjvo6JZOqpAHJyfCEZ5KoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <div class="conteiner-fluid">
@@ -26,47 +23,57 @@
                 @else
                 <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
                 @endif
-                <!-- <figcaption>Imagem Do Produto</figcaption> -->
             </figure>
         </header>
-        <div class="content">
+        <main class="content">
             <div class='cadastro'>
-                <form action="/produto" method="POST" enctype="multipart/form-data" onsubmit="f" class="row formulario">
+                <form action="/produto" method="POST" enctype="multipart/form-data" onsubmit="carregaDados()" class="row formulario">
                     @csrf
 
                     <div class="file form-group">
                         <label for="">Imagem Do Produto</label>
                         @if($img_lock == "disable")
-                        <input type="file" class='form-control col-11' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
+                            <input type="file" class='form-control col-11' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
                         @else
-                        <input type="file" class='form-control' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
-                        <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
+                            <input type="file" class='form-control' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
+                            <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
                         @endif
                     </div>
-                    <div class="form-group col-5">
-                        <label for="nome_descritivo">Nome do Produto </label>
-                        <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
+
+                    <div class="line-two">
+                        <div class="form-group content-produto col-5">
+                            <label for="nome_descritivo">Nome do Produto </label>
+                            <input type="text" name="nome_descritivo" class="form-control" value="{{$produto->nome_descritivo}}" required />
+                        </div>
+                        <div class="form-group content-tipo col-4">
+                            <label for="tipo">Tipo de produto</label>
+                            <select name="tipo" class="form-control" class="inptselect form-control" required>
+                                @foreach($parametro_select as $key_selected => $value_selected)
+                                <option value="{{$key_selected}}">{{$value_selected}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group content-preco col-2">
+                            <label for="valor">Preço</label>
+                            <div id='preco' class="input-group ">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">R$</span>
+                                </div>
+                                <input type="text" id="valor" maxlength="11" name="valor" class="form-control" value="@if($produto->valor != 0)
+                                    {{number_format($produto->valor, 2, ',', '.')}}
+                                    @endif" />
+                            </div>
+                            <input type="hidden" id="valor_without_mask" name="valor_without_mask" value="{{ $produto->valor }}" />
+                        </div>
                     </div>
-                    <div class="form-group col-5">
-                        <label for="tipo">Tipo de produto</label>
-                        <select name="tipo" class="form-control" class="inptselect form-control" required>
-                            @foreach($parametro_select as $key_selected => $value_selected)
-                            <option value="{{$key_selected}}">{{$value_selected}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group col-2">
-                        <label for="valor_mask">Preço</label>
-                        <input type="text" id="valor_mask" name="valor_mask" class="form-control" value="{{ number_format($produto->valor, 2)}}" />
-                       
-                    </div>
+
                     <div class="form-group col-12 descricao-form">
                         <label for="descricao">Descriçao</label>
                         <textarea class="textarea form-control" rows="2" name="descricao">{{$produto->descricao}}</textarea>
                     </div>
                     <div class="button-form row">
                         <div class="col-2">
-                            <button type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</button>
+                            <a href='/produto' type="button" class="btn btn-second bottom "><i class="fas fa-save"></i>Cancelar</a>
                         </div>
                         <div class="col-2">
                             <button type="submit" class="btn btn-primary bottom"><i class="fas fa-save"></i>Salvar</button>
@@ -76,7 +83,7 @@
                     <input type="hidden" name="tokid" value="{{$tokid}}">
                 </form>
             </div>
-        </div>
+        </main>
     </div>
     <hr>
     <div class="produtos-genericos  ">
@@ -179,20 +186,35 @@
             </div>
         </div>
     </div>
-    </body>
+
+    <div id='up'>
+        <button id="upPage">
+            <i class="bi bi-arrow-up-circle-fill"></i>
+        </button>
+    </div>
 
 </html>
 
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        $('#valor_mask').mask("#.##0,00", {
+        $('#valor').mask("#.##0,00", {
             reverse: true
         });
     });
 
-    function f() {
-        $('#valor').val($("#valor_mask").cleanVal() / 100);
+    $(document).ready(function() {
+        // subir a tela
+
+        $("button").click(function() {
+            $(document).scrollTop(0);
+        });
+    });
+
+    function carregaDados() {
+        $('#valor_without_mask').val($("#valor").cleanVal() / 100);
+        console.log($('#valor').val());
+        console.log($('#valor_without_mask').val());
     }
 
 
