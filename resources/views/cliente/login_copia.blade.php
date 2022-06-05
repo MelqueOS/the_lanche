@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}" />
     <link rel="stylesheet" href="{{asset('css/bootstrap-icons.css')}}" />
     <link rel='stylesheet' href="{{asset('css/padroes.css')}}" />
-    <link rel="stylesheet" href="{{asset('css/login.css')}}" />
+    <link rel="stylesheet" href="{{asset('css/login-cliente.css')}}" />
 </head>
 
 <body>
