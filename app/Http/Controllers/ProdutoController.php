@@ -89,7 +89,7 @@ class ProdutoController extends Controller
         $produto->nome_descritivo = $request->get("nome_descritivo");
         $produto->tipo = $request->get("tipo");
 
-        $produto->valor = $request->get("valor_mask");
+        $produto->valor = $request->get("valor_without_mask");
         $produto->descricao = $request->get("descricao");
         if (
             empty($request->file("imagem_produto"))
