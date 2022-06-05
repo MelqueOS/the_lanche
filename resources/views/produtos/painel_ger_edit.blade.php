@@ -33,10 +33,10 @@
                     <div class="file form-group">
                         <label for="">Imagem Do Produto</label>
                         @if($img_lock == "disable")
-                            <input type="file" class='form-control col-11' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
+                        <input type="file" class='form-control col-11' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" required />
                         @else
-                            <input type="file" class='form-control' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
-                            <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
+                        <input type="file" class='form-control' id="flImage" name="imagem_produto" accept="image/png, image/jpeg" />
+                        <input type="hidden" name="att_url" value="{{$produto->url_img}}" />
                         @endif
                     </div>
 
@@ -130,10 +130,9 @@
                                     <div class="img ">
 
                                         @if(asset($linha2->url_img))
-                                        <i class="bi bi-file-image-fill " style="font-size:50px"></i>
-
-                                        @else
                                         <img src="{{asset($linha2->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
+                                        @else
+                                        <i class="bi bi-file-image-fill " style="font-size:50px"></i>
                                         @endif
                                     </div>
                                     <div class="informacoes text-light">

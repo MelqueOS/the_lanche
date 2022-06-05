@@ -111,6 +111,7 @@ h2 {
     justify-content: space-around;
 }
 
+
 .cont {
     display: flex;
     flex-direction: row;
@@ -127,7 +128,7 @@ h2 {
     min-height: 200px;
     max-height: 300px;
     height: 200px;
-    background-color: #eb5600ab;
+    background-color: var(--corPrim);
     border: 1px solid var(--corPrim);
     border-radius: 6px;
 
@@ -222,11 +223,12 @@ figure {
         border-radius: 6px;
     } */
 
-    div.content-produto{
+    div.content-produto {
         width: 58.33333333%;
     }
 
-    div.content-tipo, div.content-preco {
+    div.content-tipo,
+    div.content-preco {
         width: 41.66666667%;
     }
 }
