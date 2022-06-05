@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class EmpresaController extends Controller
 {
     //Comentem essa primeira função para criar usuario de empresa
-    public function __construct(){
-        $this->middleware("auth");       
-    }
+
     /**
      * Display a listing of the resource.
      *

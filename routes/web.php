@@ -64,3 +64,11 @@ Route::get('/5', function () {
 Route::get('/7', function () {
     return view('empresa.empresa_edit');
 });
+Route::group([  
+    'middleware' => 'auth',  
+  ], function () {  
+    Route::resources([
+        "empresa" => EmpresaController::class,
+        "produto" => ProdutoController::class,
+    ]);
+});
