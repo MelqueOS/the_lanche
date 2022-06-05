@@ -24,7 +24,9 @@
     </div>
 
     <!-- AQUI VAI TER UM FOREACH >> AQUI VAI SER O TIPO(COMBO, COMIDA, BEBIDA, ETC)-->
-    <form method ="POST" action="/pedido">
+    {{-- So remover esse comentario caso for inserir a função de realizar pedido
+        <form method ="POST" action="/pedido">
+    --}}
     @if(count($produtos) == 0)
             <p>Não há nenhum cardapio disponivel<p>
     @else
@@ -76,9 +78,13 @@
         <hr>
         @endforeach
     @endif
-    <input type="hidden" name = "revise" value = "false">
+    {{--
+        Descomentar caso for inserir o sistema de pedidos
+        <input type="hidden" name = "revise" value = "false">
     <input type="hidden" name = "usr_token" value = "{{$usr_token}}">
     <input type="hidden" name = "tokid" value = "{{$tokid}}">
+
+    --}}
     <!--
         Não aceitando envio de pedidos
     -->
@@ -87,7 +93,7 @@
         <input type ="submit"class="btn btn-success p-2" value="Pedir"/>
     </div>
     --}}
-    </form>
+    {{--</form>--}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type='text/javascript' src='js/cardapio.js'></script>
 </body>

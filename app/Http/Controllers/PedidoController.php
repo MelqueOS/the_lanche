@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Models\Produto_Combo;
 
 class PedidoController extends Controller
 {
@@ -22,16 +23,13 @@ class PedidoController extends Controller
             '5' => 'Bebida',
             '6' => 'Combo'
          );
-        $usr_token = 2; 
-        $tokid = 1;//Linha temporaria
-        $produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$tokid)->get();
+        //$produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$tokid)->get();
+        $produtos = Produto_Combo::All();
         return view(
             "cliente.cardapio",
             [
                 "produtos" => $produtos,
                 "tipo" => $tip_produtos,
-                "usr_token" => $usr_token,
-                "tokid" => $tokid
             ]
         );
     }

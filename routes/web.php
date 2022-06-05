@@ -29,9 +29,9 @@ Route::resources([
     "adm"=> AdmLogController::class
 ]);
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('cliente.cardapio');
-});
+});*/
 //Rota de login da empresa
 Route::get("/login", [AdmLogController::class, "index"])->name('login');
 Route::get('/teste', function () {
@@ -63,9 +63,6 @@ Route::get('/5', function () {
 
 Route::get('/7', function () {
     return view('empresa.empresa_edit');
-});
-Route::get('/', function () {
-    return view('empresa.cadastro');
 });
 Route::get('/empresaacesso',[EmpresaController::class, 'acesso'])->name('acesso');
 Route::post('/empresacadastro',[EmpresaController::class, 'cadastro'])->name('cadastro');
