@@ -23,6 +23,7 @@ class PedidoController extends Controller
             '5' => 'Bebida',
             '6' => 'Combo'
          );
+         $tokid=1;
         //$produtos = DB::table("produto_combo as pdc")->join("empresa AS emp", "pdc.empresa_id","=","emp.user_tag_id")->where("emp.user_tag_id","=" ,$tokid)->get();
         $produtos = Produto_Combo::All();
         return view(
@@ -30,6 +31,8 @@ class PedidoController extends Controller
             [
                 "produtos" => $produtos,
                 "tipo" => $tip_produtos,
+                "parametro_select" => $tip_produtos,
+                "tokid" => $tokid,
             ]
         );
     }
