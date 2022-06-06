@@ -15,19 +15,53 @@
     font-weight: bold;
 }
 
+h1#unico {
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline wavy var(--corPrim);
+}
+
+h1#titulo {
+    margin: 20px 0;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: underline wavy var(--bordBlack);
+}
+
+h1#titulo::selection {
+    color: white;
+    background-color: var(--bordBlack)
+}
 h2 {
     text-decoration: underline wavy var(--corPrim);
 }
 
 .navbar {
-    margin: 10px 0;
-    justify-content: flex-end;
     border-bottom: 1px solid var(--formBord);
+    margin: 0;
 }
 
-.cont-form {
-    margin-right: 2%;
-    width: 400px;
+.content-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 30px 0px 10px;
+}
+
+figure {
+    display: flex;
+    border: 1px solid #333333;
+    border-radius: 50%;
+    flex-direction: column;
+}
+
+figure img {
+    height: 70px;
+    width: 70px;
 }
 
 .tipo {
@@ -36,12 +70,12 @@ h2 {
     margin: 0 25px;
 }
 
-.conteudo{
+.conteudo {
     display: flex;
     flex-direction: row;
 }
 
-.item{
+.item {
     margin-right: 20px;
 }
 
@@ -60,21 +94,31 @@ h2 {
 
 .box-img {
     display: flex;
+    justify-content: center;
     align-items: center;
-    border: 1px solid var(--formBord);
-    border-radius: 8px;
     margin-right: 20px;
     padding: 0 5px;
-    
+    width: 35%;
+    max-width: 40%;
+
 }
 
 .box-item img {
-    height: 80px;
-    width: 80px;
+    height: 100px;
+    width: 100px;
 }
 
-.sub-box{
+img {
+    border-radius: 6px;
+}
+
+.sub-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 100%;
+    width: 60%;
+    max-width: 60%;
 }
 
 .descricao {
@@ -85,13 +129,13 @@ h2 {
     text-overflow: ellipsis;
 }
 
-.valor{
+.valor {
     height: 15%;
     text-transform: uppercase;
 }
-.fab{
+
+.fab {
     position: fixed;
-    bottom:10px;
-    right:10px;
+    bottom: 10px;
+    right: 10px;
 }
-  

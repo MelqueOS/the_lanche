@@ -10,6 +10,9 @@
     <link rel='stylesheet' href="{{asset('css/padroes.css')}}" />
     <link rel="stylesheet" href="{{asset('css/login-empresa.css')}}" />
 
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
+
 
 </head>
 
