@@ -133,7 +133,7 @@
                                 <div class="conteudo">
                                     <div class='produto '>
                                         <div class="img ">
-                                            @if(asset($linha2->url_img))
+                                            @if(file_exists($linha2->url_img))
                                             <img src="{{asset($linha2->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
                                             @else
                                             <i class="bi bi-file-image-fill " style="font-size:50px"></i>

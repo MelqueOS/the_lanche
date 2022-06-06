@@ -63,7 +63,7 @@
                         @foreach($parametro_select as $key_selected => $value_selected)
                         @if($linha2->tipo == $key_selected)
                         <div class='produto '>
-                            @if(asset($linha2->url_img))
+                            @if(file_exists($linha2->url_img))
                             <div class='box-img'>
                                 <img src="{{asset($linha2->url_img)}}" id="imgPhoto" alt="" class="imgPhoto">
                             </div>
