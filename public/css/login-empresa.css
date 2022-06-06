@@ -38,6 +38,7 @@ label:hover {
     width: 70%;
     background-color: var(--corPrim);
     border-radius: 8px;
+    min-height: 440px;
 }
 
 form {

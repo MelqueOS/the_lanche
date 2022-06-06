@@ -1,0 +1,15 @@
+@import url('padroes.css');
+
+.navbar>.container,
+.navbar>.container-fluid {
+    justify-content: space-between;
+    width: 100%;
+}
+
+a{
+    text-transform: capitalize;
+}
+
+.bi:before{
+    font-size: 1.5rem;
+}

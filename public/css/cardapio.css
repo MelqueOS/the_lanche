@@ -67,75 +67,12 @@ form{
     height:100%;
 }
 
-#upPage {
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-    border-color: #333;
-}
-
-#upPage:hover {
-    box-shadow: 0 .25rem 2rem var(--corPrim);
-}
-
-.bi-arrow-up-circle-fill {
-    font-size: 50px;
-    width: 100%;
-    height: 100%;
-    color: var(--corPrim);
-}
-
-header {
-    row-gap: 20px;
-}
 
 .imgPhoto {
     border-radius: 6px;
     font-size: 60px;
     height: var(--sizeImg);
     width: var(--sizeImg);
-}
-
-.img {
-    display: flex;
-    border-radius: 6px;
-    max-width: 40%;
-    margin: 5px;
-}
-
-.formulario {
-    row-gap: 20px;
-}
-
-.input-group-text {
-    border-radius: 6px 0 0 6px;
-}
-
-.line-two {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.button-form {
-    justify-content: space-evenly;
-    margin: 10px 0px 30px 0px;
-}
-
-hr {
-    color: var(--corPrim);
-    margin: 30px 0px;
-    text-align: center;
-    width: 100%;
-}
-
-hr:not([size]) {
-    height: 2px;
 }
 
 h1 {
@@ -149,14 +86,6 @@ h2 {
     text-transform: capitalize;
 }
 
-.textarea {
-    height: calc(3em + 1rem + 2px);
-}
-
-.conteiner-fluid {
-    margin: 0px 50px;
-}
-
 .listagem {
     display: flex;
     flex-direction: row;
@@ -164,11 +93,6 @@ h2 {
     justify-content: left;
     row-gap: 40px;
     column-gap: 40px;
-}
-
-.cadastro {
-    width: 100%;
-    justify-content: space-around;
 }
 
 .box-item {
@@ -195,16 +119,6 @@ h2 {
     background-color: white;
     border-radius: 6px;
 }
-
-.conteudo>* {
-    justify-content: center;
-    align-items: center;
-}
-
-.conteudo:hover {
-    box-shadow: 0 1rem 3rem rgb(0 0 0 / 18%);
-}
-
 .tipo h1 {
     text-transform: uppercase;
 }
@@ -216,33 +130,6 @@ h2 {
     height: 100%;
     width: 90%;
 }
-
-.informacoes {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 16px;
-    margin: 0px 10px;
-    width: calc(100% - var(--sizeImg));
-}
-
-.informacoes>* {
-    text-align: center;
-    width: 100%;
-}
-
-.nome {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-decoration: underline wavy var(--corPrim);
-}
-
-.sep {
-    margin: 10px 0px;
-    height: 2px;
-    width: 90%;
-}
-
 
 .descricao {
     display: -webkit-box;
@@ -267,26 +154,4 @@ h2 {
 
 figure {
     cursor: pointer;
-}
-
-
-/* REGRAS */
-@media screen and (max-width:840px) {
-    .line-two {
-        flex-direction: column;
-        row-gap: 15px;
-    }
-
-    /* #basic-addon1 {
-        border-radius: 6px;
-    } */
-
-    div.content-produto {
-        width: 58.33333333%;
-    }
-
-    div.content-tipo,
-    div.content-preco {
-        width: 41.66666667%;
-    }
 }
