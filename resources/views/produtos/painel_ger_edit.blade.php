@@ -117,10 +117,12 @@
                         <div class="tipo d-flex flex-column">
                             <h1>
                                 @foreach($parametro_select as $key_selected => $value_selected)
-                                @if($linha->tipo == $key_selected)
-                                {{$value_selected}}
-                                {{$conferir[]=$linha->tipo}}
-                                @endif
+                                    @if($linha->tipo == $key_selected)
+                                        {{$value_selected}}
+                                        @php 
+                                            $conferir[]=$linha->tipo
+                                        @endphp
+                                    @endif
                                 @endforeach
                             </h1>
                         </div>
