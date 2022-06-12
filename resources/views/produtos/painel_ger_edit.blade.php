@@ -61,7 +61,11 @@
                                 <label for="tipo">Tipo de produto</label>
                                 <select name="tipo" class="form-control" class="inptselect form-control" required>
                                     @foreach($parametro_select as $key_selected => $value_selected)
+                                    @if($key_selected==$produto->tipo)
+                                    <option value="{{$key_selected}}" selected="selected">{{$value_selected}}</option>
+                                    @else
                                     <option value="{{$key_selected}}">{{$value_selected}}</option>
+                                    @endif
                                     @endforeach
                                 </select>
                             </div>
