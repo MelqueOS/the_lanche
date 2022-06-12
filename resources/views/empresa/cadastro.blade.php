@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('css/cadastro.css')}}" />
 </head>
 
-<body class="d-flex flex-column  ">
+<body class="d-flex flex-column ">
 <h1 class="text-center fw-bold text-uppercase p-5 m-5">{{$titulo}}</h1>
     <form action="{{route('cadastro')}}" method="POST" class="d-flex flex-row h-50 pb-5 align-items-center   justify-content-center " enctype="multipart/form-data" name='form-cad'>
         @csrf
@@ -26,14 +26,13 @@
                 <label for="">Razão social <input class='form-control' type="text" name="razsocial" maxlength='14' value="{{$empresa->razao_social}}" class='cnpj' required /></label>
                 <label for="">Senha<input class='form-control' type="password" name="senha" required /></label>
                 <label for="">Confirmar Senha <input class='form-control' type="password" name="csenha" required /></label>
-
             </fieldset>
         </div>
         <div class="d-flex flex-column w-50 h-50 align-items-center">
             <fieldset class="col-8  h-100  d-flex flex-column justify-content-around">
                 <label for="">Telefone<input type="text" name="telefone" class='phone form-control' maxlength='15' value="{{$empresa->telefone}}" required></label>
                 <label for="">Tipo de Logradouro  
-                    <select name="tipologadouro" class="form-control" required>
+                    <select name="tipologadouro" class="form-select" required>
                     @php
                     $ok = false;
                     @endphp
@@ -55,7 +54,6 @@
                     @php
                     $ok = false;
                     @endphp
-
                     @endforeach
                 </select></label>
                 <label for="">Logradouro<input class='form-control' type="text" name="logradouro" value="{{$endereco->logradouro}}" required></label>
