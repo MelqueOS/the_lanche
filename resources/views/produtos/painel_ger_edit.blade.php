@@ -33,7 +33,7 @@
                 <h1 id='titulo'>{{$secao[1]}}</h1>
                 <figure class="max-width col">
                     @if($produto->url_img != null)
-                    <img alt="" id="imgHead" src="{{asset($produto->url_img);}}" class="imgPhoto">
+                    <img alt="" id="imgPhoto" src="{{asset($produto->url_img);}}" class="imgPhoto">
                     @else
                     <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
                     @endif
@@ -121,12 +121,12 @@
                         <div class="tipo d-flex flex-column">
                             <h1>
                                 @foreach($parametro_select as $key_selected => $value_selected)
-                                    @if($linha->tipo == $key_selected)
-                                        {{$value_selected}}
-                                        @php 
-                                            $conferir[]=$linha->tipo
-                                        @endphp
-                                    @endif
+                                @if($linha->tipo == $key_selected)
+                                {{$value_selected}}
+                                @php
+                                $conferir[]=$linha->tipo
+                                @endphp
+                                @endif
                                 @endforeach
                             </h1>
                         </div>
