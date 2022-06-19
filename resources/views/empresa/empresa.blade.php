@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark navedit ">
         <div class="container-fluid">
             <div class="inicial">
-                <a class="navbar-brand" href="/">The Lanche</a>
+                <a class="navbar-brand" href="">The Lanche</a>
                 <a class="navbar-brand" aria-current="page" href="/produto">Gerenciar cardapio</a>
                 <!-- futuro -->
                 {{-- Sera adicionado no futuro
