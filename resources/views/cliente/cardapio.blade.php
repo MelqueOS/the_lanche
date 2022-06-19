@@ -49,7 +49,7 @@
                         @foreach($parametro_select as $key_selected => $value_selected)
                         @if($linha->tipo == $key_selected)
                         {{$value_selected}}
-                        @php
+                        @php 
                             $conferir[]=$linha->tipo
                         @endphp
                         @endif

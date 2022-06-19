@@ -33,7 +33,7 @@
                 <h1 id='titulo'>{{$secao[1]}}</h1>
                 <figure class="max-width col">
                     @if($produto->url_img != null)
-                    <img alt="" id="imgHead" src="{{asset($produto->url_img);}}" class="imgPhoto">
+                    <img alt="" id="imgPhoto" src="{{asset($produto->url_img);}}" class="imgPhoto">
                     @else
                     <img alt="" id="imgPhoto" src="{{asset('img/mais.webp')}}" class="imgPhoto">
                     @endif
@@ -61,7 +61,11 @@
                                 <label for="tipo">Tipo de produto</label>
                                 <select name="tipo" class="form-control" class="inptselect form-control" required>
                                     @foreach($parametro_select as $key_selected => $value_selected)
+                                    @if($key_selected==$produto->tipo)
+                                    <option value="{{$key_selected}}" selected="selected">{{$value_selected}}</option>
+                                    @else
                                     <option value="{{$key_selected}}">{{$value_selected}}</option>
+                                    @endif
                                     @endforeach
                                 </select>
                             </div>
