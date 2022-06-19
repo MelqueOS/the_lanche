@@ -111,6 +111,7 @@
                     @endphp
                     @foreach($produtos as $linha)
                     @if(in_array($linha->tipo, $conferir) == true)
+                    
                     @else
                     <hr>
                     <div class='item'>
@@ -119,7 +120,9 @@
                                 @foreach($parametro_select as $key_selected => $value_selected)
                                 @if($linha->tipo == $key_selected)
                                 {{$value_selected}}
-                                {{$conferir[]=$linha->tipo}}
+                                @php
+                                $conferir[]=$linha->tipo
+                                @endphp
                                 @endif
                                 @endforeach
                             </h1>
