@@ -18,9 +18,6 @@
     <nav class="navbar navbar-expand-lg">
         <div class="cont-form ">
             <figure><img src="{{asset('img/logo.svg')}}" alt=""></figure>
-            <form action="" method="get" class='form-group'>
-                <input type="text" name='search-item' class='form-control search-item' placeholder='Buscar um Item' />
-            </form>
         </div>
     </nav>
 
